@@ -1,0 +1,32 @@
+
+------------------------------------------------------------
+Test started: 14.03.2017 10:29:55
+------------------------------------------------------------
+CFG:C:\Training\HandsOn\Automation\CentralLockingSystem\CentralLockingSystemNET.cfg
+*********** Activate and compile all modules ***********
+Compile all nodes of configuration: CentralLockingSystemNET
+
+Running StandardTests...
+
+
+*********** Execution of all test modules in all test environments started *********** 
+Hint: test modules in sub folders are not be considered.
+
+---------- Executing TestEnvironment: 'Test Environment' (C:\Training\HandsOn\Automation\CentralLockingSystem\TestSetupNET.tse) ----------
+Found 1 test module(s).
+ - executing testmodule: 'Structured .NET Tester'
+     --> Verdict: Failed. Number of test cases/unsuccessful test cases: 6/5
+         FAIL: Test module did not report success.
+---------- Executing of TestEnvironment: 'Test Environment' finished ----------
+
+*********** Execution of all test modules in all test environments finished *********** 
+
+
+------------------------------------------------------------
+TEST RESULTS
+------------------------------------------------------------
+	FAILED	StandardTests
+------------------------------------------------------------
+Test contains errors.
+------------------------------------------------------------
+GetScriptResult: found 1 failed test(s).

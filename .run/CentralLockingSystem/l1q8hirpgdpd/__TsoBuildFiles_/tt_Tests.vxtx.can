@@ -1,0 +1,145 @@
+﻿/* !Encoding: 65001  */
+includes
+{
+  #include "__VariablesLib.cin"
+  #include "__CaplGeneratorLib.cin"
+  #include "__CANoeReportFuntionsLib.cin"
+}
+
+variables
+{
+  // Global variables defined within this CAPL file
+}
+
+void Tthsmn6vo_tf_SwitchAndTestLed(signal * pLed, signal * pLedState, int64 pState)
+{
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $pLed.phys = pState;
+      __ReportSignalRefSetLValue(pLed, __cArray);
+      __ReportTableRow(0, __cArray, __cAOp, pState, "pState");
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (700 * 1000000), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(pLedState, pState, "==") == 1;
+      __ReportSignalRefCheckLValue(pLedState, __cArray);
+      __ReportTableRow(0, __cArray, "==", pState, "pState");
+      __ReportCell(pLedState);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+}
+
+testcase Tthsmn6vo_ttc_TestLed(signal * pWhichLed, signal * pExpectedLedState)
+{
+  SetBreakOnFail(1);
+
+  {
+    CreateTTEIFFunction("Tthsmn6vo_tf_SwitchAndTestLed", __eFct, __eLocal);
+    AddIFParameterSignal(pWhichLed);
+    AddIFParameterSignal(pExpectedLedState);
+    AddIFParameterInt64(0);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "dfe77053-0a7a-4750-bfbd-082d5370793a");
+  }
+
+
+  {
+    CreateTTEIFFunction("Tthsmn6vo_tf_SwitchAndTestLed", __eFct, __eLocal);
+    AddIFParameterSignal(pWhichLed);
+    AddIFParameterSignal(pExpectedLedState);
+    AddIFParameterInt64(1);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "dfe77053-0a7a-4750-bfbd-082d5370793a");
+  }
+
+
+  {
+    CreateTTEIFFunction("Tthsmn6vo_tf_SwitchAndTestLed", __eFct, __eLocal);
+    AddIFParameterSignal(pWhichLed);
+    AddIFParameterSignal(pExpectedLedState);
+    AddIFParameterInt64(0);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "dfe77053-0a7a-4750-bfbd-082d5370793a");
+  }
+
+
+}
+
+testsequence Tthsmn6vo_tts_AllLeds()
+{
+  SetBreakOnFail(1);
+
+  CallTTETCList("Tthsmn6vo_ttc_TestLed", "7,7", "b3a106713230ab340dc93e5d9f7b8308", __eLocal);
+
+}
+
+void Tthsmn6vo_Tet_TtInit()
+{
+
+}
+
+void Tthsmn6vo_Tet_TsCall0()
+{
+  CreateTTEIFFunction("Tthsmn6vo_tts_AllLeds", __eTsDef, __eLocal);
+  CallInterfaceFunction(__cEmpty , __cEmpty, __cEmpty );
+}
+
+void Tthsmn6vo_Tet_Tc0()
+{
+  CreateTTEIFFunction("Tthsmn6vo_Tc0", __eTcDef, __eLocal);  
+  CallInterfaceFunction("ttc_Led1", __cEmpty , __cEmpty );
+}
+testcase Tthsmn6vo_Tc0()
+{	
+  SetBreakOnFail(1);
+
+  TestPreparationBegin();
+  {
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eSet, __cSet, "sigLED1=1", "0");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`CCU::`frmLamps::`sigLED1.phys = 1;
+      __ReportSignalSetLValue("CAN signal 'sigLED1'", `CAN::dbNode::`CCU::`frmLamps::`sigLED1, __cArray);
+      __ReportTableRow(0, __cArray, __cAOp, 1, "");
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eWait, __cWait, "", "1");
+  {
+    __Wait("1", (700 * 1000000), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`CANister::`frmLEDStatus::`sigLEDStat_01, 1, "==") == 1;
+      __ReportTableRow(0, "CAN signal 'sigLEDStat_01'", "==", 1, "");
+      __ReportCell(`CAN::dbNode::`CANister::`frmLEDStatus::`sigLEDStat_01);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+}
+

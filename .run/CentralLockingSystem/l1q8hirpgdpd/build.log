@@ -1,0 +1,139 @@
+﻿22:58:04 # Build of test unit 'tu_FunctionalTests' started...
+22:58:04 - Build Step #0: BuildPreparation (ArtefactID: -1)
+22:58:04 - ------------------------------------------------
+22:58:04 - ============================== Build Step #0 finished ==============================
+22:58:04 - Build Step #1: PreBuildEvent (ArtefactID: -1)
+22:58:04 - ---------------------------------------------
+22:58:04 - ============================== Build Step #1 finished ==============================
+22:58:04 - Build Step #2: BuildTestSequenceDiagramDependencyTree (ArtefactID: -1)
+22:58:04 - ----------------------------------------------------------------------
+22:58:04 - Nothing to do (no Test Sequence Diagram Files)
+22:58:04 - ============================== Build Step #2 finished ==============================
+22:58:04 - Build Step #3: TraceArtefactIds (ArtefactID: -1)
+22:58:04 - ------------------------------------------------
+22:58:04 - Artefact IDs:
+22:58:04 -   0 C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt
+22:58:04 -   1 C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\NewFile1.vtt
+22:58:04 - ============================== Build Step #3 finished ==============================
+22:58:04 - Build Step #4: FuzzTestDetection (ArtefactID: -1)
+22:58:04 - -------------------------------------------------
+22:58:04 - ============================== Build Step #4 finished ==============================
+22:58:04 - Build Step #5: ValidateTestUnit (ArtefactID: -1)
+22:58:04 - ------------------------------------------------
+22:58:04 # Checking test unit consistency
+22:58:04 - ============================== Build Step #5 finished ==============================
+22:58:04 - Build Step #6: BuildParameterTypeLibs (ArtefactID: -1)
+22:58:04 - ------------------------------------------------------
+22:58:04 - Nothing to do (no C# documents and no .NET assemblies)
+22:58:04 - ============================== Build Step #6 finished ==============================
+22:58:04 - Build Step #7: BuildCaplTypeLibs (ArtefactID: -1)
+22:58:04 - -------------------------------------------------
+22:58:04 - Nothing to do (no C# documents and no .NET assemblies)
+22:58:04 - ============================== Build Step #7 finished ==============================
+22:58:04 - Build Step #8: BuildSysVarTypeLibs (ArtefactID: -1)
+22:58:04 - ---------------------------------------------------
+22:58:04 - Nothing to do (no C# documents and no .NET assemblies)
+22:58:04 - ============================== Build Step #8 finished ==============================
+22:58:04 - Build Step #9: BuildCoTypeLib (ArtefactID: -1)
+22:58:04 - ----------------------------------------------
+22:58:04 - Nothing to do (no C# documents and no .NET assemblies or no CO-Lib)
+22:58:04 - ============================== Build Step #9 finished ==============================
+22:58:04 - Build Step #10: ValidateTteFile (ArtefactID: 0)
+22:58:04 - -----------------------------------------------
+22:58:04 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' is up to date (regarding to export table hash)
+22:58:04 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' is outdated
+22:58:04 - Reason: Last write time of 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:58:04) differs from 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:56:39) stored in MAKE database
+22:58:04 # Compiling file 'tt_Tests.vtt' in test unit 'tu_FunctionalTests'
+22:58:05 # Compilation succeeded (22:58:05) -- 0 errors, 0 warnings
+22:58:05 - ============================== Build Step #10 finished ==============================
+22:58:05 - Build Step #11: ValidateTteFile (ArtefactID: 1)
+22:58:05 - -----------------------------------------------
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\NewFile1.vtt' is up to date (regarding to export table hash)
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\NewFile1.vtt' is up to date (regarding to dependencies in MAKE database)
+22:58:05 - ============================== Build Step #11 finished ==============================
+22:58:05 - Build Step #12: ConditionalBuildAbort (ArtefactID: -1)
+22:58:05 - ------------------------------------------------------
+22:58:05 - All Validation succeeded - continue build.
+22:58:05 - ============================== Build Step #12 finished ==============================
+22:58:05 - Build Step #13: CollectNavigationInfo (ArtefactID: 0)
+22:58:05 - -----------------------------------------------------
+22:58:05 - ============================== Build Step #13 finished ==============================
+22:58:05 - Build Step #16: CollectNavigationInfo (ArtefactID: 1)
+22:58:05 - -----------------------------------------------------
+22:58:05 - ============================== Build Step #16 finished ==============================
+22:58:05 - Build Step #14: CompileVtt2Vxtx (ArtefactID: 0)
+22:58:05 - -----------------------------------------------
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx' is outdated
+22:58:05 - Reason: Last write time of 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:58:04) differs from dependency relation to 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:56:39) stored in MAKE database
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.can' is outdated
+22:58:05 - Reason: Last write time of 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:58:04) differs from dependency relation to 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' (07/01/2022 22:56:39) stored in MAKE database
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx' is up to date (regarding to export table hash)
+22:58:05 - ============================== Build Step #14 finished ==============================
+22:58:05 - Build Step #17: CompileVtt2Vxtx (ArtefactID: 1)
+22:58:05 - -----------------------------------------------
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\NewFile1.vxtx' is up to date (regarding to dependencies in MAKE database)
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\NewFile1.vxtx.can' is up to date (regarding to dependencies in MAKE database)
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\NewFile1.vxtx' is up to date (regarding to export table hash)
+22:58:05 - ============================== Build Step #17 finished ==============================
+22:58:05 - Build Step #15: CompileGeneratedCapl (ArtefactID: 0)
+22:58:05 - ----------------------------------------------------
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.cbf' is outdated
+22:58:05 - Reason: Last write time of 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.can' (07/01/2022 22:58:05) differs from dependency relation to 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.can' (07/01/2022 22:56:46) stored in MAKE database
+22:58:05 - BuildStepUtilities.CompileCaplFile: 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.can' --> 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\tt_Tests.vxtx.cbf'
+22:58:05 - Export table file 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bbo2mg0uh9jq~3-0.' not copied to 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__ExpTbl_\tt_Tests.vtt.export.xml' because export tables have not changed
+22:58:05 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt' to 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\tt_Tests.vtt'
+22:58:05 - ============================== Build Step #15 finished ==============================
+22:58:05 - Build Step #18: CompileGeneratedCapl (ArtefactID: 1)
+22:58:05 - ----------------------------------------------------
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\__TsoBuildFiles_\NewFile1.vxtx.cbf' is up to date (regarding to dependencies in MAKE database)
+22:58:05 - ============================== Build Step #18 finished ==============================
+22:58:05 - Build Step #19: MoveCSharpXmlDocumentation (ArtefactID: -1)
+22:58:05 - -----------------------------------------------------------
+22:58:05 - MoveCSharpXmlDocumentation: Skipped because option is deactivated
+22:58:05 - ============================== Build Step #19 finished ==============================
+22:58:05 - Build Step #20: ValidateTteFile (ArtefactID: 0)
+22:58:05 - -----------------------------------------------
+22:58:05 - ============================== Build Step #20 finished ==============================
+22:58:05 - Build Step #21: ValidateTteFile (ArtefactID: 1)
+22:58:05 - -----------------------------------------------
+22:58:05 - ============================== Build Step #21 finished ==============================
+22:58:05 - Build Step #22: ValidateIdUsage (ArtefactID: -1)
+22:58:05 - ------------------------------------------------
+22:58:05 - ============================== Build Step #22 finished ==============================
+22:58:05 - Build Step #23: ExportTraceabilityMatrix (ArtefactID: -1)
+22:58:05 - ---------------------------------------------------------
+22:58:05 - ExportTraceabilityMatrix: Skipped because option is deactivated
+22:58:05 - ============================== Build Step #23 finished ==============================
+22:58:05 - Build Step #24: IncludeSources (ArtefactID: -1)
+22:58:05 - -----------------------------------------------
+22:58:05 - IncludeSources: Skipped because option is deactivated
+22:58:05 - ============================== Build Step #24 finished ==============================
+22:58:05 - Build Step #25: WriteSystemEnvironment (ArtefactID: -1)
+22:58:05 - -------------------------------------------------------
+22:58:05 - Copy merged Test System Variable file...
+22:58:05 - Copy <sk8au2rndpru-MTSV> to C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\TestSysVars.vsysvar
+22:58:05 - 'C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\TestSysVars.vsysvar' is up to date (regarding to dependencies in MAKE database)
+22:58:05 - Add variant property file...
+22:58:05 - No variant properties - nothing to do
+22:58:05 - ============================== Build Step #25 finished ==============================
+22:58:05 - Build Step #26: WriteTUProperties (ArtefactID: -1)
+22:58:05 - --------------------------------------------------
+22:58:05 - ============================== Build Step #26 finished ==============================
+22:58:05 - Build Step #27: WriteTetEntries (ArtefactID: -1)
+22:58:05 - ------------------------------------------------
+22:58:05 - ============================== Build Step #27 finished ==============================
+22:58:05 - Build Step #28: FuzzTestNLRemove (ArtefactID: -1)
+22:58:05 - -------------------------------------------------
+22:58:05 - ============================== Build Step #28 finished ==============================
+22:58:05 - Build Step #29: WriteManifest (ArtefactID: -1)
+22:58:05 - ----------------------------------------------
+22:58:05 - Writing manifest C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\obj_CANisterTest\bin_bbo2mg0uh9jq\tu_FunctionalTests.vtumanifest
+22:58:05 - ============================== Build Step #29 finished ==============================
+22:58:05 - Build Step #34: RemoveOrphanedBuildArtfacts (ArtefactID: -1)
+22:58:05 - ------------------------------------------------------------
+22:58:05 - Removing orphaned build artefacts from the vtuexe's main folder...
+22:58:05 - Nothing to do.
+22:58:05 - ============================== Build Step #34 finished ==============================
+22:58:05 - Build Step #30: WriteMetainfo (ArtefactID: -1)
+22:58:05 - ----------------------------------------------
+22:58:05 - BUILD TIME excluding ZIP/UNZIP (hours:minutes:seconds:milliseconds): 00:00:00:108

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<PropertyGroup>
+<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+<ProductVersion>8.0.50727</ProductVersion>
+<SchemaVersion>2.0</SchemaVersion>
+<ProjectGuid>{C4D4EC6F-6CC3-4645-9455-80A71AD20DF3}</ProjectGuid>
+<OutputType>Library</OutputType>
+<AppDesignerFolder>Properties</AppDesignerFolder>
+<AssemblyName>CentralLockingSystem</AssemblyName>
+<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+<TargetFrameworkProfile>Client</TargetFrameworkProfile>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+<DebugSymbols>true</DebugSymbols>
+<DebugType>full</DebugType>
+<Optimize>false</Optimize>
+<OutputPath>.\</OutputPath>
+<DefineConstants>DEBUG;TRACE</DefineConstants>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<NoWarn>1701, 1702</NoWarn>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<DebugType>pdbonly</DebugType>
+<Optimize>true</Optimize>
+<OutputPath>.\</OutputPath>
+<DefineConstants>TRACE</DefineConstants>
+<ErrorReport>prompt</ErrorReport>
+<WarningLevel>4</WarningLevel>
+<NoWarn>1701, 1702</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+<Reference Include="Vector.Tools.Internal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.Tools.Internal.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.Tools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.Tools.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.Runtime.Internal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.CANoe.Runtime.Internal.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.CANoe.Runtime.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.Sockets.Internal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.CANoe.Sockets.Internal.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.Sockets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.CANoe.Sockets.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.Threading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.CANoe.Threading.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.Diagnostics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.Diagnostics.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.Scripting.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.Scripting.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.Scripting.UI.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.TFS.Internal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.CANoe.TFS.Internal.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.TFS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\v40\Vector.CANoe.TFS.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="Vector.CANoe.VTS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>$(CANoe_InstallDir)NETDev\Vector.CANoe.VTS.dll</HintPath>
+<Private>False</Private>
+</Reference>
+<Reference Include="comfort, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>C:\Training\HandsOn\Automation\CentralLockingSystem\DBs\comfort.dll</HintPath>
+<Private>True</Private>
+</Reference>
+<Reference Include="SystemVariables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>C:\Training\HandsOn\Automation\CentralLockingSystem\SystemVariables\SystemVariables.dll</HintPath>
+<Private>True</Private>
+</Reference>
+<Reference Include="CentralLockingSystemNET.cfg_sysvars, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>C:\Training\HandsOn\Automation\CentralLockingSystem\CentralLockingSystemNET.cfg_sysvars.dll</HintPath>
+<Private>True</Private>
+</Reference>
+<Reference Include="CentralLockingSystem_CaplLibraries, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>C:\Training\HandsOn\Automation\CentralLockingSystem\Testmodules\CentralLockingSystem_CaplLibraries.dll</HintPath>
+<Private>True</Private>
+</Reference>
+<Reference Include="SignalGenerators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+<SpecificVersion>False</SpecificVersion>
+<HintPath>C:\Training\HandsOn\Automation\CentralLockingSystem\Testmodules\SignalGenerators.dll</HintPath>
+<Private>True</Private>
+</Reference>
+</ItemGroup>
+<ItemGroup>
+<Compile Include="CentralLockingSystem.cs" />
+</ItemGroup>
+<ItemGroup>
+<Folder Include="Properties\" />
+</ItemGroup>
+<PropertyGroup>
+  <PostCompileAdditionalParams>-R:"$(CANoe_InstallDir)NETDev\v40" -R:"$(CANoe_InstallDir)NETDev"</PostCompileAdditionalParams>
+</PropertyGroup>
+<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+<Import Project="$(CANoe_InstallDir)PostCompiler\Vector.PostCompiler.targets" />
+<PropertyGroup>
+<PreBuildEvent>"$(CANoe_InstallDir)Scripts\ReleaseDotNetAssemblies.vbs" "$(SolutionPath)"</PreBuildEvent>
+<PostBuildEvent>"$(CANoe_InstallDir)Scripts\ReloadDotNetAssemblies.vbs" "$(SolutionPath)"</PostBuildEvent>
+</PropertyGroup>
+</Project>

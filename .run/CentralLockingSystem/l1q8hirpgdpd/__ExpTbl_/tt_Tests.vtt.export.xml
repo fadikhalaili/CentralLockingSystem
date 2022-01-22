@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testsequence name="tts_AllLeds" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt" SourceFilePersistencyGuid="d1t11nkgaalv" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="13d171a8-2ce6-4e64-8ba9-55bac66106c1">
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/ts_definitions[1]/ts_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+    <nestedListCalls>/ttroot/ttlib[1]/ts_definitions[1]/ts_definition[1]/tttestcaselist[1]</nestedListCalls>
+  </testsequence>
+  <testcase name="ttc_TestLed" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt" SourceFilePersistencyGuid="d1t11nkgaalv" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="df1fd02a-54e6-4aed-b42a-894bc141d5d0">
+    <parameter name="pWhichLed" type="signal" raw_type="signal" />
+    <parameter name="pExpectedLedState" type="signal" raw_type="signal" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+  <function name="tf_SwitchAndTestLed" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\TSO\Fadi_ImproveTraining\Training\TrainingNetwork\vTeststudioProject\tu_FunctionalTests\Test Tables\tt_Tests.vtt" SourceFilePersistencyGuid="d1t11nkgaalv" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="dfe77053-0a7a-4750-bfbd-082d5370793a">
+    <parameter name="pLed" type="signal" raw_type="signal" />
+    <parameter name="pLedState" type="signal" raw_type="signal" />
+    <parameter name="pState" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/function_definitions[1]/function_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </function>
+</tclibrary>

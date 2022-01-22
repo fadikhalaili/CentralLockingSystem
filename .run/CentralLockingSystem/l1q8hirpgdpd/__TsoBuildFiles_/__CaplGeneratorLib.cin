@@ -1,0 +1,458 @@
+﻿/* !Encoding: 65001  */
+void __qwordToBytes(qword inp, byte out[]){
+  int i;
+  for(i=0;i<elCount(out);i++){
+    out[i] = inp%256;
+    inp /= 256;
+  }
+}
+
+void __WriteHexDataToStrBuf(char strBuf[], byte data[], long dataCnt)
+{
+  char tmp[8];
+  long limit, i;
+  const long dataMaxDisplayCnt = 32;
+  limit = _min(dataMaxDisplayCnt, dataCnt);
+
+  if (dataCnt > dataMaxDisplayCnt)
+    limit--;
+  if (limit <= 0)
+  {
+    snprintf(strBuf, elCount(strBuf), "[0]");
+    return;
+  }
+
+  snprintf(strBuf, elCount(strBuf), "[%d] %02X", dataCnt, data[0]);
+  for (i = 1; i < limit; i++)
+  {
+    snprintf(tmp, 8, " %02X", data[i]);
+    strncat(strBuf, tmp, elCount(strBuf));
+  }
+  if (dataCnt > dataMaxDisplayCnt)
+  {
+    snprintf(tmp, 8, " ... %02X", data[dataCnt - 1]);
+    strncat(strBuf, tmp, elCount(strBuf));
+  }
+}
+
+void __SetBusContext(char bus[], int saveCurrentBusContext)
+{
+  __nBusContextOk = 1;
+  __nBusContextNew = GetBusNameContext(bus);
+  if(__nBusContextNew == 0)
+  {
+    __nBusContextOk = 0;
+    testStepErrorInTestSystem("", "Unable to determine context for bus: '%s'. Please check input parameter.", bus);
+    __nBusContextOld = 0;
+    return;
+  }
+  if(saveCurrentBusContext == __eSaveCurrent)
+  {
+    __nBusContextOld = SetBusContext(__nBusContextNew);
+  }
+  else
+  {
+    SetBusContext(__nBusContextNew);
+  }
+}
+
+void __ResetBusContext()
+{
+  if(__nBusContextOld > 0)
+  {
+    SetBusContext(__nBusContextNew);
+  }
+}
+
+int __BusContextOk()
+{
+  return __nBusContextOk;
+}
+
+void __Wait(char step[], int64 timeInNs, int64 unitInNs, char name[])
+{
+  char buffer[2048];
+  double timeValueByUnit;
+
+  timeValueByUnit = (double)timeInNs / (double)unitInNs;
+
+  if(unitInNs == 1000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 2048, "%.3f us", timeValueByUnit);
+    else
+      snprintf(buffer, 2048, "%.3f (%s) us", timeValueByUnit, name);
+  }
+  else if(unitInNs == 1000000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 2048, "%.3f ms", timeValueByUnit);
+    else
+      snprintf(buffer, 2048, "%.3f (%s) ms", timeValueByUnit, name);
+  }
+  else if(unitInNs == 1000000000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 2048, "%.3f s", timeValueByUnit);
+    else
+      snprintf(buffer, 2048, "%.3f (%s) s", timeValueByUnit, name);
+  }
+  else
+  {
+    testStepErrorInTestSystem(0, step, "Unable to wait, unknown time unit %I64d.", unitInNs);
+    return;
+  }
+  if(timeInNs > 0)
+  {
+    if(0 == testWaitForTimeoutNSDBSilent(timeInNs))
+      testStepEndWait(2, step, "Waited for %s", buffer);
+    else
+    {
+      testStepErrorInTestSystem(0, step, "Waited for %s", buffer);
+      return;
+    }
+  }
+  else if(timeInNs == 0)
+  {
+    testStepEndWait(2, step, "Waited for %s", buffer);
+  }
+  else
+  {
+    testStepErrorInTestSystem(0, step, "Unable to wait for %s. Please check input parameter.", buffer);
+  }
+}
+
+long __CompareBytes(byte leftSide[], long leftSideCnt, byte rightSide[], long rightSideCnt)
+{
+  DWORD i;
+
+  if (leftSideCnt > elCount(leftSide) || rightSideCnt > elCount(rightSide))
+  {
+    testStepErrorInTestSystem("Unable to compare arrays. Please check input parameter.");
+    return -1;
+  }
+
+  if (leftSideCnt != rightSideCnt)
+    return leftSideCnt - rightSideCnt;
+
+  for (i = 0; i < leftSideCnt; i++)
+  {
+    if (leftSide[i] != rightSide[i])
+      return leftSide[i] - rightSide[i];
+  }
+
+  return 0;
+}
+
+int __LoopIsBlocking()
+{ 
+  int64 timeLoopNow, timeLoopOld, cntTimeEqual;
+  timeLoopNow = timeNowInt64();
+  if(timeLoopNow > timeLoopOld)
+  {
+    cntTimeEqual = 0;
+  }
+  else
+  {
+    ++cntTimeEqual;
+    if(cntTimeEqual >= 1000)
+    {
+      testStepErrorInTestSystem(0, "", "Blocking loop detected and canceled. 1000 cycles have been performed at the same time.");
+      return 1;
+    }
+  }
+  timeLoopOld = timeLoopNow;
+  return 0;
+}
+
+int __DoElseIf(int bDone)
+{
+  if(bDone)
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "Previous condition matched, skipping block.");
+    return 0;
+  }
+  return 1;
+}
+
+int __DoElse(int bDone)
+{
+  if(bDone)
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "Previous condition matched, skipping block.");
+    return 0;
+  }
+  else
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "No condition matched, executing 'else' block.");
+    return 1;
+  }
+}
+
+
+
+void __ReportSignalRefCheckLValue(signal * sig, char buffer[])
+{
+  char tmp[2048];
+
+  __GetLastQualifier(sig.name, tmp);
+
+  snprintf(buffer, 2048, "Signal '%s'", tmp);    
+}
+
+void __ReportSignalCheckRValue(char sigName[], signal * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", sigName, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", sigName); 
+}
+
+void __ReportSignalRefCheckRValue(signal * sig, char buffer[])
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (0 == getSignalTime(sig))
+    snprintf(buffer, 2048, "%s %s", sigName, __cNotOnlineYet);  
+  else
+    snprintf(buffer, 2048, "%s", sigName); 
+}
+
+
+void __ReportSignalSetLValue(char report[], signal * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportSignalRefSetLValue(signal * sig, char buffer[])
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "Signal '%s' %s", sigName, __cNotOnlineYet);  
+  else
+   snprintf(buffer, 2048, "Signal '%s'", sigName);  
+}
+
+void __ReportSignalSetRValue(char name[], signal * sig, char buffer[])
+{
+  __ReportSignalCheckRValue(name, sig, buffer);
+}
+
+void __ReportSignalRefSetRValue(signal * sig, char buffer[])
+{
+  __ReportSignalRefCheckRValue(sig, buffer);
+}
+
+
+void __ReportServiceSignalCheckRValue(char sigName[], serviceSignalNumber * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", sigName, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", sigName); 
+}
+
+void __ReportServiceSignalCheckRValue(char sigName[], serviceSignalString * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", sigName, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", sigName); 
+}
+
+void __ReportServiceSignalCheckRValue(char sigName[], serviceSignalData * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", sigName, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", sigName); 
+}
+
+void __ReportServiceSignalSetLValue(char report[], serviceSignalNumber * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportServiceSignalSetLValue(char report[], serviceSignalString * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportServiceSignalSetLValue(char report[], serviceSignalData * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportServiceSignalSetRValue(char report[], serviceSignalNumber * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportServiceSignalSetRValue(char report[], serviceSignalString * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportServiceSignalSetRValue(char report[], serviceSignalData * sig, char buffer[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+
+void __ReportByteIndex(char report[], int64 index, char buffer[])
+{
+  if (strlen(report) == 0)
+    snprintf(buffer, 2048, "Byte[%I64d]", index);
+  else
+    snprintf(buffer, 2048, "Byte[%I64d (%s)]", index, report);
+}
+
+
+void __ReportSignal(char report[], signal * sig, char buffer[], int checkIsOnlineYet)
+{
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportSignalRef(signal * sig, char buffer[], int checkIsOnlineYet)
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+    snprintf(buffer, 2048, "Signal '%s' %s", sigName, __cNotOnlineYet);  
+  else
+    snprintf(buffer, 2048, "Signal '%s'", sigName);  
+}
+
+void __ReportSignal(char report[], serviceSignalNumber * sig, char buffer[], int checkIsOnlineYet)
+{
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportSignalRef(serviceSignalNumber * sig, char buffer[], int checkIsOnlineYet)
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+    snprintf(buffer, 2048, "Signal '%s' %s", sigName, __cNotOnlineYet);  
+  else
+    snprintf(buffer, 2048, "Signal '%s'", sigName);  
+}
+
+
+void __ReportSignal(char report[], serviceSignalString * sig, char buffer[], int checkIsOnlineYet)
+{
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportSignalRef(serviceSignalString * sig, char buffer[], int checkIsOnlineYet)
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+    snprintf(buffer, 2048, "Signal '%s' %s", sigName, __cNotOnlineYet);  
+  else
+    snprintf(buffer, 2048, "Signal '%s'", sigName);  
+}
+
+void __ReportSignal(char report[], serviceSignalData * sig, char buffer[], int checkIsOnlineYet)
+{
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+   snprintf(buffer, 2048, "%s %s", report, __cNotOnlineYet);
+  else
+   snprintf(buffer, 2048, "%s", report); 
+}
+
+void __ReportSignalRef(serviceSignalData * sig, char buffer[], int checkIsOnlineYet)
+{
+  char sigName[2048];
+
+  __GetLastQualifier(sig.name, sigName);
+
+  if (checkIsOnlineYet && (0 == getSignalTime(sig)))
+    snprintf(buffer, 2048, "Signal '%s' %s", sigName, __cNotOnlineYet);  
+  else
+    snprintf(buffer, 2048, "Signal '%s'", sigName);  
+}
+
+
+
+void __GetLastQualifier(char qualPathIn[], char lastQualOut[])
+{
+  long i, len, pos;
+
+  len = strlen(qualPathIn);
+
+  pos = 0;
+  for (i = len-1; i > 0; --i)
+  {
+    if (qualPathIn[i] == ':')
+    {
+      pos = i;
+      break;
+    }
+  }
+
+  if (pos > 0 && pos != len)
+    substr_cpy_off(lastQualOut, 0, qualPathIn, pos + 1, -1, elcount(lastQualOut));
+  else
+    strncpy(lastQualOut, qualPathIn, elCount(lastQualOut));
+}
+
+void InjectTestControlStructEnd(long num, long verdict)
+{
+  int x;
+
+  for(x=0; x<num; x++)
+  {
+    TestControlStructEnd(verdict);
+  }
+}
+
+void __WriteHexData(char orig[], byte data[], long dataCnt)
+{
+  char tmp[2048];
+  __WriteHexDataToStrBuf(tmp, data, dataCnt);
+  write("Orig (char[]) %s", orig);
+  write("HexDump:%s", tmp);
+}

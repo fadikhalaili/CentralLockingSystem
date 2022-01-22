@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<testsuites xsi:noNamespaceSchemaLocation="xunit.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<testsuite id="0" package="Central locking system test" name="CANoe.CAN.LIN.Ethernet.SmartCharging /pro 15.3.89 (SP3)" timestamp="2022-01-21T10:26:36" hostname="SE01067NB" tests="12" failures="7" errors="0" time="43.200828">
+<testcase name="Lock statically" time="0.7000000000002728" classname="Test static requirements of the SUT">
+<failure type="teststep_type" message="Check CAN signal 'LockState' value failed: = 0 (Unlocked), condition: == 1 (Locked)" />
+</testcase>
+<testcase name="Statically open the window" time="3.5" classname="Test static requirements of the SUT">
+<failure type="teststep_type" message="Check CAN signal 'WindowMotion' value failed: = 0 (not_moving), condition: == 2 (currently_opening)" />
+</testcase>
+<testcase name="Statically close the window" time="2" classname="Test static requirements of the SUT">
+<failure type="teststep_type" message="Check CAN signal 'WindowMotion' value failed: = 0 (not_moving), condition: == 1 (currently_closing)" />
+</testcase>
+<testcase name="Unlock statically" time="1.199999999999818" classname="Test static requirements of the SUT"></testcase>
+<testcase name="Lock by increasing velocity" time="9.400000000000091" classname="Test velocity dependent requirements of Central Locking System"></testcase>
+<testcase name="Check no unlock when slowing down" time="14.599999999999909" classname="Test velocity dependent requirements of Central Locking System"></testcase>
+<testcase name="Crash while engine is on" time="0.40000000000009095" classname="Test velocity dependent requirements of Central Locking System">
+<failure type="teststep_type" message="Check CAN signal 'LockState' value failed: = 1 (Locked), condition: == 0 (Unlocked)" />
+</testcase>
+<testcase name="Apply crash while engine is off and not moving" time="0.5" classname="Test velocity dependent requirements of Central Locking System"></testcase>
+<testcase name="Apply crash when engine is off but moving" time="0.40000000000009095" classname="Test velocity dependent requirements of Central Locking System">
+<failure type="teststep_type" message="Check CAN signal 'LockState' value failed: = 1 (Locked), condition: == 0 (Unlocked)" />
+</testcase>
+<testcase name="Timing check between Request and Response" time="1.0924479999998766" classname="Additional requirements of the Window System"></testcase>
+<testcase name="Ambiguous open and close" time="0.20838000000003376" classname="Additional requirements of the Window System">
+<failure type="teststep_type" message="No fault memory information available" />
+</testcase>
+<testcase name="Open and comfort-close" time="9.199999999999818" classname="Additional requirements of the Window System">
+<failure type="teststep_type" message="Check CAN signal 'WindowMotion' value failed: = 0 (not_moving), condition: == 1 (currently_closing)" />
+</testcase>
+</testsuite>
+</testsuites>

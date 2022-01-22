@@ -1,0 +1,29 @@
+﻿/* !Encoding: 65001  */
+includes
+{
+  #include "__VariablesLib.cin"
+  #include "__CaplGeneratorLib.cin"
+  #include "__CANoeReportFuntionsLib.cin"
+}
+
+variables
+{
+  // Global variables defined within this CAPL file
+}
+
+void Tt35nstfj_Tet_TtInit()
+{
+
+}
+
+void Tt35nstfj_Tet_Tc0()
+{
+  CreateTTEIFFunction("Tt35nstfj_Tc0", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Test Case", __cEmpty , __cEmpty );
+}
+testcase Tt35nstfj_Tc0()
+{	
+  SetBreakOnFail(1);
+
+}
+

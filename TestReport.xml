@@ -1,0 +1,2140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2022-01-21 10:26:36" timestamp="3066.910000" verdicts="2_basic" measurementid="7b92333b-6d20-4231-8e2f-ce59308685eb">
+  <testgroup>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3066.910000">
+      <testpattern timestamp="3066.910000" name="initialize" type="testprimitive">
+        <title>Initialize signals of Central locking system</title>
+        <details timestamp="3066.910000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3066.910000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3066.910000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3066.910000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3066.910000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3067.010000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3067.010000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3067.010000" name="initialize" type="testprimitive">
+        <title>Initialize signals of Windows system</title>
+        <details timestamp="3067.010000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyUp&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3067.010000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3067.010000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3067.110000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3067.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3067.110000" name="statechange" type="testpattern">
+        <title>Request to lock the car. Let&apos;s see if the car will be locked (Engine not running)</title>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 0</teststep>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 1 (Request_lock)</teststep>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 0</teststep>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyUp&apos;: 0</teststep>
+        <teststep timestamp="3067.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyDown&apos;: 0</teststep>
+        <teststep timestamp="3067.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3067.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3067.610000" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;LockState&apos; value failed: = 0 (Unlocked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3067.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;KeyUp&apos; value passed: = 0, condition: == 0</teststep>
+        <teststep timestamp="3067.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;KeyDown&apos; value passed: = 0, condition: == 0</teststep>
+        <teststep timestamp="3067.610000" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3067.610000" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3067.610000" name="statechange" type="testpattern">
+        <title>Request to lock the car. Let&apos;s see if the car will be locked (Engine running)</title>
+        <result timestamp="3067.610000" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3067.610000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <result timestamp="3067.610000" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3067.610000" endtime="2022-01-21 10:26:36" endtimestamp="3067.610000" result="fail" />
+      <title>Lock statically</title>
+      <ident>TC101</ident>
+      <description>Lock the car while enigne off or on</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3067.610000">
+      <preparation starttime="2022-01-21 10:26:36" timestamp="3067.610000">
+        <testpattern timestamp="3067.610000" name="initialize" type="testprimitive">
+          <title>Initialize all signals </title>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+              <description>0 (idle)</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;KeyUp&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3067.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+              <description>0</description>
+            </info>
+          </details>
+          <teststep timestamp="3067.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3068.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3068.110000" result="pass"/>
+        </testpattern>
+        <prepend endtime="2022-01-21 10:26:36" endtimestamp="3068.110000" />
+      </preparation>
+      <testpattern timestamp="3068.110000" name="statechange" type="testpattern">
+        <title>Start opening/closing the window. Check if the window is really opening/closing then</title>
+        <teststep timestamp="3068.110000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyDown&apos;: 1</teststep>
+        <teststep timestamp="3068.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3071.110000" level="2" type="auto" ident="2" result="pass">Waited for 3000 ms.</teststep>
+        <teststep timestamp="3071.110000" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;WindowMotion&apos; value failed: = 0 (not_moving), condition: == 2 (currently_opening)</teststep>
+        <teststep timestamp="3071.110000" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3071.110000" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3071.110000" name="statechange" type="testpattern">
+        <title>Stop opening/closing the window. Check if the window is halted very soon. </title>
+        <result timestamp="3071.110000" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3071.110000" endtime="2022-01-21 10:26:36" endtimestamp="3071.110000" result="fail" />
+      <title>Statically open the window</title>
+      <ident>TC201</ident>
+      <description>- Message &quot;WindowControl&quot; is to be sent at minimum by the CycleTimeFast of message &quot;WindowControl&quot;\n- Message &quot;WindowState&quot; is to be sent cyclically but also spontaneously on write of the signal &quot;WindowMotion&quot;\n- The deinitialisation (Key=0) statechange-pattern does not affect the test result, because the fast cycle is repeated once even if the value is not active (like here)</description>
+      <checkstatistic checkname="Cycle Time Absolute" id="1_10001" seq="1" result="pass">
+        <spec>
+          <xinfo>
+            <name>Type of check</name>
+            <description>Cycle Time Absolute</description>
+          </xinfo>
+          <xinfo>
+            <name>Message</name>
+            <description>CAN message ID = 101 (0x65) on bus CAN</description>
+          </xinfo>
+          <xinfo>
+            <name>MaxTime</name>
+            <description>350 ms</description>
+          </xinfo>
+        </spec>
+        <statistic>
+          <xinfo>
+            <name>Runtime of the statistic</name>
+            <description>3000 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Number of samples</name>
+            <description>150</description>
+          </xinfo>
+          <xinfo>
+            <name>Message ID</name>
+            <description>101 (0x65)</description>
+          </xinfo>
+          <xinfo>
+            <name>Minimal measured cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Maximal measured cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Average cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Failure ratio (in %)</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+        <statistic title="Distribution of measured times" type="distribution">
+          <xinfo>
+            <name> &lt;= 35 ms</name>
+            <description>149</description>
+          </xinfo>
+          <xinfo>
+            <name>35 ms - 70 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>70 ms - 105 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>105 ms - 140 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>140 ms - 175 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>175 ms - 210 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>210 ms - 245 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>245 ms - 280 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>280 ms - 315 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>315 ms - 350 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>350 ms - 385 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>385 ms - 420 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>420 ms - 455 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>455 ms - 490 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>490 ms - 525 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name> &gt; 525 ms</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+      </checkstatistic>
+      <checkstatistic checkname="Cycle Time Relative" id="2_10002" seq="2" result="pass">
+        <spec>
+          <xinfo>
+            <name>Type of check</name>
+            <description>Cycle Time Relative</description>
+          </xinfo>
+          <xinfo>
+            <name>Message</name>
+            <description>CAN message &apos;WindowState&apos; ID = 100 (0x64) on bus CAN</description>
+          </xinfo>
+          <xinfo>
+            <name>CycleTime</name>
+            <description>100 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>MaxTime</name>
+            <description>400 ms (4)</description>
+          </xinfo>
+        </spec>
+        <statistic>
+          <xinfo>
+            <name>Runtime of the statistic</name>
+            <description>3000 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Number of samples</name>
+            <description>30</description>
+          </xinfo>
+          <xinfo>
+            <name>Message ID</name>
+            <description>100 (0x64)</description>
+          </xinfo>
+          <xinfo>
+            <name>Minimal measured cycle time</name>
+            <description>99.988 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Maximal measured cycle time</name>
+            <description>100.024 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Average cycle time</name>
+            <description>100.000413 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Failure ratio (in %)</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+        <statistic title="Distribution of measured times" type="distribution">
+          <xinfo>
+            <name> &lt;= 40 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>40 ms - 80 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>80 ms - 120 ms</name>
+            <description>29</description>
+          </xinfo>
+          <xinfo>
+            <name>120 ms - 160 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>160 ms - 200 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>200 ms - 240 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>240 ms - 280 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>280 ms - 320 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>320 ms - 360 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>360 ms - 400 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>400 ms - 440 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>440 ms - 480 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>480 ms - 520 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>520 ms - 560 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>560 ms - 600 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name> &gt; 600 ms</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+      </checkstatistic>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3071.110000">
+      <preparation starttime="2022-01-21 10:26:36" timestamp="3071.110000">
+        <testpattern timestamp="3071.110000" name="initialize" type="testprimitive">
+          <title>Initialize all signals </title>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+              <description>0 (idle)</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;KeyUp&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+              <description>0</description>
+            </info>
+          </details>
+          <details timestamp="3071.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+              <description>0</description>
+            </info>
+          </details>
+          <teststep timestamp="3071.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3071.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3071.610000" result="pass"/>
+        </testpattern>
+        <prepend endtime="2022-01-21 10:26:36" endtimestamp="3071.610000" />
+      </preparation>
+      <testpattern timestamp="3071.610000" name="statechange" type="testpattern">
+        <title>Start opening/closing the window. Check if the window is really opening/closing then</title>
+        <teststep timestamp="3071.610000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyUp&apos;: 1</teststep>
+        <teststep timestamp="3071.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3073.110000" level="2" type="auto" ident="2" result="pass">Waited for 1500 ms.</teststep>
+        <teststep timestamp="3073.110000" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;WindowMotion&apos; value failed: = 0 (not_moving), condition: == 1 (currently_closing)</teststep>
+        <teststep timestamp="3073.110000" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3073.110000" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3073.110000" name="statechange" type="testpattern">
+        <title>Stop opening/closing the window. Check if the window is halted very soon. </title>
+        <result timestamp="3073.110000" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3073.110000" endtime="2022-01-21 10:26:36" endtimestamp="3073.110000" result="fail" />
+      <title>Statically close the window</title>
+      <ident>TC202</ident>
+      <description>- Message &quot;WindowControl&quot; is to be sent at minimum by the CycleTimeFast of message &quot;WindowControl&quot;\n- Message &quot;WindowState&quot; is to be sent cyclically but also spontaneously on write of the signal &quot;WindowMotion&quot;\n- The deinitialisation (Key=0) statechange-pattern does not affect the test result, because the fast cycle is repeated once even if the value is not active (like here)</description>
+      <checkstatistic checkname="Cycle Time Absolute" id="3_10003" seq="1" result="pass">
+        <spec>
+          <xinfo>
+            <name>Type of check</name>
+            <description>Cycle Time Absolute</description>
+          </xinfo>
+          <xinfo>
+            <name>Message</name>
+            <description>CAN message ID = 101 (0x65) on bus CAN</description>
+          </xinfo>
+          <xinfo>
+            <name>MaxTime</name>
+            <description>350 ms</description>
+          </xinfo>
+        </spec>
+        <statistic>
+          <xinfo>
+            <name>Runtime of the statistic</name>
+            <description>1500 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Number of samples</name>
+            <description>75</description>
+          </xinfo>
+          <xinfo>
+            <name>Message ID</name>
+            <description>101 (0x65)</description>
+          </xinfo>
+          <xinfo>
+            <name>Minimal measured cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Maximal measured cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Average cycle time</name>
+            <description>20 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Failure ratio (in %)</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+        <statistic title="Distribution of measured times" type="distribution">
+          <xinfo>
+            <name> &lt;= 35 ms</name>
+            <description>74</description>
+          </xinfo>
+          <xinfo>
+            <name>35 ms - 70 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>70 ms - 105 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>105 ms - 140 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>140 ms - 175 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>175 ms - 210 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>210 ms - 245 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>245 ms - 280 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>280 ms - 315 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>315 ms - 350 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>350 ms - 385 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>385 ms - 420 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>420 ms - 455 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>455 ms - 490 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>490 ms - 525 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name> &gt; 525 ms</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+      </checkstatistic>
+      <checkstatistic checkname="Cycle Time Relative" id="4_10004" seq="2" result="pass">
+        <spec>
+          <xinfo>
+            <name>Type of check</name>
+            <description>Cycle Time Relative</description>
+          </xinfo>
+          <xinfo>
+            <name>Message</name>
+            <description>CAN message &apos;WindowState&apos; ID = 100 (0x64) on bus CAN</description>
+          </xinfo>
+          <xinfo>
+            <name>CycleTime</name>
+            <description>100 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>MaxTime</name>
+            <description>400 ms (4)</description>
+          </xinfo>
+        </spec>
+        <statistic>
+          <xinfo>
+            <name>Runtime of the statistic</name>
+            <description>1500 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Number of samples</name>
+            <description>15</description>
+          </xinfo>
+          <xinfo>
+            <name>Message ID</name>
+            <description>100 (0x64)</description>
+          </xinfo>
+          <xinfo>
+            <name>Minimal measured cycle time</name>
+            <description>99.976 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Maximal measured cycle time</name>
+            <description>100.024 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Average cycle time</name>
+            <description>100.000857 ms</description>
+          </xinfo>
+          <xinfo>
+            <name>Failure ratio (in %)</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+        <statistic title="Distribution of measured times" type="distribution">
+          <xinfo>
+            <name> &lt;= 40 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>40 ms - 80 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>80 ms - 120 ms</name>
+            <description>14</description>
+          </xinfo>
+          <xinfo>
+            <name>120 ms - 160 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>160 ms - 200 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>200 ms - 240 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>240 ms - 280 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>280 ms - 320 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>320 ms - 360 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>360 ms - 400 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>400 ms - 440 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>440 ms - 480 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>480 ms - 520 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>520 ms - 560 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name>560 ms - 600 ms</name>
+            <description>0</description>
+          </xinfo>
+          <xinfo>
+            <name> &gt; 600 ms</name>
+            <description>0</description>
+          </xinfo>
+        </statistic>
+      </checkstatistic>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3073.110000">
+      <testpattern timestamp="3073.110000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3073.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3073.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3073.210000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3073.210000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3073.210000" name="statechange" type="testpattern">
+        <title>Request to unlock the car. Let&apos;s see if the car will be unlocked</title>
+        <teststep timestamp="3073.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 2 (Request_unlock)</teststep>
+        <teststep timestamp="3073.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3073.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 0</teststep>
+        <teststep timestamp="3073.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 0</teststep>
+        <teststep timestamp="3073.210000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3073.710000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3073.710000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3073.710000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3073.710000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3073.710000" name="statechange" type="testpattern">
+        <title>Request to unlock the car. Let&apos;s see if the car will be unlocked</title>
+        <teststep timestamp="3073.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 2 (Request_unlock)</teststep>
+        <teststep timestamp="3073.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3073.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 1</teststep>
+        <teststep timestamp="3073.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 0</teststep>
+        <teststep timestamp="3073.710000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3074.210000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3074.210000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3074.210000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3074.210000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3074.210000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.210000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3074.210000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3074.310000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3074.310000" result="pass"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3073.110000" endtime="2022-01-21 10:26:36" endtimestamp="3074.310000" result="pass" />
+      <title>Unlock statically</title>
+      <ident>TC102</ident>
+      <description>Unlock the car while engine is off or on</description>
+    </testcase>
+    <title>Test static requirements of the SUT</title>
+  </testgroup>
+  <testgroup>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3074.310000">
+      <testpattern timestamp="3074.310000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3074.310000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3074.310000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3074.410000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3074.410000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3074.410000" name="statechange" type="testpattern">
+        <title>Initialize all input signals</title>
+        <teststep timestamp="3074.410000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 2 (Request_unlock)</teststep>
+        <teststep timestamp="3074.410000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3074.610000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3074.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3074.610000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3074.610000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3074.610000" name="statechange" type="testpattern">
+        <title>Start Engine</title>
+        <teststep timestamp="3074.610000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 1</teststep>
+        <teststep timestamp="3074.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3075.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3075.110000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3075.110000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3075.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3075.110000" name="TF_AccelerateDecelerate" type="testpattern">
+        <title>Accelerate to velocity lower than the lock-velocity</title>
+        <teststep timestamp="3075.110000" level="0" type="user" ident="Speed Change" result="na">Requested speed is 20.000000</teststep>
+        <teststep timestamp="3075.110000" level="0" type="user" ident="Speed Change" result="na">Accelerating...</teststep>
+        <teststep timestamp="3077.110000" level="0" type="user" ident="Speed Change" result="na">Reached speed is 20.000000</teststep>
+        <result timestamp="3077.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3077.110000" name="statecheck" type="testprimitive">
+        <title>Try with velocity lower than the lock-velocity</title>
+        <teststep timestamp="3077.610000" level="2" type="auto" ident="1" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3077.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3077.610000" level="2" type="auto" ident="2" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3077.610000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3077.610000" name="TF_AccelerateDecelerate" type="testpattern">
+        <title>Accelerate to lock-velocity</title>
+        <teststep timestamp="3077.610000" level="0" type="user" ident="Speed Change" result="na">Requested speed is 50.000000</teststep>
+        <teststep timestamp="3077.610000" level="0" type="user" ident="Speed Change" result="na">Accelerating...</teststep>
+        <teststep timestamp="3080.610000" level="0" type="user" ident="Speed Change" result="na">Reached speed is 50.000000</teststep>
+        <result timestamp="3080.610000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3080.610000" name="statecheck" type="testprimitive">
+        <title>Try if the Central Locking System reacts on the velocity change</title>
+        <teststep timestamp="3081.110000" level="2" type="auto" ident="1" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3081.110000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3081.110000" level="2" type="auto" ident="2" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3081.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3081.110000" name="TF_AccelerateDecelerate" type="testpattern">
+        <title>Decelerate until stopped</title>
+        <teststep timestamp="3081.110000" level="0" type="user" ident="Speed Change" result="na">Requested speed is 0.000000</teststep>
+        <teststep timestamp="3081.110000" level="0" type="user" ident="Speed Change" result="na">Decelerating...</teststep>
+        <teststep timestamp="3083.610000" level="0" type="user" ident="Speed Change" result="na">Reached speed is 0.000000</teststep>
+        <result timestamp="3083.610000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3083.610000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3083.610000">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3083.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3083.710000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3083.710000" result="pass"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3074.310000" endtime="2022-01-21 10:26:36" endtimestamp="3083.710000" result="pass" />
+      <title>Lock by increasing velocity</title>
+      <ident>TC103</ident>
+      <description>Start engine, try different velocity levels if the car will be locked dependent to the velocity.</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3083.710000">
+      <preparation starttime="2022-01-21 10:26:36" timestamp="3083.710000">
+        <vardef timestamp="3083.710000" name="CounterVar" type="integer">
+          <testerinput>
+            <inputvalue>0</inputvalue>
+          </testerinput>
+        </vardef>
+        <vardef timestamp="3083.710000" name="VelocityVar" type="float">
+          <testerinput>
+            <inputvalue>0</inputvalue>
+          </testerinput>
+        </vardef>
+        <prepend endtime="2022-01-21 10:26:36" endtimestamp="3083.710000" />
+      </preparation>
+      <testpattern timestamp="3083.710000" name="statechange" type="testpattern">
+        <title>Initialize all input signals</title>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 0 (idle)</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 0</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 0</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 2 (Request_unlock)</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Accelerate&apos;: 0</teststep>
+        <teststep timestamp="3083.710000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Decelerate&apos;: 0</teststep>
+        <teststep timestamp="3083.710000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3083.910000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3083.910000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3083.910000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3083.910000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3083.910000" name="initialize" type="testprimitive">
+        <title>Reset the lock request</title>
+        <details timestamp="3083.910000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <teststep timestamp="3083.910000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3084.010000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3084.010000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3084.010000" name="choice" type="controlfunction">
+        <title>Ensure that engine is running</title>
+        <teststep timestamp="3084.010000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;EngineRunning&apos; value passed: = 0, condition: == 0</teststep>
+        <teststep timestamp="3084.010000" level="0" type="auto" ident="" result="na">If condition is fulfilled, executing if block.</teststep>
+        <testpattern timestamp="3084.010000" name="initialize" type="testprimitive">
+          <title>Start engine</title>
+          <details timestamp="3084.010000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+              <description>1</description>
+            </info>
+          </details>
+          <teststep timestamp="3084.010000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3084.510000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3084.510000" result="pass"/>
+        </testpattern>
+        <result timestamp="3084.510000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3084.510000" name="statecheck" type="testprimitive">
+        <title>Check lock state after start of engine</title>
+        <teststep timestamp="3084.610000" level="2" type="auto" ident="1" result="pass">Waited for 100 ms.</teststep>
+        <teststep timestamp="3084.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 0 (Unlocked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3084.610000" level="2" type="auto" ident="2" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3084.610000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3084.610000" name="for_loop" type="controlfunction">
+        <title>Accelerate to a velocity faster than the lock-velocity</title>
+        <teststep timestamp="3084.610000" level="0" type="auto" ident="" result="na">Set specified value.\nVariable &apos;CounterVar&apos;: 0</teststep>
+        <teststep timestamp="3084.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 0, condition: &lt; 21</teststep>
+        <teststep timestamp="3084.610000" level="0" type="auto" ident="0" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3084.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3084.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3084.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3084.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <teststep timestamp="3084.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3085.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3085.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3085.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 1, condition: &lt; 21</teststep>
+        <teststep timestamp="3085.110000" level="0" type="auto" ident="1" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3085.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3085.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3085.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3085.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>33.541</description>
+            </info>
+          </details>
+          <teststep timestamp="3085.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3085.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3085.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3085.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 2, condition: &lt; 21</teststep>
+        <teststep timestamp="3085.610000" level="0" type="auto" ident="2" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3085.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3085.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3085.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3085.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>47.4342</description>
+            </info>
+          </details>
+          <teststep timestamp="3085.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3086.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3086.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3086.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 3, condition: &lt; 21</teststep>
+        <teststep timestamp="3086.110000" level="0" type="auto" ident="3" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3086.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3086.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3086.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3086.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>58.0948</description>
+            </info>
+          </details>
+          <teststep timestamp="3086.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3086.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3086.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3086.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 4, condition: &lt; 21</teststep>
+        <teststep timestamp="3086.610000" level="0" type="auto" ident="4" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3086.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3086.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3086.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3086.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>67.082</description>
+            </info>
+          </details>
+          <teststep timestamp="3086.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3087.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3087.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3087.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 5, condition: &lt; 21</teststep>
+        <teststep timestamp="3087.110000" level="0" type="auto" ident="5" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3087.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3087.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3087.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3087.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>75</description>
+            </info>
+          </details>
+          <teststep timestamp="3087.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3087.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3087.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3087.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 6, condition: &lt; 21</teststep>
+        <teststep timestamp="3087.610000" level="0" type="auto" ident="6" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3087.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3087.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3087.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3087.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>82.1584</description>
+            </info>
+          </details>
+          <teststep timestamp="3087.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3088.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3088.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3088.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 7, condition: &lt; 21</teststep>
+        <teststep timestamp="3088.110000" level="0" type="auto" ident="7" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3088.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3088.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3088.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3088.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>88.7412</description>
+            </info>
+          </details>
+          <teststep timestamp="3088.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3088.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3088.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3088.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 8, condition: &lt; 21</teststep>
+        <teststep timestamp="3088.610000" level="0" type="auto" ident="8" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3088.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3088.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3088.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3088.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>94.8683</description>
+            </info>
+          </details>
+          <teststep timestamp="3088.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3089.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3089.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3089.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 9, condition: &lt; 21</teststep>
+        <teststep timestamp="3089.110000" level="0" type="auto" ident="9" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3089.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3089.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3089.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3089.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>100.623</description>
+            </info>
+          </details>
+          <teststep timestamp="3089.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3089.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3089.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3089.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 10, condition: &lt; 21</teststep>
+        <teststep timestamp="3089.610000" level="0" type="auto" ident="10" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3089.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3089.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3089.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3089.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>106.066</description>
+            </info>
+          </details>
+          <teststep timestamp="3089.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3090.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3090.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3090.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 11, condition: &lt; 21</teststep>
+        <teststep timestamp="3090.110000" level="0" type="auto" ident="11" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3090.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3090.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3090.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3090.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>111.243</description>
+            </info>
+          </details>
+          <teststep timestamp="3090.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3090.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3090.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3090.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 12, condition: &lt; 21</teststep>
+        <teststep timestamp="3090.610000" level="0" type="auto" ident="12" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3090.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3090.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3090.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3090.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>116.19</description>
+            </info>
+          </details>
+          <teststep timestamp="3090.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3091.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3091.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3091.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 13, condition: &lt; 21</teststep>
+        <teststep timestamp="3091.110000" level="0" type="auto" ident="13" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3091.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3091.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3091.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3091.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>120.934</description>
+            </info>
+          </details>
+          <teststep timestamp="3091.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3091.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3091.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3091.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 14, condition: &lt; 21</teststep>
+        <teststep timestamp="3091.610000" level="0" type="auto" ident="14" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3091.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3091.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3091.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3091.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>125.499</description>
+            </info>
+          </details>
+          <teststep timestamp="3091.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3092.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3092.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3092.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 15, condition: &lt; 21</teststep>
+        <teststep timestamp="3092.110000" level="0" type="auto" ident="15" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3092.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3092.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3092.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3092.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>129.904</description>
+            </info>
+          </details>
+          <teststep timestamp="3092.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3092.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3092.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3092.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 16, condition: &lt; 21</teststep>
+        <teststep timestamp="3092.610000" level="0" type="auto" ident="16" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3092.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3092.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3092.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3092.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>134.164</description>
+            </info>
+          </details>
+          <teststep timestamp="3092.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3093.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3093.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3093.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 17, condition: &lt; 21</teststep>
+        <teststep timestamp="3093.110000" level="0" type="auto" ident="17" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3093.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3093.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3093.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3093.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>138.293</description>
+            </info>
+          </details>
+          <teststep timestamp="3093.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3093.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3093.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3093.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 18, condition: &lt; 21</teststep>
+        <teststep timestamp="3093.610000" level="0" type="auto" ident="18" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3093.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3093.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3093.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3093.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>142.302</description>
+            </info>
+          </details>
+          <teststep timestamp="3093.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3094.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3094.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3094.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 19, condition: &lt; 21</teststep>
+        <teststep timestamp="3094.110000" level="0" type="auto" ident="19" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3094.110000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3094.110000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3094.110000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3094.110000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>146.202</description>
+            </info>
+          </details>
+          <teststep timestamp="3094.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3094.610000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3094.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3094.610000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value passed: = 20, condition: &lt; 21</teststep>
+        <teststep timestamp="3094.610000" level="0" type="auto" ident="20" result="na">For-loop condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3094.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3094.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3094.610000" name="initialize" type="testprimitive">
+          <title>Speed up</title>
+          <details timestamp="3094.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>150</description>
+            </info>
+          </details>
+          <teststep timestamp="3094.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3095.110000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+          <result timestamp="3095.110000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3095.110000" level="0" type="auto" ident="" result="na">Check variable &apos;CounterVar&apos; value failed: = 21, condition: &lt; 21</teststep>
+        <teststep timestamp="3095.110000" level="0" type="auto" ident="" result="na">For-loop condition is not fulfilled, leaving loop.</teststep>
+        <result timestamp="3095.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3095.110000" name="statecheck" type="testprimitive">
+        <title>Check lock state at a speed of 150 km/h</title>
+        <teststep timestamp="3095.210000" level="2" type="auto" ident="1" result="pass">Waited for 100 ms.</teststep>
+        <teststep timestamp="3095.210000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3095.210000" level="2" type="auto" ident="2" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3095.210000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3095.210000" name="statechange" type="testpattern">
+        <title>Check lock state at the lock-velocity (50 km/h)</title>
+        <teststep timestamp="3095.210000" level="0" type="auto" ident="" result="na">Set specified value.\nVariable &apos;VelocityVar&apos;: 50</teststep>
+        <teststep timestamp="3095.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 50</teststep>
+        <teststep timestamp="3095.210000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3095.710000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3095.710000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3095.710000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3095.710000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3095.710000" name="statechange" type="testpattern">
+        <title>Check lock state below the lock-velocity (20 km/h)</title>
+        <teststep timestamp="3095.710000" level="0" type="auto" ident="" result="na">Set specified value.\nVariable &apos;VelocityVar&apos;: 20</teststep>
+        <teststep timestamp="3095.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 20</teststep>
+        <teststep timestamp="3095.710000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3096.210000" level="2" type="auto" ident="2" result="pass">Waited for 500 ms.</teststep>
+        <teststep timestamp="3096.210000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3096.210000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3096.210000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3096.210000" name="while_loop" type="controlfunction">
+        <title>Halt, lock must be kept engaged nevertheless</title>
+        <teststep timestamp="3096.210000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value passed: = 20, condition: &gt; 0</teststep>
+        <teststep timestamp="3096.210000" level="0" type="auto" ident="1" result="na">While condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3096.210000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3096.210000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3096.210000" name="initialize" type="testprimitive">
+          <title>Slow down</title>
+          <details timestamp="3096.210000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>16</description>
+            </info>
+          </details>
+          <teststep timestamp="3096.210000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3096.610000" level="2" type="auto" ident="2" result="pass">Waited for 400 ms.</teststep>
+          <result timestamp="3096.610000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3096.610000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value passed: = 16, condition: &gt; 0</teststep>
+        <teststep timestamp="3096.610000" level="0" type="auto" ident="2" result="na">While condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3096.610000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3096.610000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3096.610000" name="initialize" type="testprimitive">
+          <title>Slow down</title>
+          <details timestamp="3096.610000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>12</description>
+            </info>
+          </details>
+          <teststep timestamp="3096.610000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3097.010000" level="2" type="auto" ident="2" result="pass">Waited for 400 ms.</teststep>
+          <result timestamp="3097.010000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3097.010000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value passed: = 12, condition: &gt; 0</teststep>
+        <teststep timestamp="3097.010000" level="0" type="auto" ident="3" result="na">While condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3097.010000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3097.010000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3097.010000" name="initialize" type="testprimitive">
+          <title>Slow down</title>
+          <details timestamp="3097.010000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>8</description>
+            </info>
+          </details>
+          <teststep timestamp="3097.010000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3097.410000" level="2" type="auto" ident="2" result="pass">Waited for 400 ms.</teststep>
+          <result timestamp="3097.410000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3097.410000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value passed: = 8, condition: &gt; 0</teststep>
+        <teststep timestamp="3097.410000" level="0" type="auto" ident="4" result="na">While condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3097.410000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3097.410000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3097.410000" name="initialize" type="testprimitive">
+          <title>Slow down</title>
+          <details timestamp="3097.410000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>4</description>
+            </info>
+          </details>
+          <teststep timestamp="3097.410000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3097.810000" level="2" type="auto" ident="2" result="pass">Waited for 400 ms.</teststep>
+          <result timestamp="3097.810000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3097.810000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value passed: = 4, condition: &gt; 0</teststep>
+        <teststep timestamp="3097.810000" level="0" type="auto" ident="5" result="na">While condition is fulfilled, executing loop body.</teststep>
+        <testpattern timestamp="3097.810000" name="varset_bycapl" type="controlfunction">
+          <title>Variable Assignment by CAPL</title>
+          <result timestamp="3097.810000" result="pass"/>
+        </testpattern>
+        <testpattern timestamp="3097.810000" name="initialize" type="testprimitive">
+          <title>Slow down</title>
+          <details timestamp="3097.810000">
+            <title>Set specified value.</title>
+            <info>
+              <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+              <description>0</description>
+            </info>
+          </details>
+          <teststep timestamp="3097.810000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+          <teststep timestamp="3098.210000" level="2" type="auto" ident="2" result="pass">Waited for 400 ms.</teststep>
+          <result timestamp="3098.210000" result="pass"/>
+        </testpattern>
+        <teststep timestamp="3098.210000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;Velocity&apos; value failed: = 0, condition: &gt; 0</teststep>
+        <teststep timestamp="3098.210000" level="0" type="auto" ident="" result="na">While condition is not fulfilled, leaving loop.</teststep>
+        <result timestamp="3098.210000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3098.210000" name="statecheck" type="testprimitive">
+        <title>Check lock state after halt</title>
+        <teststep timestamp="3098.310000" level="2" type="auto" ident="1" result="pass">Waited for 100 ms.</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3098.310000" level="2" type="auto" ident="2" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3098.310000" result="pass"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3083.710000" endtime="2022-01-21 10:26:36" endtimestamp="3098.310000" result="pass" />
+      <title>Check no unlock when slowing down</title>
+      <ident>TC104</ident>
+      <description>Slow down, try if the car remains locked.</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3098.310000">
+      <testpattern timestamp="3098.310000" name="statechange" type="testpattern">
+        <title>Initialize all input signals</title>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 0 (idle)</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 1</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 80</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Accelerate&apos;: 0</teststep>
+        <teststep timestamp="3098.310000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Decelerate&apos;: 0</teststep>
+        <teststep timestamp="3098.310000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3098.510000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3098.510000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3098.510000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3098.510000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3098.510000" name="statechange" type="testpattern">
+        <title>Apply a crash. Check if the car has been opened</title>
+        <teststep timestamp="3098.510000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 1</teststep>
+        <teststep timestamp="3098.510000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3098.710000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;LockState&apos; value failed: = 1 (Locked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3098.710000" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3098.710000" name="statechange" type="testpattern">
+        <title>Check if the car remains opened, even if the velocity changes</title>
+        <result timestamp="3098.710000" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3098.710000" name="initialize" type="testprimitive">
+        <title>Reset the crash signal</title>
+        <result timestamp="3098.710000" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3098.710000" endtime="2022-01-21 10:26:36" endtimestamp="3098.710000" result="fail" />
+      <title>Crash while engine is on</title>
+      <ident>TC105</ident>
+      <description>Apply a crash while engine is running. Slow down. Car must open and remain opened.</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3098.710000">
+      <testpattern timestamp="3098.710000" name="statechange" type="testpattern">
+        <title>Initialize all input signals</title>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 1 (Request_lock)</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 0</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 0</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Accelerate&apos;: 0</teststep>
+        <teststep timestamp="3098.710000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Decelerate&apos;: 0</teststep>
+        <teststep timestamp="3098.710000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3098.910000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3098.910000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3098.910000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3098.910000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3098.910000" name="statechange" type="testpattern">
+        <title>Apply the crash</title>
+        <teststep timestamp="3098.910000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 1</teststep>
+        <teststep timestamp="3098.910000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3099.110000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3099.110000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3099.110000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3099.110000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3099.110000" name="initialize" type="testprimitive">
+        <title>Reset the crash signal</title>
+        <details timestamp="3099.110000">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3099.110000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3099.210000" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3099.210000" result="pass"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3098.710000" endtime="2022-01-21 10:26:36" endtimestamp="3099.210000" result="pass" />
+      <title>Apply crash while engine is off and not moving</title>
+      <ident>TC106</ident>
+      <description>Apply a crash when engine is not running and car is not moving. Car must not be opened.</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3099.210000">
+      <testpattern timestamp="3099.210000" name="statechange" type="testpattern">
+        <title>Initialize all input signals</title>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 1 (Request_lock)</teststep>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 0</teststep>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;EngineRunning&apos;: 0</teststep>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;Velocity&apos;: 100</teststep>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Accelerate&apos;: 0</teststep>
+        <teststep timestamp="3099.210000" level="0" type="auto" ident="" result="na">Successfully set system variable &apos;SystemUnderTest::Decelerate&apos;: 0</teststep>
+        <teststep timestamp="3099.210000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3099.410000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3099.410000" level="0" type="auto" ident="" result="na">Check CAN signal &apos;LockState&apos; value passed: = 1 (Locked), condition: == 1 (Locked)</teststep>
+        <teststep timestamp="3099.410000" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3099.410000" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3099.410000" name="statechange" type="testpattern">
+        <title>Apply the crash</title>
+        <teststep timestamp="3099.410000" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;CrashDetected&apos;: 1</teststep>
+        <teststep timestamp="3099.410000" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3099.610000" level="2" type="auto" ident="2" result="pass">Waited for 200 ms.</teststep>
+        <teststep timestamp="3099.610000" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;LockState&apos; value failed: = 1 (Locked), condition: == 0 (Unlocked)</teststep>
+        <teststep timestamp="3099.610000" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3099.610000" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3099.610000" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <result timestamp="3099.610000" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3099.610000" endtime="2022-01-21 10:26:36" endtimestamp="3099.610000" result="fail" />
+      <title>Apply crash when engine is off but moving</title>
+      <ident>TC107</ident>
+      <description>Apply a crash when engine is not running but the car is moving. Car must be opened.</description>
+    </testcase>
+    <title>Test velocity dependent requirements of Central Locking System</title>
+  </testgroup>
+  <testgroup>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3099.610000">
+      <teststep timestamp="3100.610708" level="1" type="auto" ident="Resume reason" result="na">Resumed on message id=101 (0x65) Elapsed time=0.708002ms (max=200ms)</teststep>
+      <teststep timestamp="3100.702448" level="1" type="auto" ident="Resume reason" result="na">Resumed on message id=100 (0x64) Elapsed time=91.74ms (max=200ms)</teststep>
+      <teststep timestamp="3100.702448" level="0" type="user" ident="" result="pass">Message &apos;WindowState&apos; occured within 91740us</teststep>
+      <details timestamp="3100.702448">
+        <canmsg id="0x64" dlc="2" rtr="nortr">
+          <byte pos="0">0x01</byte>
+          <byte pos="1">0x00</byte>
+        </canmsg>
+      </details>
+      <verdict time="2022-01-21 10:26:36" timestamp="3099.610000" endtime="2022-01-21 10:26:36" endtimestamp="3100.702448" result="pass" />
+      <title>Timing check between Request and Response</title>
+      <ident>TC203</ident>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3100.702448">
+      <testpattern timestamp="3100.702448" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyUp&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.702448">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3100.702448" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3100.802448" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3100.802448" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3100.802448" name="faultmem_clear" type="testpattern">
+        <title>Erase the DTCs</title>
+        <teststep timestamp="3100.802448" level="0" type="auto" ident="Query fault memory" result="na">Clearing fault memory of target SUT</teststep>
+        <result timestamp="3100.806424" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3100.806424" name="statechange" type="testpattern">
+        <title>Operate both, key up and key down. Check the behavior.</title>
+        <teststep timestamp="3100.806424" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyUp&apos;: 1</teststep>
+        <teststep timestamp="3100.806424" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;KeyDown&apos;: 1</teststep>
+        <teststep timestamp="3100.806424" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3100.906424" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <teststep timestamp="3100.906424" level="0" type="auto" ident="" result="na">Check CAN signal &apos;WindowMotion&apos; value passed: = 0 (not_moving), condition: == 0 (not_moving)</teststep>
+        <teststep timestamp="3100.906424" level="2" type="auto" ident="3" result="pass">Validation of the expected parameters</teststep>
+        <result timestamp="3100.906424" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3100.906424" name="faultmem_status" type="testpattern">
+        <title>Check if one entry has been created.</title>
+        <teststep timestamp="3100.906424" level="0" type="auto" ident="Query fault memory" result="na">Checking status of fault memory for SUT</teststep>
+        <teststep timestamp="3100.910828" level="0" type="auto" ident="Evaluate response" result="fail">No fault memory information available</teststep>
+        <teststep timestamp="3100.910828" type="auto" ident="" detectedAt="3100.908572" detectedText="Sent at " result="na">
+          <tabularinfo>
+            <description>//Beispiel_Steuergeraet/CommonDiagnostics/FaultMemory_ReadAllIdentified/RDI_RDTCBSM_RQ</description>
+            <heading>
+              <cell>Parameter</cell>
+              <cell>Value</cell>
+              <cell>Raw</cell>
+            </heading>
+            <row level="0">
+              <cell>SID-RQ</cell>
+              <cell>0x19</cell>
+              <cell>19 </cell>
+            </row>
+            <row level="0">
+              <cell>ReportDtcByStatusMask</cell>
+              <cell>0x02</cell>
+              <cell>02 </cell>
+            </row>
+            <row level="0">
+              <cell>DTC Statusbyte</cell>
+              <cell>0x21</cell>
+              <cell>21 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Test failed</cell>
+              <cell>true</cell>
+              <cell>01 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Test failed this monitoring cycle</cell>
+              <cell>0x00</cell>
+              <cell>00 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Pending DTC</cell>
+              <cell>0x00</cell>
+              <cell>00 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Confirmed DTC</cell>
+              <cell>false</cell>
+              <cell>00 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Test not completed since last clear</cell>
+              <cell>false</cell>
+              <cell>00 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Test failed since last clear</cell>
+              <cell>true</cell>
+              <cell>01 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Test not completed this monitoring cycle</cell>
+              <cell>false</cell>
+              <cell>00 </cell>
+            </row>
+            <row level="1">
+              <cell>DTC Statusbyte.Warning indicator requested</cell>
+              <cell>0x00</cell>
+              <cell>00 </cell>
+            </row>
+          </tabularinfo>
+        </teststep>
+        <teststep timestamp="3100.910828" type="auto" ident="" detectedAt="3100.910828" detectedText="Sent at " result="na">
+          <tabularinfo>
+            <description>//Beispiel_Steuergeraet/CommonDiagnostics/FaultMemory_ReadAllIdentified/RDI_RDTCBSM_NR</description>
+            <heading>
+              <cell>Parameter</cell>
+              <cell>Value</cell>
+              <cell>Raw</cell>
+            </heading>
+            <row level="0">
+              <cell>SID-NR</cell>
+              <cell>0x7F</cell>
+              <cell>7f </cell>
+            </row>
+            <row level="0">
+              <cell>SIDRQ-NR</cell>
+              <cell>0x19</cell>
+              <cell>19 </cell>
+            </row>
+            <row level="0">
+              <cell>RESPONSE CODE</cell>
+              <cell>Subfunction not supported</cell>
+              <cell>12 </cell>
+            </row>
+          </tabularinfo>
+        </teststep>
+        <result timestamp="3100.910828" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3100.910828" name="statecheck" type="testprimitive">
+        <title>Let&apos;s show the illegal state to the user, do nothing more.</title>
+        <result timestamp="3100.910828" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3100.910828" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <result timestamp="3100.910828" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3100.910828" endtime="2022-01-21 10:26:36" endtimestamp="3100.910828" result="fail" />
+      <title>Ambiguous open and close</title>
+      <ident>TC204</ident>
+      <description>Check ambiguous operation (open and close at the same time).</description>
+    </testcase>
+    <testcase starttime="2022-01-21 10:26:36" timestamp="3100.910828">
+      <testpattern timestamp="3100.910828" name="initialize" type="testprimitive">
+        <title>Initialize all signals </title>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;Velocity&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;CrashDetected&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;LockRequest&apos; on bus CAN</name>
+            <description>0 (idle)</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;EngineRunning&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyUp&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Accelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <details timestamp="3100.910828">
+          <title>Set specified value.</title>
+          <info>
+            <name>System variable &apos;SystemUnderTest::Decelerate&apos;</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3100.910828" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3101.010828" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3101.010828" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3101.010828" name="initialize" type="testprimitive">
+        <title>Open the window</title>
+        <details timestamp="3101.010828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+            <description>1</description>
+          </info>
+        </details>
+        <teststep timestamp="3101.010828" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3106.010828" level="2" type="auto" ident="2" result="pass">Waited for 5000 ms.</teststep>
+        <result timestamp="3106.010828" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3106.010828" name="initialize" type="testprimitive">
+        <title>Open the window</title>
+        <details timestamp="3106.010828">
+          <title>Set specified value.</title>
+          <info>
+            <name>CAN signal &apos;KeyDown&apos; on bus CAN</name>
+            <description>0</description>
+          </info>
+        </details>
+        <teststep timestamp="3106.010828" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3106.110828" level="2" type="auto" ident="2" result="pass">Waited for 100 ms.</teststep>
+        <result timestamp="3106.110828" result="pass"/>
+      </testpattern>
+      <testpattern timestamp="3106.110828" name="statechange" type="testpattern">
+        <title>Try the comfort close. Check if the window is really closing.</title>
+        <teststep timestamp="3106.110828" level="0" type="auto" ident="" result="na">Successfully set CAN signal &apos;LockRequest&apos;: 3 (Comfort_lock)</teststep>
+        <teststep timestamp="3106.110828" level="2" type="auto" ident="1" result="pass">Stimulation of the input parameters</teststep>
+        <teststep timestamp="3110.110828" level="2" type="auto" ident="2" result="pass">Waited for 4000 ms.</teststep>
+        <teststep timestamp="3110.110828" level="0" type="auto" ident="" result="fail">Check CAN signal &apos;WindowMotion&apos; value failed: = 0 (not_moving), condition: == 1 (currently_closing)</teststep>
+        <teststep timestamp="3110.110828" level="0" type="auto" ident="3" result="fail">Validation of the expected parameters</teststep>
+        <result timestamp="3110.110828" result="fail"/>
+      </testpattern>
+      <testpattern timestamp="3110.110828" name="statechange" type="testpattern">
+        <title>Check if the window is still closing if the lock request is reset.</title>
+        <result timestamp="3110.110828" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3110.110828" name="statechange" type="testpattern">
+        <title>Check if the window stops moving when the car is opened again.</title>
+        <result timestamp="3110.110828" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3110.110828" name="testerconfirmation" type="testprimitive">
+        <title>Verify physical window state</title>
+        <result timestamp="3110.110828" result="skip"/>
+      </testpattern>
+      <testpattern timestamp="3110.110828" name="initialize" type="testprimitive">
+        <title>Reset the affected signals </title>
+        <result timestamp="3110.110828" result="skip"/>
+      </testpattern>
+      <verdict time="2022-01-21 10:26:36" timestamp="3110.110828" endtime="2022-01-21 10:26:36" endtimestamp="3110.110828" result="fail" />
+      <title>Open and comfort-close</title>
+      <ident>TC205</ident>
+      <description>Open the window, then check comfort close.</description>
+    </testcase>
+    <title>Additional requirements of the Window System</title>
+  </testgroup>
+  <verdict time="2022-01-21 10:26:36" timestamp="3067.610000" endtime="2022-01-21 10:26:36" endtimestamp="3110.110828" result="fail" />
+  <title>Central locking system test</title>
+  <description>Test the states of the Central Locking System (CLS) that are depending on the lock/unlock requests by using the remote control within the key, and that are depending on the velocity and the crash sensor of the vehicle.</description>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>fkhalaili</description>
+    </xinfo>
+    <info>
+      <name>Editor</name>
+      <description>Vector Informatik - Version 1.1</description>
+    </info>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.CAN.LIN.Ethernet.SmartCharging /pro 15.3.89 (SP3)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\CentralLockingSystem.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database comfort on CAN</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\comfort.dbc (2013-08-05 09:01:54)</description>
+    </xinfo>
+    <xinfo>
+      <name>Diagnostic Description of SUT</name>
+      <description>CommonDiagnostics, en-US, C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\SampleUDS.cdd (1.0, 2009-11-24 10:40:55+01:00)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>Tester</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\Testmodules\LockingSystemTester.vxt</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2017-03-14, 10:05:24</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Library (CAPL)</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\Testmodules\TestCaseLibrary.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Variant</name>
+      <description>Central locking system with window lifts</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>SE01067NB</description>
+    </xinfo>
+    <xinfo>
+      <name>CAPL DLL capldll</name>
+      <description>C:\Program Files\Vector CANoe 15\Exec32\capldll.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>CAPL DLL capldll</name>
+      <description>C:\Users\Public\Documents\Vector\CANoe\Sample Configurations 15.3.89\Programming\CAPLdll\VS 2017 Project\Debug\capldll.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNLVector</name>
+      <description>CANoe Interaction Layer NL (Vector) Version 3.30.95 (Mar 24 2021 10:43:19) , C:\ProgramData\Vector\AddOn Packages\Vector AddOn\vModules\CANoe_14_0\Exec32\CANoeILNLVector.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module osek_tp</name>
+      <description>OSEK_TP (VC15, Version 5.32.76 32bit MSC15.0, Build 76), C:\Program Files\Vector CANoe 15\Exec32\osek_tp.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 15.3.89.0, C:\Program Files\Vector CANoe 15\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNLDefault</name>
+      <description>CANoe Interaction Layer NL (Default) Version 3.30.95 (Mar 24 2021 11:15:19) , C:\ProgramData\Vector\AddOn Packages\Vector AddOn\vModules\CANoe_14_0\Exec32\CANoeILNLDefault.dll</description>
+    </xinfo>
+  </testsetup>
+  <sut>
+    <info>
+      <name>CLS</name>
+      <description>Central Locking System - Version 1.1</description>
+    </info>
+    <info>
+      <name>SUT-Driver</name>
+      <description>Signal-Driver and CAPL-Driver (Diagnosis) for the SUT - Version 1.0</description>
+    </info>
+  </sut>
+  <extendedinfo type="html"><![CDATA[<b>Measurement was performed with simulation running as fast as possible.</b>]]></extendedinfo>
+</testmodule>
+<!--footprint="348b8d0e2c4d885c60c5f97827cfd58a" version="1"-->

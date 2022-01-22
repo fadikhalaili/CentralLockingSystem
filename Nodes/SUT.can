@@ -1,0 +1,412 @@
+/*@!Encoding:1252*/
+includes
+{
+  #include "Diagnostics/CCI_CanTp.cin"
+}
+
+variables
+{
+  // Abbreviations:
+  // CLS = Central Locking System
+
+  long cLockMinVelocity = 50;    // Velocity when the CLS should lock
+  int  gWindowMovement = 0;      // -1 when moving down, 1 when moving up
+  int  cMinWindowPosition = 0;   // Min/Max window positions (that can be shown)
+  int  cMaxWindowPosition = 16;  //         by the window-bitmap
+  int  gCurrentDiffPos;          // Indicates the current movement
+  int  gCurrentWindowPos;        // Holds the current position
+
+  int  gsStateKeyDown = 0;       // Last applied state of the DownKey for the window-lift
+  int  gsStateKeyUp   = 0;       // Last applied state of the UpKey for the window-lift
+
+  int  gCrashApplied = 0;        // We had a crash?
+
+  int  cWindowStateCurrentlyOpening = 2;  // enums that reflect the enum in the CANdb++-database
+  int  cWindowStateCurrentlyClosing = 1;
+  int  cWindowStateNotMoving = 0;
+
+  // Window movement simulation
+  mstimer tWindow;
+  dword cUpdateRateWindow = 300;  //ms
+
+  int  gInvalidWindowKeyKombinationOccurred = 0;
+  
+  const cIsTester = 0;
+  char gECU[10] = "SUT";
+  
+  int gQualityLevel = 0;
+  
+}
+
+on preStart
+{
+  gQualityLevel = GetProfileInt  ("Quality","Level", 0 , "SUT.ini");      
+  
+  write ("QualityLevel = %d", gQualityLevel);
+  if (gQualityLevel<1)
+   cLockMinVelocity = 60;
+  
+  if (gQualityLevel<2)
+    cMaxWindowPosition=4;
+}
+
+on preStop
+{
+  gQualityLevel++;
+  if (gQualityLevel>4)
+    gQualityLevel=0;
+  
+  WriteProfileInt  ("Quality","Level", gQualityLevel, "SUT.ini");      
+
+}
+
+on message LockingRemoteControlRequest
+{
+  int LockRequestState = -1;
+
+  // Check if there was a change in the signals and indicate them to the appropriate handlers
+
+  if(LockRequestState != this.LockRequest)
+  {
+    if(this.LockRequest == 1)  // RequestLock
+    {
+      if (gQualityLevel>3)
+        SignalLock();
+    }
+    else if(this.LockRequest == 2) // RequestUnlock
+    SignalUnlock();
+    else if(this.LockRequest == 3) // Comfort close
+    SignalComfortClose();
+    // else: idle
+
+    LockRequestState = this.LockRequest;
+  }
+}
+
+SignalLock ()
+{
+  // CLS lock has been requested. This request can be served easily.
+  $CentralLockingSystemState::LockState = 1;
+
+  if($VehicleMotion::EngineRunning == 0)
+  {
+    // Activate the Anti-Theft-System only if the engine is not running
+    if (gQualityLevel>3)
+      $CentralLockingSystemState::AntiTheftSystemActive = 1;
+  }
+}
+
+SignalUnlock ()
+{
+  // Any unlock signal has been occurred.
+
+  $CentralLockingSystemState::LockState = 0;
+  $CentralLockingSystemState::AntiTheftSystemActive = 0;
+
+  if(@sysvar::SystemUnderTest::ErrorInWindowApplication)
+  {
+
+  }
+  else
+  {
+    SignalWindowUp(0);  // stop a potentially moving window due to safety reasons
+                        // maybe a child within the car leans out of the window
+  }
+}
+
+on message VehicleMotion
+{
+  int lStateCrash = -1;
+  long lStateVelocity = -1;
+  int lStateEngine = -1;
+
+  // Check if there was a change in the signals and indicate them to the appropriate handlers
+
+  if(lStateCrash != this.CrashDetected)
+  {
+    if(this.CrashDetected == 1)
+      SignalCrash();
+
+    lStateCrash = this.CrashDetected;
+  }
+
+  if(lStateVelocity != this.Velocity)
+  {
+    SignalVelocity(this.Velocity.phys);
+
+    lStateVelocity = this.Velocity;
+  }
+
+  if(lStateEngine != this.EngineRunning)
+  {
+    SignalEngine(this.EngineRunning);
+
+    lStateEngine = this.EngineRunning;
+  }
+}
+
+SignalCrash ()
+{
+  // Crash has been occurred
+  // A crash shall automatically open the CLS (under some circumstances)
+
+  int lUnlock;
+
+  lUnlock = 0;
+
+  if(@sysvar::SystemUnderTest::ErrorInCrashSensorUsage)
+  {
+    // This is an error injection: 
+    // Crash sensor applied in all states, independent to the engine
+    lUnlock = 1;
+  }
+  else
+  {
+    // This is the normal behavior:
+    // Apply the crash sensor only, if the engine is running.
+    // Otherwise a theft might get control over the car
+    // when he hammers a bit onto a crash-sensor.
+
+    if($VehicleMotion::EngineRunning || $VehicleMotion::Velocity)
+    lUnlock = 1;
+  }
+
+  if(lUnlock)
+  {
+    gCrashApplied = 1;
+    if (gQualityLevel>=2)
+      $CentralLockingSystemState::LockState = 0;
+  }
+}
+
+SignalVelocity (long aVelocity)
+{
+  int lApply;
+
+  lApply = 0;
+
+  
+  if(aVelocity >= cLockMinVelocity && $VehicleMotion::EngineRunning)
+  {
+    // It is allowed to lock motion dependent only, if there
+    // is/was no crash.
+
+    if(@sysvar::SystemUnderTest::ErrorCrashSensorOnVelocity)
+      lApply = 1;            // Causes a safety-Problem. Locked if speed was too fast
+    else if(!gCrashApplied)  
+      lApply = 1;            // Intended behavior
+
+    if(lApply)
+    {
+      $CentralLockingSystemState::LockState = 1;
+    }
+  }
+}
+
+SignalComfortClose ()
+{
+  // comfort close was requested.
+
+  // 1. Lock CLS
+  if (gQualityLevel>=3)
+    $CentralLockingSystemState::LockState = 1;
+
+  // 2. Close the windows
+  if (gQualityLevel>=3)
+    StartMovingWindows(-1);
+}
+
+on message WindowControl
+{
+  // Check if there was a change in the signals and indicate them to the appropriate handlers
+
+  if(this.KeyDown && this.KeyUp && !@sysvar::SystemUnderTest::ErrorKeyUpAndDownError)
+  {
+    gInvalidWindowKeyKombinationOccurred = 1;  // used as diagnostic trouble code
+
+    StopMovingWindows();    // invalid command, therefore windows must be stopped
+                            // due to safety reasons
+  }
+  else
+  {
+    if(this.KeyDown != gsStateKeyDown)
+    {
+      SignalWindowDown(this.KeyDown);
+      gsStateKeyDown = this.KeyDown;
+    }
+  
+    if(this.KeyUp   != gsStateKeyUp)
+    {
+      SignalWindowUp(this.KeyUp);
+      gsStateKeyUp   = this.KeyUp;
+    }
+  }
+}
+
+SignalWindowUp (int aStart)
+{
+  // Request to move up the windows.
+
+  // aStart = 1 if the WindowMovement shall be started
+  // aStart = 0 if the WindowMovement shall be stopped
+
+  if(aStart)
+  {
+    StartMovingWindows(-1);
+  }
+  else
+  {
+    StopMovingWindows();
+  }
+}
+
+SignalWindowDown (int aStart)
+{
+  // Request to move down the windows.
+
+  // aStart = 1 if the WindowMovement shall be started
+  // aStart = 0 if the WindowMovement shall be stopped
+
+  if(aStart)
+  {
+    StartMovingWindows(1);
+  }
+  else
+  {
+    StopMovingWindows();
+  }
+}
+
+ApplyWindowMove ()
+{
+  // Normally we should know the signal value 
+  gCurrentWindowPos = $WindowState::WindowPosition;
+
+  if(gCurrentDiffPos < 0)  // We move up
+  {
+    if(gCurrentWindowPos > cMinWindowPosition) // not yet fully closed
+    gCurrentWindowPos += gCurrentDiffPos;
+  }
+  else if(gCurrentDiffPos > 0)  // We move down
+  {
+    if(gCurrentWindowPos < cMaxWindowPosition) // not yet fully opened
+    gCurrentWindowPos += gCurrentDiffPos;
+  }
+  else
+  {
+    // We do nothing, because there is no request to move
+  }
+
+  // Indicate the current window position
+  $WindowState::WindowPosition = gCurrentWindowPos;
+}
+
+on timer tWindow
+{
+  // Maybe the windows shall be moved...
+  ApplyWindowMove();
+  SetTimer(this, cUpdateRateWindow);
+}
+
+StartMovingWindows (int aDir)
+{
+  // aDir < 0: moving up
+  // aDir > 0: moving down
+
+  CancelTimer(tWindow);  
+  SetTimer(tWindow, cUpdateRateWindow);
+  gCurrentDiffPos = aDir;
+  ApplyWindowMove();
+
+  if (gQualityLevel<=3)
+    return;
+  if(aDir > 0)
+  {
+    $WindowState::WindowMotion = cWindowStateCurrentlyOpening;
+  }
+  else if(aDir < 0)
+  {
+    $WindowState::WindowMotion = cWindowStateCurrentlyClosing;
+  }
+  else
+  {
+    $WindowState::WindowMotion = cWindowStateNotMoving;
+  }
+}
+
+StopMovingWindows ()
+{
+  CancelTimer(tWindow);
+  gCurrentDiffPos = 0;
+  ApplyWindowMove();
+
+  $WindowState::WindowMotion = cWindowStateNotMoving;
+}
+
+SignalEngine (int aState)
+{
+  // aState = 1: switched on
+  // aState = 0: switched off
+
+  // Reset the crash sensor when the engine state changes
+  gCrashApplied = 0;
+}
+
+on diagRequest FaultMemory_ReadAllIdentified
+{
+  diagResponse this resp;
+
+  BYTE rawResp[ 3 + 1 * 4] = { 0x59, 0x02, 0x79
+  , 0x00, 0x00, 0x02, 0x79
+  };
+
+  // Currently we have only 1 DTC:
+  // - Indicate whether an invalid input-status of the Up/down-keys for the window lift
+  //   has been occurred.  
+
+  if(gInvalidWindowKeyKombinationOccurred)
+  {
+    DiagResize( resp, elcount( rawResp));
+    DiagSetPrimitiveData( resp, rawResp, elcount(rawResp));
+  }
+  
+  if (gQualityLevel>=3)
+    DiagSendPositiveResponse(resp);
+  
+}
+
+on diagRequest FaultMemory_Clear
+{
+  DiagResponse this lResp;
+  
+  // Let's clear our DTC's:
+  gInvalidWindowKeyKombinationOccurred = 0;
+
+  // Send response
+  DiagSendPositiveResponse(lResp);
+}
+
+on start
+{
+  // Here the outputs of the diagnostic callback functions are switched off
+  setWriteDbgLevel(0);
+}
+
+on diagRequest FaultMemory_ReadAllSupported
+{
+  // Return a list of all DTCs this ECU may set
+
+  DiagResponse this resp;
+
+  diagSetParameter( resp, "DtcStatusbyte", 0x79);
+  diagResize( resp, 3 + 3 * 4); // 3 DTC plus the prefix
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 0, "DTC", 0x01);
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 0, "DtcStatusbyte", 0x79);
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 1, "DTC", 0x02);
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 1, "DtcStatusbyte", 0x79);
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 2, "DTC", 0x03);
+  diagSetComplexParameter( resp, "ListOfDTCAndStatus", 2, "DtcStatusbyte", 0x79);
+
+  DiagSendResponse( resp);
+}
+

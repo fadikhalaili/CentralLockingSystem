@@ -1,0 +1,205 @@
+﻿/* !Encoding: 65001  */
+variables
+{
+  byte __bArray[2048];
+  long __bArrayCtr;
+  byte __bArray2[2048];
+  long __bArrayCtr2;
+
+  char __cArray[2048];
+  char __cArray2[2048];
+  char __cArray3[2048];
+  char __cArray4[2048];
+  char __cArray5[2048];
+  char __cArray6[2048];
+  
+  char __cConditionArray[2048];
+  char __cCompareArray[2048];
+  char __cCompareTmpArray[2048];
+  char __cCheckReportString[2048];
+
+  FRConfiguration __FRConfiguration;
+
+  long __csr;              
+  long __oneOfFlag;        
+  long __bVerdict;
+
+  long __nBusContextNew = 0;
+  long __nBusContextOld = 0;
+  long __nBusContextOk = 0;
+  
+  double __nDouble;
+  int64 __nInt64;
+
+  char __cSVAsSymRef[64] = "System variable '%s'";
+  char __cEVAsSymRef[64] = "Environment variable '%s'";
+  char __cSIGAsSymRef[64] = "Signal '%s'";
+  
+  char __cAOp[4] = "=";
+  char __cEqOp[4] = "==";
+  char __cEmpty[2] = "";
+  char __cTSym[8] = "Symbol";
+  char __cTOp[4] = "Op.";
+  char __cStatus[8] = "Status";
+  char __cRefVal[32] = "Reference value";
+  char __cRetVal[32] = "Return value";
+  char __cActual[8] = "Actual";
+  char __cRes[8] = "Result";
+  char __cAssigned[16] = "Assigned";
+  char __cAssignedRaw[32] = "Assigned (raw64)";
+  char __cExpected[16] = "Expected";
+  char __cCheckCaption[32] = "Check of expected values";
+  char __cCheckCaptionUDS[64] = "Check of expected values of UDS status fields";
+  char __cSetCaption[32] = "Stimulation of values";
+  char __cResetCaption[32] = "Reset of symbols";
+  char __cRange[8]="Range";
+  char __cLowerCaseRange[8]="range";
+  char __cNotOnlineYet[32] = "not online yet";
+  char __cEvaluateResponse[32] = "Evaluate response";
+  char __cSetByFunction[32] = "Set by Function";
+  char __cWaveformCurve[8] = "Curve";
+  char __cExecuteWaveformCurves[32] = "Execution of waveform curves";
+  char __cWhile[32] = "While";
+  char __cWhileIteration[32] = "While Iteration";
+  char __cWhileCondition[32] = "While Condition";
+  char __cIf[32] = "If";
+  char __cIfCondition[32] = "If Condition";
+  char __cIfControlFlow[32] = "If Control Flow";
+  char __cElse[32] = "Else";
+  char __cElseIf[32] = "Else If";
+  char __cForEach[32] = "For Each";
+  char __cForEachIteration[32] = "For Each Iteration";
+  char __cContinue[32] = "Continue";
+  char __cBreak[32] = "Break";
+  char __cFor[32] = "For";
+  char __cForIteration[32] = "For Iteration";
+  char __cReturn[32] = "Return";
+
+  char __cNetFunctionCall[32] = ".NET Function Call";
+  char __cCaplFunctionCall[32] = "CAPL Function Call";
+  char __cAwaitSignalsAvailable[32] = "Await Signals Available";
+  char __cAwaitValueMatch[32] = "Await Value Match";
+  char __cReport[32] = "Report";
+  char __cSet[32] = "Set";
+  char __cValue[32] = "Value";
+  char __cStateChange[32] = "State Change";
+  char __cCheck[32] = "Check";
+  char __cReset[32] = "Reset";
+  char __cSend[32] = "Send";
+  char __cStimulateRamp[32] = "Stimulate Ramp";
+  char __cStimulateToggle[32] = "Stimulate Toggle";
+  char __cStimulateWaveform[32] = "Execute Waveform";
+  char __cUntilMeasurementEnd[32] = "Until Measurement End";
+  char __cWait[32] = "Wait";
+  char __cCANoeStandardService[32] = "CANoe Standard Service";
+  char __cDiagService[32] = "Diagnostic Service";
+  char __cDiagUnlockEcu[32] = "Diagnostic Unlock ECU";
+  char __cFaultMemoryClear[32] = "Fault Memory Clear";
+  char __cFaultMemoryDtcSupport[32] = "Fault Memory DTC Support";
+  char __cFaultMemoryStatus[32] = "Fault Memory Status";
+  char __cFaultMemoryDtc[32] = "Fault Memory DTCs";
+  char __cFaultMemoryParticularDtc[32] = "Fault Memory Particular DTC";
+  char __cCANstressConfiguration[32] = "CANstress Configuration";
+  char __cCANstressState[32] =  "CANstress State";
+  char __cCAPLInline[32] = "CAPL Inline";
+  char __cJ1939AddressClaimingConflict[32] = "J1939 Address Claiming Conflict";
+  char __cJ1939CommandedAddress[32] = "J1939 Commanded Address";
+  char __cJ1939RequestAddressClaiming[32] = "J1939 Request Address Claiming";
+  char __cJ1939Request[32] = "J1939 Request";
+  char __cJ1939Request2[32] = "J1939 Request2";
+  char __cJ1939WaitForDTC[32] = "J1939 Wait for DTC";
+  char __cLinChangeScheduleTable[32] = "linChangeSchedTable";
+  char __cLinSetBreakLength[32] = "linSetBreakLength";
+  char __cLinStartScheduler[32] = "linStartScheduler";
+  char __cLinStopScheduler[32] = "linStopScheduler";
+  char __cRequestResponse[32] = "Request Response";
+  char __cSetByTester[32] = "Set by Tester";
+  char __cVTSystemConfiguration[32] = "VT System Configuration";
+  char __cTestCollectDiagEcuInformation[32] = "testCollectDiagEcuInformation";
+  char __cFuzzTestCases[32] = "Fuzz Test Cases";
+	char __cFuzzTestGenerator[32] = "Fuzz Test Generator";
+	char __cFuzzTestValGenStart[64] = "Starting test value generation";
+
+  
+  enum __ResultRepresentation { __eTrueFalse = 0, __ePassFail = 1};
+
+  enum __TestCommands { 
+    __eNoTestCommand = -1,
+    __eWait = 0,
+    __eAwaitSignalsAvailable = 1,
+    __eAwaitValueMatch = 2, 
+    __eRequestResponse = 3,
+    __eReport = 4, 
+    __eSet = 5, 
+    __eSend = 6, 
+    __eStateChange = 7, 
+    __eCheck = 8, 
+    __eUntilMeasurementEnd = 9,
+    __eCANoeStandardService = 10,
+    __eCAPLInline = 11,
+    __eSetByTester = 12,
+    __eDiagService = 13,
+    __eDiagUnlockEcu = 14,
+    __eFaultMemoryStatus = 15,
+    __eFaultMemoryClear = 16,
+    __eFaultMemoryDtc = 17,
+    __eFaultMemoryDtcSupport = 18,
+    __eFaultMemoryParticularDtc = 19,
+    __eTestCollectDiagEcuInformation = 20,
+    __eReset = 21, 
+    __eVTSystemConfiguration = 22,
+    __eStimulateWaveform = 23,
+    __eCANstressConfiguration = 24,
+    __eCANstressState = 25,
+    __eJ1939AddressClaimingConflict = 26,
+    __eJ1939RequestAddressClaiming = 27,
+    __eJ1939CommandedAddress = 28,
+    __eJ1939Request = 29,
+    __eJ1939Request2 = 30,
+    __eJ1939WaitForDTC = 31,
+    __eStimulateRamp = 32,
+    __eStimulateToggle = 33,
+    __eLinChangeScheduleTable = 34,
+    __eLinStartScheduler = 35,
+    __eLinStopScheduler = 36,
+    __eLinSetBreakLength = 37
+  };
+
+  enum __CaplCallType { 
+    __eFct = 0,
+    __eTcDef = 1,
+    __eTestFct = 2,
+    __eTsDef = 3
+  };
+
+  enum __TteCallScope {
+    __eLocal = 0,
+    __eGlobal = 1
+  };
+
+  enum __Verdict {
+    __eUndefined = -1,
+    __ePass = 0,
+    __eFail = 1,
+    __eNone = 2, 
+    __eInconclusive = 3,
+    __eErrorInTestSystem = 4
+  };
+
+  long __nControlFlowVerdict = __eUndefined;
+
+  enum __BusContextBehaviour {
+    __eDiscardCurrent = 0,
+    __eSaveCurrent = 1
+  };
+
+  enum PassFail { 
+    __eVerdictFail = 0,
+    __eVerdictPass = 1
+  };
+
+enum J1939AddressBehavior { 
+    __eUseDbObjectAddress = 0,
+    __eUseOverwrittenAddress = 1 
+  };
+}

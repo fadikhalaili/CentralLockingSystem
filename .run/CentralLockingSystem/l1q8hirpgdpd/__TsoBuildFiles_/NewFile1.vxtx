@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testtree>
+  <title></title>
+  <version>1</version>
+  <caplfunction>
+    <name>Tt35nstfj_Tet_TtInit</name>
+  </caplfunction>
+  <testcase>
+    <title>Test Case</title>
+    <testcaseid>27cdf78f-0e66-447b-86c7-1698b1c5fd8d</testcaseid>
+    <caplfunction>
+      <name>Tt35nstfj_Tet_Tc0</name>
+    </caplfunction>
+  </testcase>
+</testtree>

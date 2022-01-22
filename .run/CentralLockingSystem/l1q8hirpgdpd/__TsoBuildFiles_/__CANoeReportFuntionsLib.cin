@@ -1,0 +1,660 @@
+﻿/* !Encoding: 65001  */
+variables
+{
+  enum EnumNumRep { EnumHexRepresentation = 0, EnumDecRepresentation = 1};
+  char __cArrayCell[2048];
+  long __tableHandle;
+  long __numRepresentation = EnumDecRepresentation;
+  long __bSetInCheckAlignment = 0;
+}
+
+void __ReportCell(char value[])
+{
+  testInfoCell(__tableHandle, value);
+}
+
+void __ReportCell(char value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%d", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(byte value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%u", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(int value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%ld", value);
+  else 
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lX", value);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(int value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%ld", value);
+  else 
+    snprintf(buffer, elcount(__cArrayCell), "%lX", value);
+}
+
+void __ReportCell(word value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lu", value);
+  else 
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lX", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(word value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%lu", value);
+  else 
+    snprintf(buffer, elcount(__cArrayCell), "%lX", value);
+}
+
+void __ReportCell(long value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%ld", value);
+  else 
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lX", value);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(long value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%ld", value);
+  else 
+    snprintf(buffer, elcount(__cArrayCell), "%lX", value);
+}
+
+void __ReportCell(dword value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lu", value);
+  else 
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%lX", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(dword value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%lu", value);
+  else 
+    snprintf(buffer, elcount(__cArrayCell), "%lX", value);
+}
+
+
+void __ReportCell(int64 value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%I64d", value);
+  else
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%I64X", value);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(int64 value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%I64d", value);
+  else
+    snprintf(buffer, elcount(__cArrayCell), "%I64X", value);
+}
+
+void __ReportCell(qword value)
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%I64u", value);
+  else
+    snprintf(__cArrayCell, elcount(__cArrayCell), "%I64X", value);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(qword value, char buffer[])
+{
+  if (__numRepresentation == EnumDecRepresentation)
+    snprintf(buffer, elcount(__cArrayCell), "%I64u", value);
+  else
+    snprintf(buffer, elcount(__cArrayCell), "%I64X", value);
+}
+
+void __ReportCell(float value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%.15g", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __WriteToBuffer(float value, char buffer[])
+{
+  snprintf(buffer, elcount(__cArrayCell), "%.15g", value);
+}
+
+void __ReportCell(byte bytes[], long count)
+{
+  const long dataMaxDisplayCnt = 32;
+  char text[dataMaxDisplayCnt * 3 + 15];
+  __WriteHexDataToStrBuf(text, bytes, count);
+  testInfoCell(__tableHandle, text);
+}
+
+void __WriteToBuffer(byte bytes[], long count, char buffer[])
+{
+  __WriteHexDataToStrBuf(buffer, bytes, count);
+}
+
+
+void __ReportCell(signal * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell($rValue.phys);
+}
+
+void __ReportCell(signal * rValueAsSignal, float rValuePhys)
+{
+  if (0 == getSignalTime(rValueAsSignal))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell(rValuePhys);
+}
+
+void __ReportCell(envvarInt * rValue)
+{
+  __ReportCell(@rValue);
+}
+
+void __ReportCell(envvarFloat * rValue)
+{
+  __ReportCell(@rValue);
+}
+
+void __ReportCell(envvarData * rValue)
+{
+  byte buffer[2048];
+  long bufferLen;
+  bufferLen = getValue(rValue, buffer);
+  __ReportCell(buffer, bufferLen);
+}
+
+void __ReportCell(envvarString * rValue)
+{
+  char buffer[2048];
+  getValue(rValue, buffer);
+  __ReportCell(buffer);
+}
+
+
+void __ReportCell(sysvarString * rValue)
+{
+  char buffer[2048];
+  sysGetVariableString(rValue, buffer, elCount(buffer));
+  __ReportCell(buffer);
+}
+
+void __ReportCell(sysvarData * rValue)
+{
+  byte buffer[2048];
+  long bufferLen;
+  sysGetVariableData(rValue, buffer, bufferLen);
+  __ReportCell(buffer, bufferLen);
+}
+
+void __ReportCell(sysvarIntArray * rValue, int index)
+{
+  __ReportCell(@rValue[index]);
+}
+
+void __ReportCell(sysvarFloatArray * rValue, int index)
+{
+  __ReportCell(@rValue[index]);
+}
+
+void __ReportCell(serviceSignalNumber * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell($rValue.phys);
+}
+
+void __ReportCell(ServiceSignalString * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+  {
+    char buffer[2048];
+    getServiceSignalString(rValue, buffer, elCount(buffer));
+    __ReportCell(buffer);
+  }
+}
+void __ReportCell(ServiceSignalData * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+  {
+    byte buffer[2048];
+    long bufferLen;
+    bufferLen = getServiceSignalData(rValue, buffer, elCount(buffer));
+    __ReportCell(buffer, bufferLen);
+  }
+}
+
+void __ReportCellResult(long condition, int flag)
+{
+  if(condition)
+    if (flag)
+     testInfoCell(__tableHandle, "pass");
+    else
+     testInfoCell(__tableHandle, "true");
+  else
+  {
+    if (flag)
+      testInfoCell(__tableHandle, "fail");
+    else
+      testInfoCell(__tableHandle, "false");
+  }
+}
+
+void __ReportLValue(long indent, char lValueReport[], char op[])
+{
+  if (__oneOfFlag == 0)
+  {
+    testInfoRow(__tableHandle, indent, lValueReport);
+    testInfoCell(__tableHandle, op);
+  }
+  else if (__oneOfFlag == 1)
+  {
+    testInfoRow(__tableHandle, indent,  lValueReport);
+    testInfoCell(__tableHandle, "One Of");
+  }
+  else if (__oneOfFlag == 2)
+  {
+    testInfoRow(__tableHandle, indent, "");
+    testInfoCell(__tableHandle, "");
+  }
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], int64 rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64d", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64X", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64d (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64X (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], qword rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64u", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64X", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64u (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%I64X (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], float rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%.15g", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%.15g (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], long rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%ld", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%ld (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], dword rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lu", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lu (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], int rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%ld", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%ld (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], word rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lu", rValue);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX", rValue);
+  else
+    if (__numRepresentation == EnumDecRepresentation)
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lu (%s)", rValue, rValueName);
+	else
+      snprintf(__cArrayCell, elCount(__cArrayCell), "%lX (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], char rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], byte rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], char rValue[], char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], byte rValue[], long valueInCnt, char rValueName[])
+{
+  char dataStrBuf[32*3 + 15];
+  __WriteHexDataToStrBuf(dataStrBuf, rValue, valueInCnt);
+
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s", dataStrBuf);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s (%s)", dataStrBuf, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+
+void __ReportTableHead2Columns(char caption[], char c1[], char c2[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead3Columns(char caption[], char c1[], char c2[], char c3[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead4Columns(char caption[], char c1[], char c2[], char c3[], char c4[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead5Columns(char caption[], char c1[], char c2[], char c3[], char c4[], char c5[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoCell(__tableHandle, c5);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead6Columns(char caption[], char c1[], char c2[], char c3[], char c4[], char c5[], char c6[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoCell(__tableHandle, c5);
+  testInfoCell(__tableHandle, c6);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableEndTestStep(char step[])
+{
+  testStep(2, step, __tableHandle, 0, 0);
+}
+
+void __ReportTableEndVerdict(char step[], long verdict)
+{
+  if(verdict == __eVerdictPass)
+  {
+    testStepPass(2, step, __tableHandle);
+  }
+  else
+  {
+    testStepFail(0, step, __tableHandle);
+  }
+}
+
+void __ReportConditionTableHead(char inCondition[], int bCondition)
+{
+  char buffer[2048];
+
+  snprintf(buffer, elCount(buffer), "%s: ", inCondition);
+  if(bCondition)
+    strncat(buffer, "true", elCount(buffer));
+  else
+    strncat(buffer, "false", elCount(buffer));
+
+  __ReportTableHead5Columns(buffer, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+}
+
+void __ReportTableEndCondition(char testStepName[])
+{
+  testStepWithName(testStepName, 2, __cEmpty, __tableHandle, 0, 2);
+}
+
+void __ReportTableEndCondition(char testStepName[], int restriction)
+{
+  testStepWithName(testStepName, 2, __cEmpty, __tableHandle, 0, restriction);
+}
+
+void __ReportTableEndCondition()
+{
+  testStep(2, __cEmpty, __tableHandle, 0, 2);
+}
+
+void __ReportAwaitSignalsAvailableRow(long indent, long eventId, char reportIdent[])
+{
+  testInfoRow(__tableHandle,indent, reportIdent);
+  if (eventId >= 0)
+  {
+    if (eventId == 0)
+    {
+      testInfoCell(__tableHandle, "already online");
+      __ReportCellResult(1, 1);
+    }
+    else
+    {
+      int64 time;
+      long occurred;
+      occurred = testGetJoinedEventOccured(eventId, time);
+      if (occurred)
+         testInfoCell(__tableHandle, "online");
+      else
+        testInfoCell(__tableHandle, __cNotOnlineYet);
+      __ReportCellResult(occurred, 1);
+    }
+  }
+  else
+  {
+     testInfoCell(__tableHandle, "-", 1);
+    __ReportCellResult(0, 1);
+  }
+}
+
+void __ReportRequestResponseResult(long res, long expectTimeout)
+{
+  char buffer[2048];
+  
+  if (res < 0)
+  {
+    switch (res)
+    {
+      case -1:
+      default:
+        testStepErrorInTestSystem(0, "Resp", "Error waiting for response parameter(s) (code: %d).", res);
+        break;
+      case -2:
+        testStepFail(0, "Resp", "Constraint violation while waiting for response parameter(s) (code: %d).", res);
+        break;
+      case -999:
+        testStepInconclusive(0, "Resp", "Condition aborted while waiting for response parameter(s) (code: %d).", res);
+        break;
+    }
+    return;
+  }
+  if (res == 0)
+    snprintf(buffer, elCount(buffer), "Timeout waiting for response parameter(s).");
+  else
+    snprintf(buffer, elCount(buffer), "Response received successfully.");
+  if(expectTimeout ? (res == 0) : (res > 0))
+    testStepPass(0, "Resp", buffer);
+  else
+    testStepFail(0, "Resp", buffer);
+}

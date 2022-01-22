@@ -1,0 +1,8 @@
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\bin\Release\csharp_script.exe.config
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\bin\Release\csharp_script.exe
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\bin\Release\csharp_script.pdb
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\obj\Release\csharp_script.csproj.AssemblyReference.cache
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\obj\Release\csharp_script.csproj.ResolveComReference.cache
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\obj\Release\csharp_script.csproj.CoreCompileInputs.cache
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\obj\Release\csharp_script.exe
+C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\csharp_script\obj\Release\csharp_script.pdb

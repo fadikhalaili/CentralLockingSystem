@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2022-01-22 20:43:09" timestamp=" 801.210000" verdicts="2_basic" measurementid="41345858-3921-441f-8ed0-d1263edc4712">
+  <testcase starttime="2022-01-22 20:43:09" timestamp=" 801.210000">
+    <teststep timestamp=" 801.210000" type="user" ident="" result="pass"></teststep>
+    <verdict time="2022-01-22 20:43:09" timestamp=" 801.210000" endtime="2022-01-22 20:43:09" endtimestamp=" 801.210000" result="pass" />
+    <title>tc1</title>
+  </testcase>
+  <verdict time="2022-01-22 20:43:09" timestamp=" 801.210000" endtime="2022-01-22 20:43:09" endtimestamp=" 801.210000" result="pass" />
+  <title>fadi</title>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>fkhalaili</description>
+    </xinfo>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.CAN.LIN.Ethernet.SmartCharging /pro 15.3.89 (SP3)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\CentralLockingSystem.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database comfort on CAN</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\comfort.dbc (2013-08-05 09:01:54)</description>
+    </xinfo>
+    <xinfo>
+      <name>Diagnostic Description of SUT</name>
+      <description>CommonDiagnostics, en-US, C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\SampleUDS.cdd (1.0, 2009-11-24 10:40:55+01:00)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>fadi</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\Testmodules\fadi.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2022-01-10, 21:57:32</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>SE01067NB</description>
+    </xinfo>
+    <xinfo>
+      <name>CAPL DLL capldll</name>
+      <description>C:\Program Files\Vector CANoe 15\Exec32\capldll.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>CAPL DLL capldll</name>
+      <description>C:\Users\Public\Documents\Vector\CANoe\Sample Configurations 15.3.89\Programming\CAPLdll\VS 2017 Project\Debug\capldll.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNLVector</name>
+      <description>CANoe Interaction Layer NL (Vector) Version 3.30.95 (Mar 24 2021 10:43:19) , C:\ProgramData\Vector\AddOn Packages\Vector AddOn\vModules\CANoe_14_0\Exec32\CANoeILNLVector.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module osek_tp</name>
+      <description>OSEK_TP (VC15, Version 5.32.76 32bit MSC15.0, Build 76), C:\Program Files\Vector CANoe 15\Exec32\osek_tp.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 15.3.89.0, C:\Program Files\Vector CANoe 15\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNLDefault</name>
+      <description>CANoe Interaction Layer NL (Default) Version 3.30.95 (Mar 24 2021 11:15:19) , C:\ProgramData\Vector\AddOn Packages\Vector AddOn\vModules\CANoe_14_0\Exec32\CANoeILNLDefault.dll</description>
+    </xinfo>
+  </testsetup>
+  <extendedinfo type="html"><![CDATA[<b>Measurement was performed with simulation running as fast as possible.</b>]]></extendedinfo>
+</testmodule>
+<!--footprint="f03a9cc78dfe5ea27c252791df0a6a89" version="1"-->

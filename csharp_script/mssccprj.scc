@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[csharp_script.csproj]
+SCC_Aux_Path = "\\vistrfs1.vi.vector.int\SourceSafe\PTR\TrainingVI"
+SCC_Project_Name = "$/Training/Exercises/CANoe/Testing/TestingSymposium/Automation/CentralLockingSystem/csharp_script", TOQCAAAA
+
+[csharp_script.sln]
+SCC_Aux_Path = "\\vistrfs1.vi.vector.int\SourceSafe\PTR\TrainingVI"
+SCC_Project_Name = "$/Training/Exercises/CANoe/Testing/TestingSymposium/Automation/CentralLockingSystem/csharp_script", TOQCAAAA

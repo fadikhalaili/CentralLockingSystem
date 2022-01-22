@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Vector Test Automation Editor 2.1.19.0-->
+<testmodule title="Central locking system test" version="1.0" xmlns="http://www.vector-informatik.de/CANoe/TestModule/1.18">
+  <description>Test the states of the Central Locking System (CSL) that are dependent to the lock/unlock requests by using the remote control within the key, and that are dependent to the velocity and the crash sensor of the vehicle.</description>
+  <sut>
+    <info>
+      <name>CLS</name>
+      <description>Central Locking System - Version 1.1</description>
+    </info>
+    <info>
+      <name>SUT-Driver</name>
+      <description>Signal-Driver and CAPL-Driver (Diagnosis) for the SUT - Version 1.0</description>
+    </info>
+  </sut>
+  <engineer>
+    <info>
+      <name>Editor</name>
+      <description>Vector Informatik - Version 1.1</description>
+    </info>
+  </engineer>
+  <testgroup title="Test lock states of the car">
+    <description>Checks the lock state depending to the velocity and the crash detection system of the car.</description>
+    <nettestcase name="Execute" title="Lock the car at great velocities" class="CentralLockingSystemLibrary+LockStateDependsOnlyOnVelocity" />
+    <nettestcase name="Execute" title="Unlock the car because of crash detection" class="CentralLockingSystemLibrary+LockStateDependsOnCrashDetection" />
+    <nettestcase name="CrashDetection" title="Crash detection while engine is off" class="CentralLockingSystemLibrary" />
+  </testgroup>
+  <testgroup title="Test the windows">
+    <description>Checks the control functions of the windows and the comfort close.</description>
+    <nettestcase name="SimpleWindowTest" title="Open the window">
+      <netparam type="int" name="open">0</netparam>
+    </nettestcase>
+    <nettestcase name="SimpleWindowTest" title="Close the window">
+      <netparam type="int" name="open">0</netparam>
+    </nettestcase>
+    <nettestcase name="ComfortClose" title="Check comfort close" />
+  </testgroup>
+</testmodule>

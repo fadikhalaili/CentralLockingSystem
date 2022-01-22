@@ -1,0 +1,21 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+testcase tc1()
+{
+  testStepPass();
+}
+
+void MainTest ()
+{
+  tc1();
+}
+

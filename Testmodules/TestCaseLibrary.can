@@ -1,0 +1,95 @@
+/*@@var:*/
+variables
+{
+  const int cReasonLen = 128;
+}
+/*@@end*/
+
+/*@@testcase:TC_RequestResponseTiming(char[],char[],long,long):*/
+testcase TC_RequestResponseTiming (char aIdent[], char aTitle[], long aMin, long aMax)
+{
+  long lRet;
+  dword lTimeOnRequest;
+  dword lDiffTime;
+  char  lReason[cReasonLen];
+  message WindowState lResponse;
+
+  /*
+   * The reasons to implement this test case in CAPL are:
+   * - Measure the time between request and response once
+   *   (If this time shall be measured multiply and maybe serve as
+   *    condition, then consider to use the ChkStart_MsgDistViolation()-Check.
+   *    This has been not done here to keep the code simple.)
+   * - Print the (raw) content of a message to the report
+   */
+
+  TestCaseTitle(aIdent, aTitle);
+
+  // Initialize the environment, stop up/down of the windows
+  $WindowControl::KeyUp = 0;
+  $WindowControl::KeyDown = 0;
+
+  TestWaitForTimeout(1000);
+
+  // request the window down
+  $WindowControl::KeyDown = 1;
+
+  TestWaitForMessage(WindowControl, aMax);  // wait for the stimulation message
+  lTimeOnRequest = TimeNow();
+
+  if(TestWaitForMessage(WindowState, aMax) == 0) // wait for the response
+  {
+    TestStepFail("", "Message 'WindowState' did not occur within the given time interval.");
+  }
+  else
+  {
+    testGetWaitEventMsgData(lResponse);
+
+    lDiffTime = TimeNow() - lTimeOnRequest;
+    snprintf(lReason, cReasonLen, "Message 'WindowState' occured within %d0us", lDiffTime);
+    TestStepPass("", lReason);
+    TestCaseComment("", lResponse);  // print the message itself to the report
+  }
+}
+/*@@end*/
+
+/*@@testfunction:TF_AccelerateDecelerate(float):*/
+testfunction TF_AccelerateDecelerate(float targetSpeed)
+{
+  float currentSpeed;
+
+  /*
+   * Simulates increasing/decreasing velocity slowly
+   * as if controlled by driver (= from SUT panel)
+   */
+
+  TestStep("Speed Change", "Requested speed is %f", targetSpeed);
+  currentSpeed = $VehicleMotion::Velocity;
+  if (targetSpeed > currentSpeed) 
+  {
+    // accelerate
+    TestStep("Speed Change", "Accelerating...");
+    @sysvar::SystemUnderTest::Accelerate = 1;
+    @sysvar::SystemUnderTest::Decelerate = 0;
+    do {
+      testWaitForTimeout(20);
+      currentSpeed = $VehicleMotion::Velocity;
+    } while (targetSpeed > currentSpeed);
+    @sysvar::SystemUnderTest::Accelerate = 0;
+  }
+  else if (targetSpeed < currentSpeed) 
+  {
+    TestStep("Speed Change", "Decelerating...");
+    // decelerate
+    @sysvar::SystemUnderTest::Accelerate = 0;
+    @sysvar::SystemUnderTest::Decelerate = 1;
+    do {
+      testWaitForTimeout(20);
+      currentSpeed = $VehicleMotion::Velocity;
+    } while (targetSpeed < currentSpeed);
+    @sysvar::SystemUnderTest::Decelerate = 0;
+  }
+  TestStep("Speed Change", "Reached speed is %f", currentSpeed);
+}
+/*@@end*/
+

@@ -1,0 +1,32 @@
+
+------------------------------------------------------------
+Test started: 10/01/2022 16:42:24
+------------------------------------------------------------
+CFG:C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\CentralLockingSystem.cfg
+*********** Activate and compile all modules ***********
+Compile all nodes of configuration: CentralLockingSystem
+
+Running StandardTests...
+
+
+*********** Execution of all test modules in all test environments started *********** 
+Hint: test modules in sub folders are not be considered.
+
+---------- Executing TestEnvironment: 'Test Environment' (C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\TestSetup.tse) ----------
+Found 1 test module(s).
+ - executing testmodule: 'Tester'
+     --> Verdict: Failed. Number of test cases/unsuccessful test cases: 12/6
+         FAIL: Test module did not report success.
+---------- Executing of TestEnvironment: 'Test Environment' finished ----------
+
+*********** Execution of all test modules in all test environments finished *********** 
+
+
+------------------------------------------------------------
+TEST RESULTS
+------------------------------------------------------------
+	FAILED	StandardTests
+------------------------------------------------------------
+Test contains errors.
+------------------------------------------------------------
+GetScriptResult: found 1 failed test(s).
