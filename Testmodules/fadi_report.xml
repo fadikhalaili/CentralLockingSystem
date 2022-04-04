@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<testmodule starttime="2022-01-22 20:43:09" timestamp=" 801.210000" verdicts="2_basic" measurementid="41345858-3921-441f-8ed0-d1263edc4712">
-  <testcase starttime="2022-01-22 20:43:09" timestamp=" 801.210000">
-    <teststep timestamp=" 801.210000" type="user" ident="" result="pass"></teststep>
-    <verdict time="2022-01-22 20:43:09" timestamp=" 801.210000" endtime="2022-01-22 20:43:09" endtimestamp=" 801.210000" result="pass" />
+<testmodule starttime="2022-04-04 14:28:18" timestamp=" 841.400000" verdicts="2_basic" measurementid="fc87b6ce-c1ab-42cb-94fc-371d3cd705a1">
+  <testcase starttime="2022-04-04 14:28:18" timestamp=" 841.400000">
+    <teststep timestamp=" 841.400000" type="user" ident="" result="pass"></teststep>
+    <verdict time="2022-04-04 14:28:18" timestamp=" 841.400000" endtime="2022-04-04 14:28:18" endtimestamp=" 841.400000" result="pass" />
     <title>tc1</title>
   </testcase>
-  <verdict time="2022-01-22 20:43:09" timestamp=" 801.210000" endtime="2022-01-22 20:43:09" endtimestamp=" 801.210000" result="pass" />
+  <verdict time="2022-04-04 14:28:18" timestamp=" 841.400000" endtime="2022-04-04 14:28:18" endtimestamp=" 841.400000" result="pass" />
   <title>fadi</title>
   <testlogfiles>
   </testlogfiles>
@@ -18,19 +18,19 @@
   <testsetup>
     <xinfo>
       <name>Version</name>
-      <description>CANoe.CAN.LIN.Ethernet.SmartCharging /pro 15.3.89 (SP3)</description>
+      <description>CANoe.ISO11783.J1939.CANopen.CAN.LIN.MOST.FlexRay.J1587.Ethernet.Car2x.AFDX.A429.AMD/XCP.Scope.Sensor.SmartCharging.ForEtherCAT /pro 15.3.89 (SP3)</description>
     </xinfo>
     <xinfo>
       <name>Configuration</name>
-      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\CentralLockingSystem.cfg</description>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\cls\CentralLockingSystem.cfg</description>
     </xinfo>
     <xinfo>
       <name>Database comfort on CAN</name>
-      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\comfort.dbc (2013-08-05 09:01:54)</description>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\cls\DBs\comfort.dbc (2022-04-04 11:48:20)</description>
     </xinfo>
     <xinfo>
       <name>Diagnostic Description of SUT</name>
-      <description>CommonDiagnostics, en-US, C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\DBs\SampleUDS.cdd (1.0, 2009-11-24 10:40:55+01:00)</description>
+      <description>CommonDiagnostics, en-US, C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\cls\DBs\SampleUDS.cdd (1.0, 2009-11-24 10:40:55+01:00)</description>
     </xinfo>
     <xinfo>
       <name>Test Module Name</name>
@@ -38,11 +38,11 @@
     </xinfo>
     <xinfo>
       <name>Test Module File</name>
-      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\CentralLockingSystem\Testmodules\fadi.can</description>
+      <description>C:\Users\fkhalaili\Desktop\Training Material\Jenkins\TestingSymposium\Automation\cls\Testmodules\fadi.can</description>
     </xinfo>
     <xinfo>
       <name>Last modification of Test Module File</name>
-      <description>2022-01-10, 21:57:32</description>
+      <description>2022-04-04, 11:48:20</description>
     </xinfo>
     <xinfo>
       <name>Windows Computer Name</name>
@@ -75,4 +75,4 @@
   </testsetup>
   <extendedinfo type="html"><![CDATA[<b>Measurement was performed with simulation running as fast as possible.</b>]]></extendedinfo>
 </testmodule>
-<!--footprint="f03a9cc78dfe5ea27c252791df0a6a89" version="1"-->
+<!--footprint="0ca3d867ca7a9c521f3fd96646dacb62" version="1"-->
