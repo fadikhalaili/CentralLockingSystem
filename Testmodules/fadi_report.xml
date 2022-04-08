@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<testmodule starttime="2022-04-08 10:42:47" timestamp=" 260.990000" verdicts="2_basic" measurementid="b6ebc663-0ce7-4d67-b044-3c178fc51e19">
-  <testcase starttime="2022-04-08 10:42:47" timestamp=" 260.990000">
-    <teststep timestamp=" 260.990000" type="user" ident="" result="pass"></teststep>
-    <verdict time="2022-04-08 10:42:47" timestamp=" 260.990000" endtime="2022-04-08 10:42:47" endtimestamp=" 260.990000" result="pass" />
+<testmodule starttime="2022-04-08 11:06:30" timestamp=" 363.710000" verdicts="2_basic" measurementid="65b8ef28-c159-4caa-9921-d5fa582e52bb">
+  <testcase starttime="2022-04-08 11:06:30" timestamp=" 363.710000">
+    <teststep timestamp=" 363.710000" type="user" ident="" result="pass"></teststep>
+    <verdict time="2022-04-08 11:06:30" timestamp=" 363.710000" endtime="2022-04-08 11:06:30" endtimestamp=" 363.710000" result="pass" />
     <title>tc1</title>
   </testcase>
-  <verdict time="2022-04-08 10:42:47" timestamp=" 260.990000" endtime="2022-04-08 10:42:47" endtimestamp=" 260.990000" result="pass" />
+  <verdict time="2022-04-08 11:06:30" timestamp=" 363.710000" endtime="2022-04-08 11:06:30" endtimestamp=" 363.710000" result="pass" />
   <title>fadi</title>
   <testlogfiles>
   </testlogfiles>
@@ -75,4 +75,4 @@
   </testsetup>
   <extendedinfo type="html"><![CDATA[<b>Measurement was performed with simulation running as fast as possible.</b>]]></extendedinfo>
 </testmodule>
-<!--footprint="f09536a434af8199e1e652a7f00e252e" version="1"-->
+<!--footprint="70bffe05b08af4314d4e41dae2584c77" version="1"-->
