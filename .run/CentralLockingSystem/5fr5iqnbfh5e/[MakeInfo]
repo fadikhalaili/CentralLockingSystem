@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MakeInfo>
+  <EnvironmentHash>7249485621582706277</EnvironmentHash>
+  <ExportTableHash>8720729243817855776</ExportTableHash>
+  <UserCaplExportTableHash>6359861895986911925</UserCaplExportTableHash>
+  <Files>
+    <File Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="CentralLockingSystem.vtraceitem" Time="19 May 2016 09:34:40" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vtraceitem" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2016-05-19T09:34:40.0000000+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="CentralLockingSystem.vattribute" Time="18 September 2017 08:56:32" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vattribute" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2017-09-18T08:56:32.0000000+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="TestParameters.vparam" Time="12 April 2022 10:49:34" DependentOn="TestParameters.vparam">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestParameters.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="TestParameters.vparam" Time="25 September 2019 11:12:56" DependentOn="VariantSpecificParameters.vparam, 13nqkdrr6o07=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="VariantSpecificParameters.vparam" Time="12 April 2022 10:49:34" DependentOn="VariantSpecificParameters.vparam">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VariantSpecificParameters.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22" DependentOn="TestParameters.vparam, 13nqkdrr6o07=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="13nqkdrr6o07_PA.dll" Time="12 April 2022 10:49:34" DependentOn="TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_PA.dll" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.6197906+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="DoorLockData.vct" Time="14 February 2017 09:40:58" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="b9npddrvignd_TestSysVars.dll" Time="01 January 0001 00:00:00" DependentOn="ufj9uirk3n6g-MTSV">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\b9npddrvignd_TestSysVars.dll" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>0001-01-01T00:00:00.0000000</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="ufj9uirk3n6g-MTSV" Time="23 March 2022 14:52:17">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\ufj9uirk3n6g-MTSV" /&gt;</File>
+          <LastWriteTime>2021-04-14T17:09:05.1424613+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="ufj9uirk3n6g-MTSV" Time="23 March 2022 14:52:17" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\ufj9uirk3n6g-MTSV" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-23T14:52:17.5739468+01:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="LockingSystemTester.vtt" Time="20 October 2021 13:58:18" DependentOn="VelocityWaveform.vwf, TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop, CentralLockingSystem.vtraceitem, CentralLockingSystem.vattribute">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\LockingSystemTester.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-10-20T13:58:18.2672303+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="VelocityWaveform.vwf" Time="19 March 2019 19:08:20">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\VelocityWaveform.vwf" /&gt;</File>
+          <LastWriteTime>2019-03-19T19:08:20.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vtraceitem" Time="19 May 2016 09:34:40">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vtraceitem" /&gt;</File>
+          <LastWriteTime>2016-05-19T09:34:40.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vattribute" Time="18 September 2017 08:56:32">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vattribute" /&gt;</File>
+          <LastWriteTime>2017-09-18T08:56:32.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="VelocityWaveform.vwf" Time="19 March 2019 19:08:20" DependentOn="VelocityWaveform.vwf, TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop, CentralLockingSystem.vtraceitem, CentralLockingSystem.vattribute">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\VelocityWaveform.vwf" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2019-03-19T19:08:20.0000000+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="VelocityWaveform.vwf" Time="19 March 2019 19:08:20">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\VelocityWaveform.vwf" /&gt;</File>
+          <LastWriteTime>2019-03-19T19:08:20.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vtraceitem" Time="19 May 2016 09:34:40">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vtraceitem" /&gt;</File>
+          <LastWriteTime>2016-05-19T09:34:40.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vattribute" Time="18 September 2017 08:56:32">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vattribute" /&gt;</File>
+          <LastWriteTime>2017-09-18T08:56:32.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="CentralLockingSystemTest.dll" Time="12 April 2022 10:49:38" DependentOn="LockingTestLibrary.cs, 13nqkdrr6o07_PA.dll, 13nqkdrr6o07_CA.dll, b6anpsa9odd1_TestSysVars.dll">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\CentralLockingSystemTest.dll" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:38.6474906+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="LockingTestLibrary.cs" Time="01 December 2017 14:19:54">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\LockingTestLibrary.cs" /&gt;</File>
+          <LastWriteTime>2017-12-01T14:19:54.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07_PA.dll" Time="12 April 2022 10:49:34">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_PA.dll" /&gt;</File>
+          <LastWriteTime>2022-04-12T10:49:34.6197906+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07_CA.dll" Time="12 April 2022 10:49:34">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_CA.dll" /&gt;</File>
+          <LastWriteTime>2022-04-12T10:49:34.7366564+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="b6anpsa9odd1_TestSysVars.dll" Time="12 April 2022 10:49:34">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll" /&gt;</File>
+          <LastWriteTime>2022-04-12T10:49:34.8473511+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="LockingTestLibrary.cs" Time="01 December 2017 14:19:54" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\LockingTestLibrary.cs" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2017-12-01T14:19:54.0000000+01:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="13nqkdrr6o07_CA.dll" Time="12 April 2022 10:49:34" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_CA.dll" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.7366564+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="Utilities.can" Time="29 August 2014 10:20:18" DependentOn="TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\Utilities.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2014-08-29T10:20:18.0000000+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="DoorLockData.vct.vparam" Time="12 April 2022 10:49:38" DependentOn="DoorLockData.vct">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="DoorLockData.vct.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:38.8339917+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="VelocityWaveform.vwf.vtt" Time="12 April 2022 10:49:39" DependentOn="VelocityWaveform.vwf, TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop, CentralLockingSystem.vtraceitem, CentralLockingSystem.vattribute">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:39.3656666+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="VelocityWaveform.vwf" Time="19 March 2019 19:08:20">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\VelocityWaveform.vwf" /&gt;</File>
+          <LastWriteTime>2019-03-19T19:08:20.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vtraceitem" Time="19 May 2016 09:34:40">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vtraceitem" /&gt;</File>
+          <LastWriteTime>2016-05-19T09:34:40.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="CentralLockingSystem.vattribute" Time="18 September 2017 08:56:32">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystem.vattribute" /&gt;</File>
+          <LastWriteTime>2017-09-18T08:56:32.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="Utilities.can" Time="12 April 2022 10:49:39" DependentOn="TestParameters.vparam, VariantSpecificParameters.vparam, DoorLockData.vct, 13nqkdrr6o07=VP.vvarprop, Utilities.can">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Utilities.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:39.3756407+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="TestParameters.vparam" Time="25 September 2019 11:12:56">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\TestParameters.vparam" /&gt;</File>
+          <LastWriteTime>2019-09-25T11:12:56.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="VariantSpecificParameters.vparam" Time="19 March 2014 09:42:22">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam" /&gt;</File>
+          <LastWriteTime>2014-03-19T09:42:22.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="DoorLockData.vct" Time="14 February 2017 09:40:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\Shareable Folders\ParameterLibrary\DoorLockData.vct" /&gt;</File>
+          <LastWriteTime>2017-02-14T09:40:58.0000000+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Utilities.can" Time="29 August 2014 10:20:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\Utilities.can" /&gt;</File>
+          <LastWriteTime>2014-08-29T10:20:18.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="LockingTestLibrary.cs" Time="12 April 2022 10:49:34" DependentOn="LockingTestLibrary.cs">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingTestLibrary.cs" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="LockingTestLibrary.cs" Time="01 December 2017 14:19:54">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\CentralLockingSystemTest\LockingTestLibrary.cs" /&gt;</File>
+          <LastWriteTime>2017-12-01T14:19:54.0000000+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="TestSysVars.vsysvar" Time="23 March 2022 14:52:17" DependentOn="ufj9uirk3n6g-MTSV">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-23T14:52:17.5739468+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="ufj9uirk3n6g-MTSV" Time="23 March 2022 14:52:17">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\ufj9uirk3n6g-MTSV" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:17.5739468+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="CentralLockingSystemTest_ctrlvars1.vvarprop" Time="12 April 2022 10:49:34" DependentOn="13nqkdrr6o07=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystemTest_ctrlvars1.vvarprop" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="13nqkdrr6o07=VP.vvarprop" Time="23 March 2022 14:52:18">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\13nqkdrr6o07=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:18.1094970+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="b6anpsa9odd1_TestSysVars.dll" Time="12 April 2022 10:49:34" DependentOn="ufj9uirk3n6g-MTSV">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:49:34.8473511+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="ufj9uirk3n6g-MTSV" Time="23 March 2022 14:52:17">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\ufj9uirk3n6g-MTSV" /&gt;</File>
+          <LastWriteTime>2022-03-23T14:52:17.5739468+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="VelocityWaveform.sti" Time="01 January 0001 00:00:00" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.sti" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>0001-01-01T00:00:00.0000000</LastWriteTime>
+      <Dependencies />
+    </File>
+  </Files>
+</MakeInfo>

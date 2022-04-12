@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Vector Test Table Editor-->
+<ttroot version="24" xmlns="http://www.vector-informatik.de/ITE/TestTable/1.0">
+  <tt>
+    <tf navid="e17b22b0-7946-4ca2-9feb-657438024fc5">
+      <title>tfi_GenericGatewayTest</title>
+      <tttestcaselist>
+        <title />
+        <name>ttc_GenGatewayTest</name>
+        <combinatorics>sequential</combinatorics>
+        <structlistparameter>
+          <dbobject>ChParStList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData|END_OF_OBJECT_ChParStList|</dbobject>
+        </structlistparameter>
+        <param>
+          <type>signal</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.srcSignal|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>float</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Factor|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>float</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Offset|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>signal</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.dstSignal|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>int</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.MaxDelay|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>string</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.DBCMinMax|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>float</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Min|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>float</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Max|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>float</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Steps|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <param>
+          <type>int</type>
+          <structlistmember_parameter>
+            <dbobject>ChParList_BEGIN_OF_OBJECT|1|ALIAS::GEN_GATEWAY_TEST::slRoutingData.Repeat|END_OF_OBJECT_ChParList|</dbobject>
+          </structlistmember_parameter>
+        </param>
+        <tcid>efeba59c-b3a2-4695-82bd-07bb08f0c0a6</tcid>
+        <traceitems>
+          <traceitem>TraceItem_BEGIN_OF_OBJECT|1|df78cf2a-be61-473c-86ad-75ac68f6282e|END_OF_OBJECT_TraceItem|</traceitem>
+        </traceitems>
+      </tttestcaselist>
+    </tf>
+  </tt>
+  <ttlib>
+    <ts_definitions />
+    <tc_definitions />
+    <function_definitions />
+  </ttlib>
+</ttroot>

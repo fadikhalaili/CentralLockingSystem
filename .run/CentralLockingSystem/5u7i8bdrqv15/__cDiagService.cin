@@ -1,0 +1,524 @@
+﻿/* !Encoding: 65001  */
+long _fct_isspace(char c)
+{
+  switch(c)
+  {
+  case ' ':
+  case '\n':
+  case '\r':
+  case '\t':
+    return 1;
+  default:
+    return 0;
+  }
+}
+
+long _fct_HexDigitToInt(char c)
+{
+  if(c >= '0' && c <= '9')
+    return c - '0';
+  else if(c >= 'a' && c <= 'f')
+    return 10 + c - 'a';
+  else if(c >= 'A' && c <= 'F')
+    return 10 + c - 'A';
+  return -1;
+}
+
+long __DiagSetParameter(DiagRequest * req, char paramPath[], double value)
+{
+  long res;
+  res = req.SetParameter(1, paramPath, value);
+  if (res < 0)
+  {
+    snprintf(__cArray, 8192, "SetParameter: error setting value %g of parameter %s", value, paramPath);
+    __DiagErrCodeTestStep(res, __cArray);
+  }
+  return res;
+}
+
+long __DiagSetParameter(DiagRequest * req, char paramPath[], char value[])
+{
+  long res;
+  res = req.SetParameter(paramPath, value);
+  if (res < 0)
+  {
+    snprintf(__cArray, 8192, "SetParameter: error setting value %s of parameter %s", value, paramPath);
+    __DiagErrCodeTestStep(res, __cArray);
+  }
+  return res;
+}
+
+long __DiagSetParameter(DiagRequest * req, char paramPath[], byte value[], int len)
+{
+  long res;
+  res = req.SetParameterRaw(paramPath, value, len);
+  if (res < 0)
+  {
+    snprintf(__cArray, 8192, "SetParameter: error setting data value of parameter %s", paramPath);
+    __DiagErrCodeTestStep(res, __cArray);
+  }
+  return res;
+}
+
+long __ConvertByteSeqText2Bytes(char value[], byte outBuffer[])
+{
+  DWORD in;
+  DWORD out;
+  char c;
+  out = 0;
+
+  for(in = 0; in < elCount(value) && (c = value[in]) != 0; ++in)
+  {
+    long digit;
+    byte b;
+    if( _fct_isspace(c))
+      continue;
+
+    digit = _fct_HexDigitToInt(c);
+    if (digit < 0)
+      return -1; // error: not a digit
+    b = (BYTE) digit;
+
+    if(++in >= elCount(value) || (c = value[in]) == 0)
+      return -1; // error: just 1 digit
+
+    digit = _fct_HexDigitToInt(c);
+    if (digit < 0)
+      return -1; // error not a digit
+
+    outBuffer[out++] = (b << 4) + (BYTE) digit;
+  }
+  return out;
+}
+
+
+// Return 1 to continue, 0 if test case shall abort
+// -1 indicates that the default shall be used
+// result: <=0 : pos, 1: neg, 2: any, 3: none, 4: none_or_pos, 5: ignore, 6: ignoreall
+// sendingMode: 0: physical, 1: functional
+// suppressPosResp: 0: default, 1: set, 2: clear
+long __DiagSendReqAndWaitForResp(DiagRequest * req, long P2_ms, long P2ext_ms, long P2observed_ms, long appTimeout_ms, long maxRPCount,
+		      enum EnumResult expectedResult,
+		      enum EnumServiceDetails reportServiceDetails,
+		      enum EnumSendingMode sendingMode,
+		      enum EnumSuppressPosResBit suppressPosResp,
+		      enum EnumVerdictOnInvalidValues verdOnInvValues)
+{
+  int64 sentTime;
+  long status;
+  long P2current;
+  long P2extCurrent;
+  long P2_orig;
+  long P2ex_orig;
+
+  if(appTimeout_ms < 0)
+    appTimeout_ms = cDiagAppTimeoutDefault;
+
+  P2current = (P2_ms > 0 ? P2_ms : DiagGetP2Timeout(2));
+  P2extCurrent = (P2ext_ms > 0 ? P2ext_ms : DiagGetP2Extended(2));
+  DiagSetP2Timeouts( P2current + (P2observed_ms > 0 ? P2observed_ms : 0), P2extCurrent);
+  TestStep("", "Set P2 to %dms, P2ex to %dms", P2current, P2extCurrent);
+
+  if(suppressPosResp == EnumSuppressPosResBit_set)
+  {
+    status = req.SetSuppressResp(1);
+    if(status != 0)
+      TestStepWarning("", "Setting positive response message indication bit returns %d. The bit might not be supported.", status);
+  }
+  else if(suppressPosResp == EnumSuppressPosResBit_clear && req.GetSuppressResp() == 1)
+  {
+    status = req.SetSuppressResp(0);
+    if(status != 0)
+      TestStepWarning("", "Clearing positive response message indication bit returns %d.", status);
+  }
+
+  _fct_TestStep_SendReq(req, sendingMode == EnumSendingMode_functional);
+
+  if (DiagIsFunctionalGroup() == 1)
+  {
+    status = req.SendNetwork();
+    if(status != 0)
+      TestStepErrorInTestSystem("", "Sending request to network returns %d", status);
+  }
+  else
+  {
+    switch(sendingMode)
+    {
+    case EnumSendingMode_physical:
+      if(__DiagErrCodeTestStep(req.SendRequest(), "send request physically") != 0)
+        return 0;
+      break;
+    case EnumSendingMode_functional:
+      if(__DiagErrCodeTestStep(req.SendFunctional(), "send request functionally") != 0)
+        return 0;
+      break;
+    default: // unsupported mode?!
+      TestStepErrorInTestSystem("", "Invalid sending mode %d", sendingMode);
+      return 0;
+    }
+  }
+
+  TestSuppressWaitingStartOutput();
+  status = TestWaitForDiagRequestSent(req, appTimeout_ms);
+  if(status <= 0)
+  {
+    __DiagErrCodeTestStep_ZeroAsTimeout(status, "Sending request");
+    return 0;
+  }
+  TestStepPass("Request sent successfully");
+  sentTime = timeNowInt64();
+
+  _fct_ReportWriteRequest(req, reportServiceDetails);
+
+  TestStep("", "Receiving diagnostic response");
+  TestSuppressWaitingStartOutput();
+  status = TestWaitForDiagResponse(req, appTimeout_ms);
+
+  if(status == 1)
+  {
+    _fct_ReportWriteResponse(req, reportServiceDetails);
+  }
+  
+  if(expectedResult == EnumResult_ignoreall)
+  {
+    TestStepPass("Ignore all.");
+    WaitForFurtherResponses();
+    return 1;
+  }
+
+  if(status < 0 && status != -92)
+  {
+    __DiagErrCodeTestStep(status, "wait for response");
+    return 0;
+  }
+
+  if(status == 0 || status == -92)
+  {
+        if(suppressPosResp == EnumSuppressPosResBit_set && req.GetSuppressResp() == 1)
+    {
+      // Request was sent with SPRMIB set
+      if(expectedResult == EnumResult_pos || expectedResult == EnumResult_neg || expectedResult == EnumResult_any)
+      {
+        TestStepFail("", "Expected response for request with SPRMIB set, none received");
+        return 0;
+      }
+    }
+
+    if(expectedResult == EnumResult_none || expectedResult == EnumResult_none_or_pos || req.GetSuppressResp() == 1)
+    {
+      TestStepPass("No response, as expected.");
+      return 1;
+    }
+    if(expectedResult == EnumResult_ignore)
+    {
+      TestStep("", "No response, ignored.");
+      return 1;
+    }
+
+    __DiagErrCodeTestStep_ZeroAsTimeout(0, "Receiving diagnostic response");
+    return 0;
+  }
+  
+    if(P2observed_ms > 0)
+  {
+    QWORD cancelTime;
+    int64 responseDelay;
+    DiagGetP2CancelTime(cancelTime);
+    responseDelay = (cancelTime - sentTime) / 1000000;
+
+    if( P2current < responseDelay)
+    {
+      // The response was received in the observation interval
+      TestStepFail("", "P2 client (%d ms) violated: response started after %I64d ms (but within observation interval of %d ms).", P2current, responseDelay, P2current + P2observed_ms);
+    }
+    else
+    {
+      TestStepPass("The response started within P2.");
+    }
+  }
+
+  // Are response pendings counted at all?
+  if(maxRPCount >= 0)
+  {
+    long count;
+    count = DiagGetRPCount();
+    if(count < 0)
+      TestStepWarning("", "Active communication interface does not support counting response pending messages!");
+    else if(count > maxRPCount)
+      TestStepFail("", "Received %d Response Pendings, but only up to %d allowed!", count, maxRPCount);
+    else
+      TestStepPass("", "Received %d Response Pendings which is within limit of %d.", count, maxRPCount);
+  }
+  
+  if(expectedResult == EnumResult_pos || expectedResult == EnumResult_none_or_pos || expectedResult == EnumResult_neg || expectedResult == EnumResult_any)
+  {
+    DWORD reasonOut[1];
+    if(DiagCheckValidRespPrimitive(req, reasonOut) != 1)
+    {
+      switch(reasonOut[0])
+      {
+      case 0: // not defined, probably "OK"
+        break;
+      case 1: // data too long EVAL00144409
+        TestStepFail("Received response is too long!"); // error from ECU
+        break;
+      case 2:
+        TestStepFail("Received response is too short!"); // error from ECU
+        break;
+      case 3:
+        TestStepFail("Constant overwritten in response!"); // error from ECU
+        break;
+      default:
+      case 4: // Unknown format Error
+        TestStepFail("Error in response"); // error from ECU
+        break;
+      case 5:
+        switch (verdOnInvValues)
+        {
+        case EnumVerdictOnInvalidValues_no_impact:
+          TestStep("", "Illegal parameter value(s) found");
+          break;
+        case EnumVerdictOnInvalidValues_warning:
+          TestStepWarning("Illegal parameter value(s) found");
+          break;
+        case EnumVerdictOnInvalidValues_fail:
+          TestStepFail("Illegal parameter value(s) found"); // error from ECU
+          break;
+        }
+
+        break;
+      }
+    }
+  }
+
+  // Check the response
+  status = req.GetLastResponseCode();
+  if(status == -1)
+  {
+    // positive response received
+    if(suppressPosResp == EnumSuppressPosResBit_set && req.GetSuppressResp() == 1)
+    {
+      // Positive response should have been suppressed, so this is only allowed if response pendings were received
+      if(DiagGetRPCount() < 1)
+        TestStepFail("", "Positive response should have been suppressed!");
+      else
+        TestStep("", "Positive response should have been suppressed, but received after ResponsePending. OK.");
+    }
+
+    switch(expectedResult)
+    {
+    case EnumResult_neg:
+    case EnumResult_none:
+        TestStepFail("Positive response received although not expected!");
+      break;
+    default:
+        TestStepPass("Positive response received.");
+        break;
+    }
+  }
+  else if(status > 0)
+  {
+    // negative response received
+    switch(expectedResult)
+    {
+    case EnumResult_neg:
+    case EnumResult_any:
+    case EnumResult_ignore:
+        TestStepPass("Negative response received.");
+        break;
+    default:
+        TestStepFail("Negative response received although not expected!");
+      break;
+    }
+  }
+
+  WaitForFurtherResponses();
+  
+  return 1;
+}
+
+void _fct_TestStep_SendReq(DiagRequest * req, int isFunctional)
+{
+  char sFunctional[15] = " functionally";
+
+  sFunctional[0] = isFunctional == 1 ? ' ' : 0; // Indicate whether request is sent functionally
+
+  if(req.IsRaw())
+  {
+    TestStep("", "Sending raw request%s ...", sFunctional);
+  }
+  else
+  {
+    char objectPath[512];
+    objectPath[0] = '?';
+    objectPath[1] = 0;
+    req.GetObjectPath(objectPath, elcount( objectPath));
+    TestStep("", "Sending request '%s'%s ...", objectPath, sFunctional);
+  }
+}
+
+// Write the request/response into the report depending on the report level
+// 0 = on fail - use TestReportAddDiagObject to store the object in the list and dump that list only when execution fails
+// 1 = never   - do not even store the object
+// 2 = always  - immediately write the object to the report using TestReportWriteDiagObject
+void _fct_ReportWriteRequest(DiagRequest * req, enum EnumServiceDetails reportServiceDetails)
+{
+  switch(reportServiceDetails)
+  {
+  case EnumServiceDetails_onfail:
+    TestReportAddDiagObject(req);      // store and write later
+    break;
+  case EnumServiceDetails_always:
+    TestReportWriteDiagObject(req);    // write immediately
+    break;
+  }
+}
+
+// Wait for additional request if several responses may be received
+void WaitForFurtherResponses()
+{
+  if(DiagIsFunctionalGroup() == 1)
+  {
+    TestStep( "", "Waiting until request processing completes...");
+    while(0 < diagGetPendingRequests())
+      testWaitForTimeoutNSDBSilent(10*1000000);
+  }
+}
+
+long __DiagGetParameter(DiagResponse * resp, char paramPath[], double& valueOut)
+{
+  double value[1];
+  long result;
+  value[0] = valueOut; // Keep the value of the parameter if retrieval fails
+  result = resp.GetParameter(1, paramPath, value);
+  valueOut = value[0];
+  return result;
+}
+
+long __DiagGetParameter(DiagResponse * resp, char paramPath[], byte bufferRaw[], char bufferStr[])
+{
+  long bitCount;
+
+  resp.GetParameterRaw(paramPath, bufferRaw, elCount(bufferRaw));
+  bitCount = resp.GetParameterSizeRaw(paramPath);
+  if (bitCount < 0)
+  {
+    snprintf(bufferStr, elCount(bufferStr), "__DiagGetParameter: Cannot retrieve parameter: '%s'", paramPath);
+    __DiagErrCodeTestStep(bitCount, bufferStr);
+  }
+  else
+  {
+    resp.GetParameter(paramPath, bufferStr, elCount(bufferStr));
+  }
+
+  return (bitCount + 7) / 8; // byte count
+}
+
+void _fct_ReportWriteResponse(DiagRequest * req, enum EnumServiceDetails reportServiceDetails)
+{
+  switch(reportServiceDetails)
+  {
+  case EnumServiceDetails_onfail:
+    TestReportAddDiagResponse(req);     // store and write later
+    break;
+  case EnumServiceDetails_always:
+    TestReportWriteDiagResponse(req);   // write immediately
+    break;
+  }
+}
+
+long __DiagReadBeforeWrite(DiagRequest * req, enum EnumServiceDetails reportServiceDetails)
+{
+  diagRequest * readRq;
+  diagResponse * readResp;
+  int i;
+  char paramPath[300];
+  BYTE paramRaw[4096];
+  long result;
+  long status;
+
+  result = req.GetPrimitiveData(paramRaw, elcount(paramRaw));
+  if(result <= 1)
+  {
+    if (result < 0)
+      __DiagErrCodeTestStep(result, "GetPrimitiveData");
+    else
+      TestStepErrorInTestSystem("Single byte request cannot be initialized from ECU values!");
+    return 0; // error
+  }
+
+  if(paramRaw[0] == 0x3B)   {
+    paramRaw[0] = 0x1A;       readRq.Resize(2);
+    readRq.SetPrimitiveData(paramRaw, 2);
+  }
+  else if(paramRaw[0] == 0x2E)    {
+    paramRaw[0] = 0x22;         readRq.Resize( 3);
+    readRq.SetPrimitiveData(paramRaw, 3);
+  }
+  else
+  {
+    TestStepErrorInTestSystem("Not a supported pair of services!");
+    return 0;
+  }
+ 
+  if(readRq.SendRequest() < 0)
+  {
+    TestStepErrorInTestSystem("Sending read request failed!");
+    return 0;
+  }
+
+  if(reportServiceDetails != EnumServiceDetails_never)
+  {
+    _fct_TestStep_SendReq(req, 0);
+    TestSuppressWaitingStartOutput();
+    result = TestWaitForDiagRequestSent(readRq, cDiagAppTimeoutDefault);
+    if (result != 1)
+    {
+      __DiagErrCodeTestStep_ZeroAsTimeout(result, "TestWaitForDiagRequestSent");
+      return 0;
+    }
+
+    TestStepPass("Request sent successfully");
+    _fct_ReportWriteRequest(readRq, reportServiceDetails);
+  }
+ 
+  TestStep("", "Receiving diagnostic response");
+  TestSuppressWaitingStartOutput();
+  result = TestWaitForDiagResponse(readRq, cDiagAppTimeoutDefault);
+  if (result != 1)
+  {
+    __DiagErrCodeTestStep_ZeroAsTimeout(result, "TestWaitForDiagResponse");
+    return 0;
+  }
+
+  TestStepPass("Response received successfully");
+ 
+  _fct_ReportWriteResponse(readRq, reportServiceDetails);
+
+  i = 0;
+  status = 1;
+  readRq.GetLastResponse(readResp);
+  while(diagGetParameterPath(readResp, i, paramPath, elcount(paramPath)) > 0)
+  {
+    long paramLen;
+    ++i;
+
+    if(diagIsParameterConstant(readResp, paramPath) > 0)
+      continue;
+
+    paramLen = diagGetParameterSizeRaw(readResp, paramPath);
+    if(paramLen == 0)
+      continue; 
+    if(diagGetParameterRaw(readResp, paramPath, paramRaw, elcount(paramRaw)) < 0)
+    {
+      status = 0;
+      continue;
+    }
+    
+    if(paramLen < 0)
+      status = 0;     else if(diagSetParameterRaw(req, paramPath, paramRaw, (paramLen + 7)/8) < 0)
+      status = 0;
+  }
+  if(i <= 0)
+    return 0;   return status;
+}

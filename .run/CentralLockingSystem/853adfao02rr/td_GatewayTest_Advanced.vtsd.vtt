@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Vector Test Table Editor-->
+<ttroot version="24" minRequiredVersion="19" minRequiredCANoeVersion="CANoe 12.0" xmlns="http://www.vector-informatik.de/ITE/TestTable/1.0">
+  <tt>
+    <tf navid="c6a59242-15cc-4d6b-a453-52ecb5fcb769">
+      <title>td_GatewayTest_Advanced</title>
+      <ts navid="3faeb1a4-aa3d-2472-1d68-4d9eae84a4e1">
+        <title>AlertShortcut=0_AlertBypassed=0</title>
+        <breakonfail>true</breakonfail>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_c9a4e729_fedb_4a4f_b26f_3b4f866e1c7f_0</name>
+        </testdiagramhelperfunction>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_27e8a061_9e5c_429f_9187_772122a2944f_1</name>
+        </testdiagramhelperfunction>
+        <for>
+          <title />
+          <loopvar>index</loopvar>
+          <loopvartype>int64</loopvartype>
+          <startvalue>
+            <const>0</const>
+          </startvalue>
+          <stopvalue>
+            <const>15</const>
+          </stopvalue>
+          <increment>
+            <const>1</const>
+          </increment>
+          <capltestcase>
+            <title />
+            <name>ctc_TestBPCShortcut</name>
+            <param>
+              <type>long</type>
+              <value>
+                <variable>index</variable>
+              </value>
+            </param>
+            <tcid>4537dc71-5886-d8e7-202e-829d55345198</tcid>
+            <traceitems>
+              <traceitem>TraceItem_BEGIN_OF_OBJECT|1|13dc282b-815d-48a8-a2ae-212b09c41b79|END_OF_OBJECT_TraceItem|</traceitem>
+            </traceitems>
+          </capltestcase>
+        </for>
+      </ts>
+      <ts navid="48100221-e165-9f43-b1a1-f4c56c708beb">
+        <title>AlertShortcut=0_AlertBypassed=1</title>
+        <breakonfail>true</breakonfail>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_c9a4e729_fedb_4a4f_b26f_3b4f866e1c7f_0</name>
+        </testdiagramhelperfunction>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_9068cac4_1ede_495a_8064_5b4e7ee09780_2</name>
+        </testdiagramhelperfunction>
+        <for>
+          <title />
+          <loopvar>index</loopvar>
+          <loopvartype>int64</loopvartype>
+          <startvalue>
+            <const>0</const>
+          </startvalue>
+          <stopvalue>
+            <const>15</const>
+          </stopvalue>
+          <increment>
+            <const>1</const>
+          </increment>
+          <capltestcase>
+            <title />
+            <name>ctc_TestBPCShortcut</name>
+            <param>
+              <type>long</type>
+              <value>
+                <variable>index</variable>
+              </value>
+            </param>
+            <tcid>f18662b3-906b-c1f1-001d-c1affa320f72</tcid>
+            <traceitems>
+              <traceitem>TraceItem_BEGIN_OF_OBJECT|1|13dc282b-815d-48a8-a2ae-212b09c41b79|END_OF_OBJECT_TraceItem|</traceitem>
+            </traceitems>
+          </capltestcase>
+        </for>
+      </ts>
+      <ts navid="5a6db3a9-d074-8a58-86fa-6b8ad3928142">
+        <title>AlertShortcut=1_AlertBypassed=0</title>
+        <breakonfail>true</breakonfail>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_2b24afd5_95e0_4e60_adb2_f13207407a1d_3</name>
+        </testdiagramhelperfunction>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_27e8a061_9e5c_429f_9187_772122a2944f_1</name>
+        </testdiagramhelperfunction>
+        <for>
+          <title />
+          <loopvar>index</loopvar>
+          <loopvartype>int64</loopvartype>
+          <startvalue>
+            <const>0</const>
+          </startvalue>
+          <stopvalue>
+            <const>15</const>
+          </stopvalue>
+          <increment>
+            <const>1</const>
+          </increment>
+          <capltestcase>
+            <title />
+            <name>ctc_TestBPCShortcut</name>
+            <param>
+              <type>long</type>
+              <value>
+                <variable>index</variable>
+              </value>
+            </param>
+            <tcid>9065710e-69ec-9c16-edc4-7d003a384bb4</tcid>
+            <traceitems>
+              <traceitem>TraceItem_BEGIN_OF_OBJECT|1|13dc282b-815d-48a8-a2ae-212b09c41b79|END_OF_OBJECT_TraceItem|</traceitem>
+            </traceitems>
+          </capltestcase>
+        </for>
+      </ts>
+      <ts navid="5e18f044-6a57-fc4c-29af-dd6e2f9e5eb9">
+        <title>AlertShortcut=1_AlertBypassed=1</title>
+        <breakonfail>true</breakonfail>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_2b24afd5_95e0_4e60_adb2_f13207407a1d_3</name>
+        </testdiagramhelperfunction>
+        <testdiagramhelperfunction>
+          <title />
+          <name>MelFunction_BinaryLink_9068cac4_1ede_495a_8064_5b4e7ee09780_2</name>
+        </testdiagramhelperfunction>
+        <for>
+          <title />
+          <loopvar>index</loopvar>
+          <loopvartype>int64</loopvartype>
+          <startvalue>
+            <const>0</const>
+          </startvalue>
+          <stopvalue>
+            <const>15</const>
+          </stopvalue>
+          <increment>
+            <const>1</const>
+          </increment>
+          <capltestcase>
+            <title />
+            <name>ctc_TestBPCShortcut</name>
+            <param>
+              <type>long</type>
+              <value>
+                <variable>index</variable>
+              </value>
+            </param>
+            <tcid>2162d8b0-e89a-2c13-8c1a-8b7e703594cc</tcid>
+            <traceitems>
+              <traceitem>TraceItem_BEGIN_OF_OBJECT|1|13dc282b-815d-48a8-a2ae-212b09c41b79|END_OF_OBJECT_TraceItem|</traceitem>
+            </traceitems>
+          </capltestcase>
+        </for>
+      </ts>
+    </tf>
+  </tt>
+  <ttlib>
+    <ts_definitions />
+    <tc_definitions />
+    <function_definitions>
+      <testdiagramhelperfunction_definition>
+        <name>MelFunction_BinaryLink_c9a4e729_fedb_4a4f_b26f_3b4f866e1c7f_0</name>
+        <parameters />
+        <caplfunction>
+          <title />
+          <name>cf_SetShortcutAlarmValues</name>
+          <param>
+            <type>int</type>
+            <value>
+              <const>0</const>
+            </value>
+          </param>
+        </caplfunction>
+      </testdiagramhelperfunction_definition>
+      <testdiagramhelperfunction_definition>
+        <name>MelFunction_BinaryLink_27e8a061_9e5c_429f_9187_772122a2944f_1</name>
+        <parameters />
+        <caplfunction>
+          <title />
+          <name>cf_SetBypassedAlarmValues</name>
+          <param>
+            <type>int</type>
+            <value>
+              <const>0</const>
+            </value>
+          </param>
+        </caplfunction>
+      </testdiagramhelperfunction_definition>
+      <testdiagramhelperfunction_definition>
+        <name>MelFunction_BinaryLink_9068cac4_1ede_495a_8064_5b4e7ee09780_2</name>
+        <parameters />
+        <caplfunction>
+          <title />
+          <name>cf_SetBypassedAlarmValues</name>
+          <param>
+            <type>int</type>
+            <value>
+              <const>1</const>
+            </value>
+          </param>
+        </caplfunction>
+      </testdiagramhelperfunction_definition>
+      <testdiagramhelperfunction_definition>
+        <name>MelFunction_BinaryLink_2b24afd5_95e0_4e60_adb2_f13207407a1d_3</name>
+        <parameters />
+        <caplfunction>
+          <title />
+          <name>cf_SetShortcutAlarmValues</name>
+          <param>
+            <type>int</type>
+            <value>
+              <const>1</const>
+            </value>
+          </param>
+        </caplfunction>
+      </testdiagramhelperfunction_definition>
+    </function_definitions>
+  </ttlib>
+</ttroot>

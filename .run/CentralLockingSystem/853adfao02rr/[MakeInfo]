@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MakeInfo>
+  <EnvironmentHash>10506333977002438595</EnvironmentHash>
+  <ExportTableHash>5609529214980817061</ExportTableHash>
+  <UserCaplExportTableHash>4435902473580735407</UserCaplExportTableHash>
+  <Files>
+    <File Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="pShortcutAlarms.vparam" Time="12 April 2022 10:41:03" DependentOn="pShortcutAlarms.vparam">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pShortcutAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50" DependentOn="pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="pBypassedAlarms.vparam" Time="12 April 2022 10:41:03" DependentOn="pBypassedAlarms.vparam">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pBypassedAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55" DependentOn="pShortcutAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="Gen_GatewayTest_Data.vparam" Time="12 April 2022 10:41:03" DependentOn="Gen_GatewayTest_Data.vparam">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Data.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, 1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="tt_BMS_Test.vtt" Time="10 November 2021 10:01:19" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-11-10T10:01:19.6350963+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="tt_GenericGatewayTest.vtt" Time="10 November 2021 10:06:33" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\tt_GenericGatewayTest.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-11-10T10:06:33.1596281+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="Gen_GatewayTest_Logic.vtt" Time="04 June 2020 11:46:27" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2020-06-04T11:46:27.7911780+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="ca_AlarmForwardingLibrary.can" Time="10 November 2021 10:06:33" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-11-10T10:06:33.1905452+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="ca_DriverUtilities.can" Time="16 March 2021 14:22:04" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-03-16T14:22:04.2875156+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_GatewayTest.vtsd" Time="08 October 2021 14:47:38" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-10-08T14:47:38.4922333+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_GatewayTest_Advanced.vtsd" Time="27 September 2021 10:31:19" DependentOn="td_GatewayTest.vtsd, pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest_Advanced.vtsd" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-09-27T10:31:19.9859676+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="td_GatewayTest.vtsd" Time="08 October 2021 14:47:38">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd" /&gt;</File>
+          <LastWriteTime>2021-10-08T14:47:38.4922333+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_UserScenarios.vtsd" Time="16 March 2021 14:22:04" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\Networkfolder\External Libraries\Diagrams\td_UserScenarios.vtsd" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2021-03-16T14:22:04.3164392+01:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_GatewayTest.vtsd.vtt" Time="12 April 2022 10:41:03" DependentOn="td_GatewayTest.vtsd, pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.3493945+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="td_GatewayTest.vtsd" Time="08 October 2021 14:47:38">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd" /&gt;</File>
+          <LastWriteTime>2021-10-08T14:47:38.4922333+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_GatewayTest_Advanced.vtsd.vtt" Time="12 April 2022 10:41:03" DependentOn="td_GatewayTest.vtsd, td_GatewayTest_Advanced.vtsd, pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.3523798+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="td_GatewayTest.vtsd" Time="08 October 2021 14:47:38">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd" /&gt;</File>
+          <LastWriteTime>2021-10-08T14:47:38.4922333+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="td_GatewayTest_Advanced.vtsd" Time="27 September 2021 10:31:19">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\td_GatewayTest_Advanced.vtsd" /&gt;</File>
+          <LastWriteTime>2021-09-27T10:31:19.9859676+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="td_UserScenarios.vtsd.vtt" Time="12 April 2022 10:41:04" DependentOn="td_UserScenarios.vtsd, pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, TrainingCar_BMS.vtraceitem">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:04.1652021+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="td_UserScenarios.vtsd" Time="16 March 2021 14:22:04">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\Networkfolder\External Libraries\Diagrams\td_UserScenarios.vtsd" /&gt;</File>
+          <LastWriteTime>2021-03-16T14:22:04.3164392+01:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="TrainingCar_BMS.vtraceitem" Time="27 September 2021 11:13:37">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\TrainingCar_BMS.vtraceitem" /&gt;</File>
+          <LastWriteTime>2021-09-27T11:13:37.6358741+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="ca_AlarmForwardingLibrary.can" Time="12 April 2022 10:41:04" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, ca_AlarmForwardingLibrary.can">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_AlarmForwardingLibrary.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:04.3406953+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="ca_AlarmForwardingLibrary.can" Time="10 November 2021 10:06:33">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" /&gt;</File>
+          <LastWriteTime>2021-11-10T10:06:33.1905452+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="ca_DriverUtilities.can" Time="12 April 2022 10:41:04" DependentOn="pShortcutAlarms.vparam, pBypassedAlarms.vparam, Gen_GatewayTest_Data.vparam, 1lht87dok14v=VP.vvarprop, ca_DriverUtilities.can">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_DriverUtilities.can" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:04.3576497+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="pShortcutAlarms.vparam" Time="22 September 2021 10:21:50">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pShortcutAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-22T10:21:50.7486252+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="pBypassedAlarms.vparam" Time="24 September 2021 13:08:55">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\Parameter\pBypassedAlarms.vparam" /&gt;</File>
+          <LastWriteTime>2021-09-24T13:08:55.2526603+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="Gen_GatewayTest_Data.vparam" Time="29 May 2020 16:34:58">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam" /&gt;</File>
+          <LastWriteTime>2020-05-29T16:34:58.0000000+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+        <DependentOn Name="ca_DriverUtilities.can" Time="16 March 2021 14:22:04">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" /&gt;</File>
+          <LastWriteTime>2021-03-16T14:22:04.2875156+01:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="TestSysVars.vsysvar" Time="30 March 2022 21:24:05" DependentOn="iotu5k7gv71t-MTSV">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-30T21:24:05.4862370+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="iotu5k7gv71t-MTSV" Time="30 March 2022 21:24:05">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\iotu5k7gv71t-MTSV" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:05.4862370+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+    <File Name="iotu5k7gv71t-MTSV" Time="30 March 2022 21:24:05" DependentOn="">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\iotu5k7gv71t-MTSV" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-03-30T21:24:05.4862370+02:00</LastWriteTime>
+      <Dependencies />
+    </File>
+    <File Name="BMS_Tests_ctrlvars1.vvarprop" Time="12 April 2022 10:41:03" DependentOn="1lht87dok14v=VP.vvarprop">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="BMS_Tests_ctrlvars1.vvarprop" /&gt;</SerializedBasedFileName>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+      <Dependencies>
+        <DependentOn Name="1lht87dok14v=VP.vvarprop" Time="30 March 2022 21:24:06">
+          <File>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\1lht87dok14v=VP.vvarprop" /&gt;</File>
+          <LastWriteTime>2022-03-30T21:24:06.0899090+02:00</LastWriteTime>
+        </DependentOn>
+      </Dependencies>
+    </File>
+  </Files>
+</MakeInfo>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testtree>
+  <title></title>
+  <version>1</version>
+  <nestedcallparameterlist>
+    <callparameterlist>
+      <name>4b9a90599a8f19a992540fa590887c40</name>
+      <title>Crash detection while engine is moving</title>
+      <testcaseid>17b5cd7d-33c3-484f-8c2b-b780687b2617</testcaseid>
+      <combinatorics>combinatorial</combinatorics>
+      <callparameter>
+        <name>engineOn</name>
+        <type>long</type>
+        <valuelist>
+          <value>
+            <const>0</const>
+          </value>
+          <value>
+            <const>1</const>
+          </value>
+        </valuelist>
+      </callparameter>
+      <callparameter>
+        <name>velocity</name>
+        <type>float</type>
+        <valuelist>
+          <value>
+            <const>40.0</const>
+          </value>
+          <value>
+            <const>60.0</const>
+          </value>
+        </valuelist>
+      </callparameter>
+      <traceitems>
+        <listtraceitems>
+          <traceitem>
+            <id>a31342c143aea0ddc86641</id>
+          </traceitem>
+        </listtraceitems>
+      </traceitems>
+    </callparameterlist>
+    <callparameterlist>
+      <name>32ddb90f4c2108f3bf7f1ca394d110c2</name>
+      <title>Lock with car moving/not moving</title>
+      <testcaseid>1bfceadf-4fcc-44db-8866-adb627991988</testcaseid>
+      <combinatorics>sequential</combinatorics>
+      <callmacro>For engine = {engineRunning}, moving = {isMoving} and applied crash = {crash}, check lock state == {expectedLockState}</callmacro>
+      <callparameter>
+        <name>engineRunning</name>
+        <type>int64</type>
+        <listparameter>
+          <syspar>
+            <name>LockingTests::LockingTestVectorList.EngineRunning</name>
+          </syspar>
+        </listparameter>
+      </callparameter>
+      <callparameter>
+        <name>isMoving</name>
+        <type>int64</type>
+        <listparameter>
+          <syspar>
+            <name>LockingTests::LockingTestVectorList.IsMoving</name>
+          </syspar>
+        </listparameter>
+      </callparameter>
+      <callparameter>
+        <name>crash</name>
+        <type>int64</type>
+        <listparameter>
+          <syspar>
+            <name>LockingTests::LockingTestVectorList.Crash</name>
+          </syspar>
+        </listparameter>
+      </callparameter>
+      <callparameter>
+        <name>expectedLockState</name>
+        <type>int64</type>
+        <listparameter>
+          <syspar>
+            <name>LockingTests::LockingTestVectorList.ExpectedLockState</name>
+          </syspar>
+        </listparameter>
+      </callparameter>
+      <traceitems>
+        <mappedtocallstraceitems>
+          <traceitemref>
+            <syspar type="structlist">
+              <name>LockingTests::LockingTestVectorList</name>
+            </syspar>
+          </traceitemref>
+        </mappedtocallstraceitems>
+      </traceitems>
+    </callparameterlist>
+  </nestedcallparameterlist>
+  <caplfunction>
+    <name>Ttgmv222r_Tet_TtInit</name>
+  </caplfunction>
+  <testgroup>
+    <title>Test static requirements of the door control unit</title>
+    <navid>0e470484-e34d-4eb1-b8f8-47616d059ed8</navid>
+    <testcase>
+      <title>Lock statically</title>
+      <testcaseid>6e13ea63-00fe-49c3-98f5-65bc5761b4a2</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc0</name>
+      </caplfunction>
+    </testcase>
+    <testcase>
+      <title>Unlock statically</title>
+      <testcaseid>260a23b1-1fa5-4655-81a3-3690dbc99970</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc1</name>
+      </caplfunction>
+    </testcase>
+    <testcaselist>
+      <title>Crash detection while engine is moving</title>
+      <testcaseid>17b5cd7d-33c3-484f-8c2b-b780687b2617</testcaseid>
+      <refname>4b9a90599a8f19a992540fa590887c40</refname>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_NetTcCall0</name>
+      </caplfunction>
+    </testcaselist>
+  </testgroup>
+  <testfixture>
+    <title>Test velocity dependent requirements of the door control unit</title>
+    <navid>c7cbd412-1e72-4e8e-80f9-dd5b3dc6ff62</navid>
+    <preparation>
+      <title></title>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tf_Preparation0</name>
+      </caplfunction>
+    </preparation>
+    <testcase>
+      <title>Lock by increasing velocity</title>
+      <testcaseid>3ba95eed-f642-44dd-bab3-ff98ce81c8f7</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc2</name>
+      </caplfunction>
+    </testcase>
+    <testcase>
+      <title>No unlock when slowing down</title>
+      <testcaseid>5df607e7-bfb1-490a-8176-e484476255a9</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc3</name>
+      </caplfunction>
+    </testcase>
+    <testcase>
+      <title>Check locking behavior with velocity waveform</title>
+      <testcaseid>2d3a6250-0c46-48b5-817a-b384940bdcc5</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc4</name>
+      </caplfunction>
+    </testcase>
+    <testsequence>
+      <title>Apply crash with different velocities</title>
+      <navid>1fb2e61f-4ec4-47cd-9384-eb602f240a30</navid>
+      <variantdependencies>
+        <varprop>
+          <name>Coverage</name>
+          <ge>
+            <const>1</const>
+          </ge>
+        </varprop>
+      </variantdependencies>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Ts0</name>
+      </caplfunction>
+      <nestedtestcaseidlist>
+        <testcaseid>91360866-9ce0-4e7e-a612-f74be4cbef39</testcaseid>
+      </nestedtestcaseidlist>
+    </testsequence>
+    <testcase>
+      <title>Lock dependent on velocity and crash detection</title>
+      <testcaseid>dfbfaf8e-928d-410b-bff8-c64569099b03</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc5</name>
+      </caplfunction>
+    </testcase>
+    <testcaselist>
+      <title>Lock with car moving/not moving</title>
+      <testcaseid>1bfceadf-4fcc-44db-8866-adb627991988</testcaseid>
+      <refname>32ddb90f4c2108f3bf7f1ca394d110c2</refname>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_TcListCall0</name>
+      </caplfunction>
+    </testcaselist>
+  </testfixture>
+  <testgroup>
+    <title>Comfort close</title>
+    <navid>5e37d69a-f840-4f8b-a4fe-55d89136eda4</navid>
+    <testcase>
+      <title>Open and comfort close</title>
+      <testcaseid>0d4f7b4c-8c8d-4b7c-ac8f-ac0e9563fca2</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc6</name>
+      </caplfunction>
+    </testcase>
+  </testgroup>
+  <testgroup>
+    <title>Diagnostics</title>
+    <navid>b706842b-d28b-49ee-b35b-daf714a7599f</navid>
+    <variantdependencies>
+      <varprop>
+        <name>Coverage</name>
+        <eq>
+          <const>2</const>
+        </eq>
+      </varprop>
+    </variantdependencies>
+    <testcase>
+      <title>Ambiguous request KeyUp/KeyDown with engine off</title>
+      <testcaseid>93258bc2-c70b-437a-ba34-581480932d74</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_TcCall0</name>
+      </caplfunction>
+    </testcase>
+    <testcase>
+      <title>Ambiguous request KeyUp/KeyDown with engine running</title>
+      <testcaseid>b20bf39f-2c25-469c-8464-cadf266bdf53</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_TcCall1</name>
+      </caplfunction>
+    </testcase>
+    <testcase>
+      <title>Variant coding</title>
+      <testcaseid>bee29e59-4de2-4565-b33d-118881811b08</testcaseid>
+      <caplfunction>
+        <name>Ttgmv222r_Tet_Tc7</name>
+      </caplfunction>
+    </testcase>
+  </testgroup>
+</testtree>

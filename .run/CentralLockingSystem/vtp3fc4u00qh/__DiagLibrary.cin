@@ -1,0 +1,407 @@
+﻿/* !Encoding: 65001  */
+variables
+{
+  double __nDiagValue;
+  char __cDiagValueArray[8192];
+  byte __bDiagValueArray[8192];
+  long __bDiagValueArrayCtr;
+  byte __bDiagValueArray2[8192];
+  long __bDiagValueArrayCtr2;
+
+    const cDiagAppTimeoutDefault = 60000;
+
+  enum EnumServiceDetails
+  {
+    EnumServiceDetails_onfail = 0,
+    EnumServiceDetails_never = 1,
+    EnumServiceDetails_always = 2
+  };
+
+  enum EnumResult
+  {
+    EnumResult_pos = 0,
+    EnumResult_neg = 1,
+    EnumResult_any = 2,
+    EnumResult_none = 3,
+    EnumResult_none_or_pos = 4,
+    EnumResult_ignore = 5,
+    EnumResult_ignoreall = 6
+  };
+
+  enum EnumSendingMode
+  {
+    EnumSendingMode_physical = 0,
+    EnumSendingMode_functional = 1
+  };
+  
+  enum EnumSuppressPosResBit
+  {
+    EnumSuppressPosResBit_asconfigured = 0,
+    EnumSuppressPosResBit_set = 1,
+    EnumSuppressPosResBit_clear = 2
+  };
+  
+  enum EnumVerdictOnInvalidValues
+  {
+    EnumVerdictOnInvalidValues_no_impact = 0,
+    EnumVerdictOnInvalidValues_warning = 1,
+    EnumVerdictOnInvalidValues_fail = 2
+  };
+}
+
+long __DiagSetTarget(char ecuQualifier[])
+{
+  char sCurrentTarget[512];
+  long result;
+
+  if(!strncmp( sCurrentTarget, ecuQualifier, elcount(sCurrentTarget)))
+    return 1; 
+  result = DiagSetTarget(ecuQualifier);
+
+    if (__DiagErrCodeTestStep(result, "DiagSetTarget") != 0)
+    return 0;
+
+    strncpy(sCurrentTarget, ecuQualifier, elcount( sCurrentTarget));
+
+  return 1;
+}
+
+long __DiagErrCodeTestStep(long code, char function[])
+{
+  char errorCodeText[256];
+  char lastCommErrorText[256];
+  char tempReportBuffer[512];
+  long lastCommErrCode; 
+
+  switch(code)
+  {
+    case 0: return 0; 
+        case -92:     case -95:
+    case -98:
+    case -77:
+    case -76:
+    case -73:
+    case -71:
+      DiagGetErrorString(code, errorCodeText, elCount(errorCodeText));
+
+      snprintf(tempReportBuffer, elCount(tempReportBuffer), "%s: %s (error code: %d).", function, errorCodeText, code);
+
+      lastCommErrCode = DiagGetLastCommunicationError();
+      if (lastCommErrCode != -1 && code == -92)
+      {
+        DiagGetCommunicationErrorString(lastCommErrCode, lastCommErrorText, elCount(lastCommErrorText));
+        testStepFail(0, "", "%s %s (comm error %d).", tempReportBuffer, lastCommErrorText, lastCommErrCode);
+      }
+      else
+      {
+        testStepFail(0, "", tempReportBuffer);
+      }
+
+      break;
+
+        default: 
+      DiagGetErrorString(code, errorCodeText, elCount(errorCodeText));
+      testStepErrorInTestSystem(0, "", "%s: %s (error code: %d).", function, errorCodeText, code);
+      break;
+  }
+
+  return code;
+}
+
+long __SAEtoNumber( char saeCode[])
+{
+  int len;
+  long value;
+  char strbuf[10];
+
+  if (!str_match_regex(saeCode, "[BbCcPpUu][0-9a-fA-F]+"))
+    return 0;
+
+  switch( toupper(saeCode[0]))
+  {
+  case 'B':
+    value = 0x80;
+    break;
+  case 'C':
+    value = 0x40;
+    break;
+  case 'P':
+    value = 0;
+    break;
+  case 'U':
+    value = 0xC0;
+    break;
+  default:
+    return 0;   }
+  len = strlen(saeCode);
+
+  if (len == 5)
+    value <<= 8;
+  else if (len == 7)
+    value <<= 16;
+  else
+    return 0;  
+    snprintf( strbuf, elcount( strbuf), "0%s", saeCode);
+  strbuf[1] = 'x';   return value + atol( strbuf);
+}
+
+long __DiagErrCodeTestStep_ZeroAsTimeout(long code, char function[])
+{
+  char buf[512];
+  long lastCommErrCode;
+  char lastCommErrorText[256];
+
+  if (code == 0)
+  {
+    snprintf(buf, elCount(buf), "Timeout");
+
+    lastCommErrCode = DiagGetLastCommunicationError();
+    if (lastCommErrCode != -1)
+    {
+      DiagGetCommunicationErrorString(lastCommErrCode, lastCommErrorText, elCount(lastCommErrorText));
+      testStepFail("", "%s. %s (comm error %d).", buf, lastCommErrorText, lastCommErrCode);
+    }
+    else
+    {
+      testStepFail(buf);
+    }
+
+    return code;
+  }
+  else
+  {
+    return __DiagErrCodeTestStep(code, function);
+  }
+}
+
+long __EvaluateWaitResWithVerdict(long result, long forwardFmDetailsVerdictOnFail)
+{
+  return __EvaluateWaitResWithVerdict(result, forwardFmDetailsVerdictOnFail, "");
+}
+long __EvaluateWaitResWithVerdict(long result, long forwardFmDetailsVerdictOnFail, char passText[])
+{
+  if (result == 1)
+  {
+    if (strlen(passText) > 0)
+    {
+      __bVerdict = __eVerdictPass;
+      TestStepPass(passText);
+    }
+    return 1;
+  }
+  else
+  {
+    __bVerdict = __eVerdictFail;
+    if (forwardFmDetailsVerdictOnFail)
+      TestReportWriteFaultMemoryDetails(0 );
+
+    __DiagErrCodeTestStep_ZeroAsTimeout(result, "Wait result");
+    return 0;
+  }
+}
+
+int Foobar(int64 dtcAvStatusMask, Int64 mask, char txt[])
+{
+  int localMatch, condition;
+  
+  localMatch = (condition = dtcAvStatusMask & mask) != 0;
+
+  return localMatch;
+}
+
+int __DTCEqualMask(int64 dtcAvStatusMask, Int64 mask, char txt[])
+{
+  int localMatch, condition;
+  
+  localMatch = (condition = dtcAvStatusMask & mask) == 0;
+
+  return localMatch;
+}
+
+
+int __DTCUnequalMask(int64 dtcAvStatusMask, Int64 mask, char txt[])
+{
+  int localMatch, condition;
+  
+  localMatch = (condition = dtcAvStatusMask & mask) != 0;
+
+  return localMatch;
+}
+
+
+int __DTCEqualMask2(int64 dtcAvStatusMask, Int64 mask, char txt[])
+{
+  int localMatch, condition;
+  
+  localMatch = (condition = dtcAvStatusMask & mask) == 0;
+  __ReportTableRow(0, txt, __cEqOp, 0, __cEmpty);
+  __ReportCell(condition ? 1 : 0);
+  __ReportCellResult(localMatch, __ePassFail);
+
+  return localMatch;
+}
+
+int __DTCUnequalMask2(int64 dtcAvStatusMask, Int64 mask, char txt[])
+{
+  int localMatch, condition;
+  
+  localMatch = (condition = dtcAvStatusMask & mask) != 0;
+  __ReportTableRow(0, txt, __cEqOp, 1, __cEmpty);
+  __ReportCell(condition ? 1 : 0);
+  __ReportCellResult(localMatch, __ePassFail);
+
+  return localMatch;
+}
+
+long __MapChar2ByteAtDiagSet(char cArray[], byte bArray[])
+{
+  DWORD in;
+  DWORD out;
+  char c;
+  out = 0;
+
+  for(in = 0; in < elCount(cArray) && (c = cArray[in]) != 0; ++in)
+  {
+    long digit;
+    byte b;
+    if( __isspace(c))
+      continue;
+
+    digit = __HexDigitToInt(c);
+    if (digit < 0)
+      return -1;     b = (BYTE) digit;
+
+    if(++in >= elCount(cArray) || (c = cArray[in]) == 0)
+      return -1; 
+    digit = __HexDigitToInt(c);
+    if (digit < 0)
+      return -1; 
+    bArray[out++] = (b << 4) + (BYTE) digit;
+  }
+  return out;
+}
+
+long __MapChar2ByteAtDiagCheck(char cArray[], byte bArray[])
+{
+  DWORD i;
+  DWORD rPos;
+
+  rPos = 0;
+  for(i = 0; i < elcount(cArray) && cArray[i]; ++i)
+  {
+    WORD b;
+    char c;
+    long digit;
+
+    // parse nibble
+    c = cArray[i];
+    if(__isspace(c))
+      continue;
+    digit = __HexDigitToInt(c);
+    if(digit >= 0)
+      b = (BYTE) digit;
+    else
+    {
+      __bVerdict = __eVerdictFail;
+      TestStepErrorInTestSystem("", "Invalid character '%c' at position %d in reference string \"%s\"!", c, i, cArray);
+      return -1;
+    }
+
+    // second nibble
+    c = cArray[++i];
+    if(c == 0 || __isspace(c))
+    {
+      __bVerdict = __eVerdictFail;
+      TestStepErrorInTestSystem("", "Error: not a 2 byte sequence! (position %d in reference string \"%s\")", i, cArray);
+      return -1;
+    }
+    b <<= 4;
+    digit = __HexDigitToInt(c);
+    if(digit >= 0)
+      b += (BYTE) digit;
+    else
+    {
+      __bVerdict = __eVerdictFail;
+      TestStepErrorInTestSystem("", "Invalid character '%c' at position %d in reference string \"%s\"!", c, i, cArray);
+      return -1;
+    }
+
+    bArray[rPos] = b;
+    ++rPos;
+  }
+
+  return rPos;
+}
+
+long __isspace(char c)
+{
+  switch(c)
+  {
+    case ' ':
+    case '\n':
+    case '\r':
+    case '\t':
+      return 1;
+    default:
+      return 0;
+  }
+}
+
+long __HexDigitToInt(char c)
+{
+  if(c >= '0' && c <= '9')
+    return c - '0';
+  else if(c >= 'a' && c <= 'f')
+    return 10 + c - 'a';
+  else if(c >= 'A' && c <= 'F')
+    return 10 + c - 'A';
+  return -1;
+}
+
+long __DiagGetReceivedFMParameter(char paramPath[], byte bufferRaw[], char bufferStr[])
+{
+  long result;
+
+  result = DiagGetReceivedParameterRaw(paramPath, bufferRaw, elCount(bufferRaw));
+  if (result < 0)
+  {
+    snprintf(bufferStr, elCount(bufferStr), "__DiagGetParameter: Cannot retrive parameter: '%s'", paramPath);
+    __DiagErrCodeTestStep(result, bufferStr);
+  }
+
+  DiagGetReceivedParameter(paramPath, bufferStr, elCount(bufferStr));
+  return result;
+}
+
+void __DiagDumpExtendedData(DWORD dtc, char dtcSymbolIdent[])
+{
+  char paramPath[8192];
+  DWORD index;
+
+  snprintf(paramPath, elcount(paramPath), "Received extended data for DTC 0x%X%s", dtc, dtcSymbolIdent);
+  __tableHandle = testInfoTable(paramPath);
+
+  testInfoHeadingBegin(__tableHandle, 0);
+  __ReportCell("Parameter");
+  __ReportCell("Value");
+  __ReportCell("Unit");
+  testInfoHeadingEnd(__tableHandle);
+
+  index = 0;
+  while(DiagGetReceivedParameterPath(index, paramPath, elcount(paramPath)) >= 0)
+  {
+    long rawLen;
+    char unit[32];
+    DiagGetReceivedParameter(paramPath, __cDiagValueArray, elcount(__cDiagValueArray));
+    unit[0] = 0;
+    DiagGetReceivedParameterUnit(paramPath, unit, elcount( unit));
+        DiagGetReceivedParameterName(paramPath, paramPath, elcount(paramPath));
+
+    testInfoRow(__tableHandle, 0, paramPath);
+    __ReportCell(__cDiagValueArray);
+    __ReportCell(unit);
+    ++index;
+  }
+
+    TestStep(0, "EnvData", __tableHandle, 0 , 1 );
+}

@@ -1,0 +1,422 @@
+﻿10:41:03 # Build of test unit 'BMS_Tests' started...
+10:41:03 - Build Step #0: BuildPreparation (ArtefactID: -1)
+10:41:03 - ------------------------------------------------
+10:41:03 - ============================== Build Step #0 finished ==============================
+10:41:03 - Build Step #1: PreBuildEvent (ArtefactID: -1)
+10:41:03 - ---------------------------------------------
+10:41:03 - ============================== Build Step #1 finished ==============================
+10:41:03 - Build Step #2: BuildTestSequenceDiagramDependencyTree (ArtefactID: -1)
+10:41:03 - ----------------------------------------------------------------------
+10:41:03 - Test Sequence Diagram Dependencies (direct dependencies only):
+10:41:03 -   td_GatewayTest.vtsd
+10:41:03 -   td_GatewayTest_Advanced.vtsd --> td_GatewayTest.vtsd 
+10:41:03 -   td_UserScenarios.vtsd
+10:41:03 - ============================== Build Step #2 finished ==============================
+10:41:03 - Build Step #3: TraceArtefactIds (ArtefactID: -1)
+10:41:03 - ------------------------------------------------
+10:41:03 - Artefact IDs:
+10:41:03 -   0 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt
+10:41:03 -   1 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can
+10:41:03 -   2 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd
+10:41:03 -   3 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest_Advanced.vtsd
+10:41:03 -   4 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 -   5 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 -   6 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\tt_GenericGatewayTest.vtt
+10:41:03 -   7 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt
+10:41:03 -   8 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 -   9 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\Diagrams\td_UserScenarios.vtsd
+10:41:03 -  10 C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can
+10:41:03 - ============================== Build Step #3 finished ==============================
+10:41:03 - Build Step #4: FuzzTestDetection (ArtefactID: -1)
+10:41:03 - -------------------------------------------------
+10:41:03 - ============================== Build Step #4 finished ==============================
+10:41:03 - Build Step #5: ValidateTestUnit (ArtefactID: -1)
+10:41:03 - ------------------------------------------------
+10:41:03 # Checking test unit consistency
+10:41:03 - ============================== Build Step #5 finished ==============================
+10:41:03 - Build Step #6: CopyParameterFile (ArtefactID: 4)
+10:41:03 - ------------------------------------------------
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\pShortcutAlarms.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\pShortcutAlarms.vparam'
+10:41:03 - ============================== Build Step #6 finished ==============================
+10:41:03 - Build Step #7: CopyParameterFile (ArtefactID: 5)
+10:41:03 - ------------------------------------------------
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\pBypassedAlarms.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\pBypassedAlarms.vparam'
+10:41:03 - ============================== Build Step #7 finished ==============================
+10:41:03 - Build Step #8: CopyParameterFile (ArtefactID: 8)
+10:41:03 - ------------------------------------------------
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\Gen_GatewayTest_Data.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\Gen_GatewayTest_Data.vparam'
+10:41:03 - ============================== Build Step #8 finished ==============================
+10:41:03 - Build Step #9: BuildParameterTypeLibs (ArtefactID: -1)
+10:41:03 - ------------------------------------------------------
+10:41:03 - Nothing to do (no C# documents and no .NET assemblies)
+10:41:03 - ============================== Build Step #9 finished ==============================
+10:41:03 - Build Step #10: BuildCaplTypeLibs (ArtefactID: -1)
+10:41:03 - --------------------------------------------------
+10:41:03 - Nothing to do (no C# documents and no .NET assemblies)
+10:41:03 - ============================== Build Step #10 finished ==============================
+10:41:03 - Build Step #11: BuildSysVarTypeLibs (ArtefactID: -1)
+10:41:03 - ----------------------------------------------------
+10:41:03 - Nothing to do (no C# documents and no .NET assemblies)
+10:41:03 - ============================== Build Step #11 finished ==============================
+10:41:03 - Build Step #12: BuildCoTypeLib (ArtefactID: -1)
+10:41:03 - -----------------------------------------------
+10:41:03 - Nothing to do (no C# documents and no .NET assemblies or no CO-Lib)
+10:41:03 - ============================== Build Step #12 finished ==============================
+10:41:03 - Build Step #13: ValidateTteFile (ArtefactID: 0)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'tt_BMS_Test.vtt' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #13 finished ==============================
+10:41:03 - Build Step #14: ValidateTteFile (ArtefactID: 6)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\tt_GenericGatewayTest.vtt' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'tt_GenericGatewayTest.vtt' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #14 finished ==============================
+10:41:03 - Build Step #15: ValidateTteFile (ArtefactID: 7)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'Gen_GatewayTest_Logic.vtt' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #15 finished ==============================
+10:41:03 - Build Step #16: ValidateCaplFiles (ArtefactID: -1)
+10:41:03 - --------------------------------------------------
+10:41:03 - CAPL file dependencies (direct dependencies only):
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can --> <pShortcutAlarms.vparam>, <pBypassedAlarms.vparam>, <Gen_GatewayTest_Data.vparam>, <1lht87dok14v=VP.vvarprop>
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - BuildStepUtilities.ValidateCaplFile: 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can'
+10:41:03 # Compiling file 'ca_AlarmForwardingLibrary.can' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - CAPL file dependencies (direct dependencies only):
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can --> <pShortcutAlarms.vparam>, <pBypassedAlarms.vparam>, <Gen_GatewayTest_Data.vparam>, <1lht87dok14v=VP.vvarprop>
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - BuildStepUtilities.ValidateCaplFile: 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can'
+10:41:03 # Compiling file 'ca_DriverUtilities.can' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #16 finished ==============================
+10:41:03 - Build Step #17: ValidateTdeFile (ArtefactID: 2)
+10:41:03 - -----------------------------------------------
+10:41:03 - Dependent files (direct and indirect dependencies):
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'td_GatewayTest.vtsd' in test unit 'BMS_Tests'
+10:41:03 #  A path name is the result of the concatenation of all partial path names. A partial path name is specified at the outgoing transitions of a 'Multiplexer' or 'Decision Variant'. It is used at time of generating tests.
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #17 finished ==============================
+10:41:03 - Build Step #18: ValidateTdeFile (ArtefactID: 3)
+10:41:03 - -----------------------------------------------
+10:41:03 - Dependent files (direct and indirect dependencies):
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest_Advanced.vtsd' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'td_GatewayTest_Advanced.vtsd' in test unit 'BMS_Tests'
+10:41:03 #  'Break on Fail' adjustment in diagram 'td_GatewayTest_Advanced' and 'td_GatewayTest' differs. The value from 'td_GatewayTest_Advanced' is taken.
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #18 finished ==============================
+10:41:03 - Build Step #19: ValidateTdeFile (ArtefactID: 9)
+10:41:03 - -----------------------------------------------
+10:41:03 - Dependent files (direct and indirect dependencies):
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\Diagrams\td_UserScenarios.vtsd' is outdated
+10:41:03 - Reason: Export Tables have changed
+10:41:03 # Compiling file 'td_UserScenarios.vtsd' in test unit 'BMS_Tests'
+10:41:03 #  Assigned commands: Test Case Attributes: Test case attribute 'LifeCycle' not available. Obsolete attributes can be removed via 'Propagate Test Case Attributes...' in Project View..
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #19 finished ==============================
+10:41:03 - Build Step #20: ValidateParameterFile (ArtefactID: 4)
+10:41:03 - -----------------------------------------------------
+10:41:03 - Dependent files:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 # Compiling file 'pShortcutAlarms.vparam' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #20 finished ==============================
+10:41:03 - Build Step #21: ValidateParameterFile (ArtefactID: 5)
+10:41:03 - -----------------------------------------------------
+10:41:03 - Dependent files:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 # Compiling file 'pBypassedAlarms.vparam' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #21 finished ==============================
+10:41:03 - Build Step #22: ValidateParameterFile (ArtefactID: 8)
+10:41:03 - -----------------------------------------------------
+10:41:03 - Dependent files:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 # Compiling file 'Gen_GatewayTest_Data.vparam' in test unit 'BMS_Tests'
+10:41:03 # Compilation succeeded (10:41:03) -- 0 errors, 0 warnings
+10:41:03 - ============================== Build Step #22 finished ==============================
+10:41:03 - Build Step #23: ConditionalBuildAbort (ArtefactID: -1)
+10:41:03 - ------------------------------------------------------
+10:41:03 - All Validation succeeded - continue build.
+10:41:03 - ============================== Build Step #23 finished ==============================
+10:41:03 - Build Step #24: CompileVtsd2Vtt (ArtefactID: 2)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\td_GatewayTest.vtsd.vtt' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - ============================== Build Step #24 finished ==============================
+10:41:03 - Build Step #27: CompileVtsd2Vtt (ArtefactID: 3)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\td_GatewayTest_Advanced.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\td_GatewayTest_Advanced.vtsd.vtt' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:03 - ============================== Build Step #27 finished ==============================
+10:41:03 - Build Step #30: CompileVtsd2Vtt (ArtefactID: 9)
+10:41:03 - -----------------------------------------------
+10:41:03 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\Diagrams\td_UserScenarios.vtsd
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:03 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem
+10:41:03 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\td_UserScenarios.vtsd.vtt' is outdated
+10:41:03 - Reason: System Environment has changed
+10:41:04 - ============================== Build Step #30 finished ==============================
+10:41:04 - Build Step #33: CollectNavigationInfo (ArtefactID: 0)
+10:41:04 - -----------------------------------------------------
+10:41:04 - ============================== Build Step #33 finished ==============================
+10:41:04 - Build Step #34: CopyVttFile (ArtefactID: 0)
+10:41:04 - -------------------------------------------
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v~3-0.' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\__ExpTbl_\tt_BMS_Test.vtt.export.xml'
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\tt_BMS_Test.vtt'
+10:41:04 - ============================== Build Step #34 finished ==============================
+10:41:04 - Build Step #35: CollectNavigationInfo (ArtefactID: 6)
+10:41:04 - -----------------------------------------------------
+10:41:04 - ============================== Build Step #35 finished ==============================
+10:41:04 - Build Step #36: CopyVttFile (ArtefactID: 6)
+10:41:04 - -------------------------------------------
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v~3-1.' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\__ExpTbl_\tt_GenericGatewayTest.vtt.export.xml'
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\tt_GenericGatewayTest.vtt' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\tt_GenericGatewayTest.vtt'
+10:41:04 - ============================== Build Step #36 finished ==============================
+10:41:04 - Build Step #37: CollectNavigationInfo (ArtefactID: 7)
+10:41:04 - -----------------------------------------------------
+10:41:04 - ============================== Build Step #37 finished ==============================
+10:41:04 - Build Step #38: CopyVttFile (ArtefactID: 7)
+10:41:04 - -------------------------------------------
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v~3-2.' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\__ExpTbl_\Gen_GatewayTest_Logic.vtt.export.xml'
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\Gen_GatewayTest_Logic.vtt'
+10:41:04 - ============================== Build Step #38 finished ==============================
+10:41:04 - Build Step #25: CollectNavigationInfoTde (ArtefactID: 2)
+10:41:04 - --------------------------------------------------------
+10:41:04 - ============================== Build Step #25 finished ==============================
+10:41:04 - Build Step #26: CopyVttFile (ArtefactID: 2)
+10:41:04 - -------------------------------------------
+10:41:04 - ============================== Build Step #26 finished ==============================
+10:41:04 - Build Step #28: CollectNavigationInfoTde (ArtefactID: 3)
+10:41:04 - --------------------------------------------------------
+10:41:04 - ============================== Build Step #28 finished ==============================
+10:41:04 - Build Step #29: CopyVttFile (ArtefactID: 3)
+10:41:04 - -------------------------------------------
+10:41:04 - ============================== Build Step #29 finished ==============================
+10:41:04 - Build Step #31: CollectNavigationInfoTde (ArtefactID: 9)
+10:41:04 - --------------------------------------------------------
+10:41:04 - ============================== Build Step #31 finished ==============================
+10:41:04 - Build Step #32: CopyVttFile (ArtefactID: 9)
+10:41:04 - -------------------------------------------
+10:41:04 - ============================== Build Step #32 finished ==============================
+10:41:04 - Build Step #39: MergeCaplDocument (ArtefactID: 1)
+10:41:04 - -------------------------------------------------
+10:41:04 - CAPL file dependencies (direct dependencies only):
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can --> <pShortcutAlarms.vparam>, <pBypassedAlarms.vparam>, <Gen_GatewayTest_Data.vparam>, <1lht87dok14v=VP.vvarprop>
+10:41:04 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can
+10:41:04 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\ca_AlarmForwardingLibrary.can' is outdated
+10:41:04 - Reason: System Environment has changed
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v~0-0.' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\__ExpTbl_\ca_AlarmForwardingLibrary.can.export.xml'
+10:41:04 - ============================== Build Step #39 finished ==============================
+10:41:04 - Build Step #40: MergeCaplDocument (ArtefactID: 10)
+10:41:04 - --------------------------------------------------
+10:41:04 - CAPL file dependencies (direct dependencies only):
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can --> <pShortcutAlarms.vparam>, <pBypassedAlarms.vparam>, <Gen_GatewayTest_Data.vparam>, <1lht87dok14v=VP.vvarprop>
+10:41:04 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pShortcutAlarms.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\Parameter\pBypassedAlarms.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\GenericGatewayTest\Gen_GatewayTest_Data.vparam
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can
+10:41:04 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\ca_DriverUtilities.can' is outdated
+10:41:04 - Reason: System Environment has changed
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v~0-1.' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\__ExpTbl_\ca_DriverUtilities.can.export.xml'
+10:41:04 - ============================== Build Step #40 finished ==============================
+10:41:04 - Build Step #41: MoveCSharpXmlDocumentation (ArtefactID: -1)
+10:41:04 - -----------------------------------------------------------
+10:41:04 - MoveCSharpXmlDocumentation: Skipped because option is deactivated
+10:41:04 - ============================== Build Step #41 finished ==============================
+10:41:04 - Build Step #42: ValidateTteFile (ArtefactID: 0)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #42 finished ==============================
+10:41:04 - Build Step #43: ValidateTteFile (ArtefactID: 6)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #43 finished ==============================
+10:41:04 - Build Step #44: ValidateTteFile (ArtefactID: 7)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #44 finished ==============================
+10:41:04 - Build Step #45: ValidateTdeFile (ArtefactID: 2)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #45 finished ==============================
+10:41:04 - Build Step #46: ValidateTdeFile (ArtefactID: 3)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #46 finished ==============================
+10:41:04 - Build Step #47: ValidateTdeFile (ArtefactID: 9)
+10:41:04 - -----------------------------------------------
+10:41:04 - ============================== Build Step #47 finished ==============================
+10:41:04 - Build Step #48: ValidateIdUsage (ArtefactID: -1)
+10:41:04 - ------------------------------------------------
+10:41:04 - ============================== Build Step #48 finished ==============================
+10:41:04 - Build Step #49: ExportTraceabilityMatrix (ArtefactID: -1)
+10:41:04 - ---------------------------------------------------------
+10:41:04 - ExportTraceabilityMatrix: Skipped because option is deactivated
+10:41:04 - ============================== Build Step #49 finished ==============================
+10:41:04 - Build Step #50: IncludeSources (ArtefactID: -1)
+10:41:04 - -----------------------------------------------
+10:41:04 - IncludeSources: Skipped because option is deactivated
+10:41:04 - ============================== Build Step #50 finished ==============================
+10:41:04 - Build Step #51: WriteSystemEnvironment (ArtefactID: -1)
+10:41:04 - -------------------------------------------------------
+10:41:04 - Copy merged Test System Variable file...
+10:41:04 - Copy <iotu5k7gv71t-MTSV> to C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\TestSysVars.vsysvar
+10:41:04 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:41:04 - C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\iotu5k7gv71t-MTSV
+10:41:04 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\TestSysVars.vsysvar' is outdated
+10:41:04 - Reason: System Environment has changed
+10:41:04 - Add variant property file...
+10:41:04 - 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\BMS_Tests_ctrlvars1.vvarprop' is outdated
+10:41:04 - Reason: System Environment has changed
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\1lht87dok14v=VP.vvarprop' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\BMS_Tests_ctrlvars1.vvarprop'
+10:41:04 - Copied file 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtraceitem' to 'C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\TrainingCar_BMS.vtraceitem'
+10:41:04 - ============================== Build Step #51 finished ==============================
+10:41:04 - Build Step #52: WriteTUProperties (ArtefactID: -1)
+10:41:04 - --------------------------------------------------
+10:41:04 - ============================== Build Step #52 finished ==============================
+10:41:04 - Build Step #53: WriteTetEntries (ArtefactID: -1)
+10:41:04 - ------------------------------------------------
+10:41:04 - ============================== Build Step #53 finished ==============================
+10:41:04 - Build Step #54: FuzzTestNodeLayer (ArtefactID: -1)
+10:41:04 - --------------------------------------------------
+10:41:04 - ============================== Build Step #54 finished ==============================
+10:41:04 - Build Step #55: WriteManifest (ArtefactID: -1)
+10:41:04 - ----------------------------------------------
+10:41:04 - Writing manifest C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\obj_TrainingCar_BMS\bin_1lht87dok14v\BMS_Tests.vtumanifest
+10:41:04 - ============================== Build Step #55 finished ==============================
+10:41:04 - Build Step #60: RemoveOrphanedBuildArtfacts (ArtefactID: -1)
+10:41:04 - ------------------------------------------------------------
+10:41:04 - Removing orphaned build artefacts from the vtuexe's main folder...
+10:41:04 - Nothing to do.
+10:41:04 - ============================== Build Step #60 finished ==============================
+10:41:04 - Build Step #56: WriteMetainfo (ArtefactID: -1)
+10:41:04 - ----------------------------------------------
+10:41:04 - BUILD TIME excluding ZIP/UNZIP (hours:minutes:seconds:milliseconds): 00:00:01:563

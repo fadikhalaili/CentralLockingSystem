@@ -1,0 +1,189 @@
+/*@!Encoding:1252*/
+includes
+{
+
+}
+
+variables
+{
+enum eAgility {eECO = 0, eCOMFORT, eSPORT = 2};
+  enum eRecuperation {eNONE = 0, eMEDIUM = 1, eMAXIMUM = 2};
+}
+
+/////////////////////////////////////////////////
+//// Waiting
+/////////////////////////////////////////////////
+cf_SafeWait(long time)
+{
+   if (time>0)
+     testWaitForTimeout(time);
+   else if (time <0)
+     testStepErrorInTestSystem("", "Waiting time not legal %d", time);   
+}
+
+/////////////////////////////////////////////////
+//// Sysvar tools
+/////////////////////////////////////////////////
+void cf_ToggleSysvar(sysvarInt * sv, long time)
+{
+  @sv=0;
+  cf_SafeWait(time);  
+  @sv = 1;  
+  cf_SafeWait(time); 
+  @sv = 0;
+  cf_SafeWait(time);
+}
+
+/////////////////////////////////////////////////
+//// Await signal 
+/////////////////////////////////////////////////
+cf_AwaitSignalMatch(char descr[], signal * sig, int v, long time)
+{
+    Teststep("","%s: Awaiting %s to be %f, waiting %d ms at max", descr, sig.name, v, time);
+  if (time>0)
+    testWaitForSignalMatch(sig, v, time);
+  testValidateSignalMatch("",sig, v);
+}
+
+/////////////////////////////////////////////////
+//// Set and document
+/////////////////////////////////////////////////
+export cf_SetAndWait(char descr[], sysvarInt * sv, int v, long wait)
+{
+  Teststep("","%s: Setting %s::%s to %d and waiting %d ms", descr, sv.namespace, sv.name, v, wait);
+  @sv=v;
+  cf_SafeWait(wait);
+}
+
+export cf_SetAndWait(char descr[], sysvarInt * sv, int v, char textVal[], long wait)
+{
+  Teststep("","%s: Setting %s::%s to %d (%s) and waiting %d ms", descr, sv.namespace, sv.name, v, textVal,  wait);
+  @sv=v;
+  cf_SafeWait(wait);
+}
+
+export cf_SetAndWait(char descr[], sysvarfloat * sv, double v, long wait)
+{
+  Teststep("","%s: Setting %s::%s to %f and waiting %d ms", descr, sv.namespace, sv.name, v, wait);
+  @sv=v;
+  cf_SafeWait(wait);
+}
+
+export cf_SetAndWait(char descr[], signal * sig, double v, long wait)
+{
+  Teststep("","%s: Setting %s to %f and waiting %d ms", descr, sig.name, v, wait);
+  $sig=v;
+  cf_SafeWait(wait);
+}
+
+// check for wait milliseconds that the signal is having value v
+export cf_CheckValueViolation(char descr[], signal * sig, double v, long wait)
+{
+   dword handle;
+   Teststep("","%s: Checking for %d ms that %s is %f", descr, wait, sig.name, v);
+   handle=ChkStart_MsgSignalValueRangeViolation(sig,v,v);
+   testWaitForTimeout(wait);
+   if (ChkQuery_NumEvents(handle)>0)
+   {
+    Teststepfail("","Signal not constant.");
+   }
+   else
+   {
+    testStepPass("","Signal was stable.");
+   }
+}
+
+/////////////////////////////////////////////////
+//// Driver Activities / complete micro scenarios
+////   Behave like a car driver! Never set signal values directly
+/////////////////////////////////////////////////
+// no matter in which operational condition the car is, the drive mode is entered
+export dvEnterDriveMode()
+{
+  cf_SetAndWait("Micro scenario: Enter drive mode",sysvar::Scenarios::Which,sysvar::Scenarios::Which::Drive, "Scenarios::Which::Drive", 1000);
+  cf_AwaitSignalMatch("Checking drive mode",sigDriveMode, frmOperationMode.sigDriveMode::DRIVE,10000);
+}
+
+// no matter in which operational condition the car is, the car is switched off
+export dvSwitchOff()
+{
+  cf_SetAndWait("Micro scenario: Switch off",sysvar::Scenarios::Which,sysvar::Scenarios::Which::Off,"Scenarios::Which::Off", 1000);
+  cf_AwaitSignalMatch("Car is Off",sigDriveMode, frmOperationMode.sigVehicleMode::OFF,10000);
+}
+
+// charges with 1Ah and waits 500ms
+export dvCharge()
+{
+    @sysvar::VehicleControl::All_BPC::ChargeAh = 1.0;
+    cf_SetAndWait("Charge", sysvar::Scenarios::Which,sysvar::Scenarios::Which::Charge,"Scenarios::Which::Charge", 1000);
+}
+
+// When normal car operation is no more needed switch to Testing (reduced BPC application)
+export dvMakeSureCarReady4BMSTests()
+{
+  if (@sysvar::Scenarios::Which!=sysvar::Scenarios::Which::Testing)
+  {
+    @sysvar::Scenarios::Which=sysvar::Scenarios::Which::Testing;
+    testWaitForTimeout(1000);
+  }
+}
+
+/////////////////////////////////////////////////
+//// Driver Activities at vehicle controls 
+////   Behave like a car driver! Never set signal values directly
+/////////////////////////////////////////////////
+// pushes the start button
+export dvPushStartButton()
+{
+   Teststep("","Pushing the Start Button");
+   cf_ToggleSysvar(sysvar::VehicleControl::SCCM::StartButton,300);
+}
+
+// pushes the brake with x % force
+export dvBrake(double level)
+{
+    cf_SetAndWait("Brake", sysvar::VehicleControl::Pedal::BrakeLinear,level, 500);
+}
+
+// Tries to set the drive mode 
+export dvDrive()
+{
+  cf_SetAndWait("Drive Mode on", sigDriveMode, frmOperationMode.sigDriveMode::DRIVE, 500);
+}
+
+// Tries to set the mode to parking
+export dvPark()
+{
+  cf_SetAndWait("Drive Mode on", sigDriveMode, frmOperationMode.sigDriveMode::PARKING, 500);
+}
+
+// pushes the throttle with x % force
+export dvThrottle(double level)
+{
+    cf_SetAndWait("Accelerating with Throttle", sysvar::VehicleControl::Pedal::ThrottleLinear,level, 100);                                                                                                      if (@sysvar::Vehicle::Faults::Testing::Driving::Fault_3==1 && $POWERTRAIN::SCCM::frmDynamicMode::sigRecuperationLevel==2 && $POWERTRAIN::SCCM::frmDynamicMode::sigAgility==0) { int b,a = 0; b= 20/a;}
+}
+
+// set the requested speed and switches speed control on
+export dvSpeedControlOn(double speed)
+{
+    cf_SetAndWait("Setting requested Speed",sysvar::VehicleControl::SCCM::RequestedSpeed,speed,500);
+    cf_SetAndWait("SpeedControl ON", sysvar::VehicleControl::SCCM::SpeedControl,1,200);
+}
+
+// stop speed control mode
+export dvSpeedControlOff()
+{
+     cf_SetAndWait("SpeedControl OFF", sysvar::VehicleControl::SCCM::SpeedControl,0,200);
+}
+
+// set agility
+export dvSetAgility(enum eAgility agility)
+{
+     cf_SetAndWait("Agility", sysvar::VehicleControl::SCCM::Agility,(long) agility,200);
+}
+
+// set recuperation level
+export dvSetRecuperation(enum eRecuperation recuperation)
+{
+     cf_SetAndWait("Recuperation", sysvar::VehicleControl::SCCM::Recuperation,(long)recuperation,200);
+}

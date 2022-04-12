@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testcase name="ttc_GenGatewayTest" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt" SourceFilePersistencyGuid="m6hf0huqebkd" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true" guid="5c743fed-e53f-4000-82c4-ee2bf767442a">
+    <parameter name="pSrcSig" type="signal" raw_type="signal" />
+    <parameter name="pFactor" type="float" raw_type="float" />
+    <parameter name="pOffset" type="float" raw_type="float" />
+    <parameter name="pDstSig" type="signal" raw_type="signal" />
+    <parameter name="pDelay" type="int64" raw_type="int" />
+    <parameter name="pDBCValues" type="string" raw_type="string" />
+    <parameter name="pMin" type="float" raw_type="float" />
+    <parameter name="pMax" type="float" raw_type="float" />
+    <parameter name="pSteps" type="float" raw_type="float" />
+    <parameter name="pRepeat" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+  <function name="tf_GenericGatewayTestOneValue" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\GenericTestprocedures\Gen_GatewayTest_Logic.vtt" SourceFilePersistencyGuid="m6hf0huqebkd" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="82cfe82f-3289-41ee-9955-ef417d25d19e">
+    <parameter name="pSigSrc" type="signal" raw_type="signal" />
+    <parameter name="pSigDst" type="signal" raw_type="signal" />
+    <parameter name="pSrcValue" type="float" raw_type="float" />
+    <parameter name="pDstValue" type="float" raw_type="float" />
+    <parameter name="pDelay" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/function_definitions[1]/function_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </function>
+</tclibrary>

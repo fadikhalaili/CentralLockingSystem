@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <FileFormatVersion>1</FileFormatVersion>
+  <TestUnitName>BMS_Tests</TestUnitName>
+  <TestUnitUri>vtso://p19tt9uv9tai/1lht87dok14v</TestUnitUri>
+  <TsoProject>C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtsoproj</TsoProject>
+  <TsoProjectRelative>.\..\..\..\..\..\..\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\TrainingCar_BMS.vtsoproj</TsoProjectRelative>
+  <ProjectGuid>p19tt9uv9tai</ProjectGuid>
+  <EditableSources>false</EditableSources>
+  <ContainsVsDll>false</ContainsVsDll>
+  <GlobalSysVarTypeLibBinary></GlobalSysVarTypeLibBinary>
+  <TestSysVarTypeLibBinary></TestSysVarTypeLibBinary>
+  <COTypeLibBinary></COTypeLibBinary>
+  <UserCaplExportTableHash>4435902473580735407</UserCaplExportTableHash>
+  <CaplArraySize>8192</CaplArraySize>
+  <CaplDiagArraySize>8192</CaplDiagArraySize>
+  <TraceItemsFile>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TrainingCar_BMS.vtraceitem" /&gt;</Source>
+  </TraceItemsFile>
+  <BuildInfo>
+    <CaplCompiler>15.3.89.0</CaplCompiler>
+    <MinRequiredCANoeVersion>8.2.64</MinRequiredCANoeVersion>
+    <TsoVersion>6.3.75.0</TsoVersion>
+    <NetApiVersion>15.3.89.0</NetApiVersion>
+    <NetFrameworkVersion>4.0</NetFrameworkVersion>
+    <PythonRuntimeVersion>3.9</PythonRuntimeVersion>
+  </BuildInfo>
+  <NetTypeLibGenerator>
+    <NamespaceGeneration>NoNamespace</NamespaceGeneration>
+    <NetTypeLibs />
+  </NetTypeLibGenerator>
+  <VariantProperties>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="BMS_Tests_ctrlvars1.vvarprop" /&gt;</Source>
+  </VariantProperties>
+  <Sources>
+    <CaplFiles>
+      <CaplFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_AlarmForwardingLibrary.can" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_AlarmForwardingLibrary.cbf" /&gt;</Binary>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ca_AlarmForwardingLibrary.can.export.xml" /&gt;</ExportTable>
+      </CaplFile>
+      <CaplFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_DriverUtilities.can" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_DriverUtilities.cbf" /&gt;</Binary>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ca_DriverUtilities.can.export.xml" /&gt;</ExportTable>
+      </CaplFile>
+    </CaplFiles>
+    <CaplIncludeFiles />
+    <NetFiles />
+    <NetBinaries />
+    <VttFiles>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_BMS_Test.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_BMS_Test.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_BMS_Test.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_BMS_Test.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\tt_BMS_Test.vtt.export.xml" /&gt;</ExportTable>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_GenericGatewayTest.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_GenericGatewayTest.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_GenericGatewayTest.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_GenericGatewayTest.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\tt_GenericGatewayTest.vtt.export.xml" /&gt;</ExportTable>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Logic.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Logic.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Logic.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Logic.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\Gen_GatewayTest_Logic.vtt.export.xml" /&gt;</ExportTable>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+      </VttFile>
+    </VttFiles>
+    <ParameterFiles>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pShortcutAlarms.vparam" /&gt;</Source>
+      </ParameterFile>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pBypassedAlarms.vparam" /&gt;</Source>
+      </ParameterFile>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Data.vparam" /&gt;</Source>
+      </ParameterFile>
+    </ParameterFiles>
+    <WaveformFiles />
+    <WaveformBinaries />
+    <CaplDlls />
+    <PythonFiles />
+  </Sources>
+  <TestSysVar>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</Source>
+  </TestSysVar>
+  <ExternalReferences />
+  <SutEnvironment>
+    <Networks>
+      <Network>
+        <Name>POWERTRAIN</Name>
+        <ChannelType>CAN</ChannelType>
+        <Databases>
+          <Database>
+            <DatabaseFile>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\..\Communication_Databases\PowerTrain.dbc" /&gt;</DatabaseFile>
+            <DatabaseName>PowerTrain</DatabaseName>
+            <OpenInfoString>*17*AFDXPDUMode*0*ASRNamesSuffixMode*1*ASRNormalizeTimings*0*ASRPDULayerMode*0*ASRShortNameUsage*0*ASRTextTableNamingMode*0*CalculateUpdateBit*0*DatabaseFile*C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Communication_Databases\PowerTrain.dbc*DoNormalization*1*EncodingForNETStringConversions*0*FilterUnrecognizedNodes*0*FlexRayABMode*0*FlexRayPostfixOption*0*IgnoredNodes**IsConvertedLinDbc*0*IsLDFEditorMode*0*LanguageCode**LinChannelPostfix*1*NetworkName**NetworkType*0</OpenInfoString>
+          </Database>
+        </Databases>
+      </Network>
+      <Network>
+        <Name>BATTERY</Name>
+        <ChannelType>CAN</ChannelType>
+        <Databases>
+          <Database>
+            <DatabaseFile>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\..\Communication_Databases\Battery.arxml" /&gt;</DatabaseFile>
+            <DatabaseName>BATTERY</DatabaseName>
+            <OpenInfoString>*17*AFDXPDUMode*0*ASRNamesSuffixMode*1*ASRNormalizeTimings*0*ASRPDULayerMode*0*ASRShortNameUsage*0*ASRTextTableNamingMode*0*CalculateUpdateBit*0*DatabaseFile*C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Communication_Databases\Battery.arxml*DoNormalization*1*EncodingForNETStringConversions*0*FilterUnrecognizedNodes*0*FlexRayABMode*0*FlexRayPostfixOption*0*IgnoredNodes**IsConvertedLinDbc*0*IsLDFEditorMode*0*LanguageCode**LinChannelPostfix*1*NetworkName*BATTERY*NetworkType*0</OpenInfoString>
+          </Database>
+        </Databases>
+      </Network>
+    </Networks>
+    <UseAllNetworks>false</UseAllNetworks>
+  </SutEnvironment>
+  <TUProperties>
+    <Caption></Caption>
+    <Description></Description>
+    <Version></Version>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+    <TestDesigners>
+      <Columns />
+      <TestDesignerEntries />
+    </TestDesigners>
+    <TUInfos />
+  </TUProperties>
+  <NodeLayerDlls />
+  <UserFiles />
+  <TetEntries>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>td_GatewayTest.vtsd.vtt</Identifier>
+    </TetEntry>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>td_GatewayTest_Advanced.vtsd.vtt</Identifier>
+    </TetEntry>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>tt_BMS_Test.vtt</Identifier>
+    </TetEntry>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>td_UserScenarios.vtsd.vtt</Identifier>
+    </TetEntry>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>Gen_GatewayTest_Logic.vtt</Identifier>
+    </TetEntry>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>tt_GenericGatewayTest.vtt</Identifier>
+    </TetEntry>
+  </TetEntries>
+</Manifest>

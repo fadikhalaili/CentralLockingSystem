@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <enumeration name="eAgility" namespace="" comment="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" integral_type="long">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>56</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+    <element raw_value="0">eECO</element>
+    <element raw_value="1">eCOMFORT</element>
+    <element raw_value="2">eSPORT</element>
+  </enumeration>
+  <enumeration name="eRecuperation" namespace="" comment="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" integral_type="long">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>106</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+    <element raw_value="0">eNONE</element>
+    <element raw_value="1">eMEDIUM</element>
+    <element raw_value="2">eMAXIMUM</element>
+  </enumeration>
+  <function name="cf_SetAndWait" id="661301440" comment="///////////////////////////////////////////////&#xA;// Set and document&#xA;///////////////////////////////////////////////" signature="void cf_SetAndWait(char descr[], sysvarInt sv, int v, long wait)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="descr" type="string" raw_type="char[]" />
+    <parameter name="sv" type="sysvarInt" raw_type="sysvarInt" />
+    <parameter name="v" type="int" raw_type="int" />
+    <parameter name="wait" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>1217</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="cf_SetAndWait" id="1114401326" comment="" signature="void cf_SetAndWait(char descr[], sysvarInt sv, int v, char textVal[], long wait)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="descr" type="string" raw_type="char[]" />
+    <parameter name="sv" type="sysvarInt" raw_type="sysvarInt" />
+    <parameter name="v" type="int" raw_type="int" />
+    <parameter name="textVal" type="string" raw_type="char[]" />
+    <parameter name="wait" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>1421</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="cf_SetAndWait" id="1283168224" comment="" signature="void cf_SetAndWait(char descr[], sysvarFloat sv, float v, long wait)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="descr" type="string" raw_type="char[]" />
+    <parameter name="sv" type="sysvarFloat" raw_type="sysvarFloat" />
+    <parameter name="v" type="float" raw_type="float" />
+    <parameter name="wait" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>1656</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="cf_SetAndWait" id="2766952152" comment="" signature="void cf_SetAndWait(char descr[], signal sig, float v, long wait)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="descr" type="string" raw_type="char[]" />
+    <parameter name="sig" type="signal" raw_type="signal" />
+    <parameter name="v" type="float" raw_type="float" />
+    <parameter name="wait" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>1865</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="cf_CheckValueViolation" id="4117627028" comment="check for wait milliseconds that the signal is having value v" signature="void cf_CheckValueViolation(char descr[], signal sig, float v, long wait)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="descr" type="string" raw_type="char[]" />
+    <parameter name="sig" type="signal" raw_type="signal" />
+    <parameter name="v" type="float" raw_type="float" />
+    <parameter name="wait" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>2119</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvEnterDriveMode" id="3464633608" comment="///////////////////////////////////////////////&#xA;// Driver Activities / complete micro scenarios&#xA;//   Behave like a car driver! Never set signal values directly&#xA;///////////////////////////////////////////////&#xA;no matter in which operational condition the car is, the drive mode is entered" signature="void dvEnterDriveMode()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>2840</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvSwitchOff" id="1870756968" comment="no matter in which operational condition the car is, the car is switched off" signature="void dvSwitchOff()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>3196</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvCharge" id="603912157" comment="charges with 1Ah and waits 500ms" signature="void dvCharge()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>3484</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvMakeSureCarReady4BMSTests" id="787479864" comment="When normal car operation is no more needed switch to Testing (reduced BPC application)" signature="void dvMakeSureCarReady4BMSTests()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>3773</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvPushStartButton" id="612595763" comment="///////////////////////////////////////////////&#xA;// Driver Activities at vehicle controls&#xA;//   Behave like a car driver! Never set signal values directly&#xA;///////////////////////////////////////////////&#xA;pushes the start button" signature="void dvPushStartButton()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>4224</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvBrake" id="1268218844" comment="pushes the brake with x % force" signature="void dvBrake(float level)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="level" type="float" raw_type="float" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>4402</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvDrive" id="1652210551" comment="Tries to set the drive mode" signature="void dvDrive()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>4552</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvPark" id="906134351" comment="Tries to set the mode to parking" signature="void dvPark()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>4701</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvThrottle" id="1707896361" comment="pushes the throttle with x % force" signature="void dvThrottle(float level)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="level" type="float" raw_type="float" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>4853</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvSpeedControlOn" id="220783469" comment="set the requested speed and switches speed control on" signature="void dvSpeedControlOn(float speed)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="speed" type="float" raw_type="float" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>5354</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvSpeedControlOff" id="2372098688" comment="stop speed control mode" signature="void dvSpeedControlOff()" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>5613</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvSetAgility" id="739757034" comment="set agility" signature="void dvSetAgility(enum eAgility agility)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="agility" type="enum eAgility" raw_type="eAgility" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>5749</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="dvSetRecuperation" id="3779514886" comment="set recuperation level" signature="void dvSetRecuperation(enum eRecuperation recuperation)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\Networkfolder\External Libraries\DriveUtilities\ca_DriverUtilities.can" SourceFilePersistencyGuid="7uud47eh3jaa" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="recuperation" type="enum eRecuperation" raw_type="eRecuperation" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>5912</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+</tclibrary>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <FileFormatVersion>1</FileFormatVersion>
+  <TestUnitName>CentralLockingSystemTest</TestUnitName>
+  <TestUnitUri>vtso://b6anpsa9odd1/13nqkdrr6o07</TestUnitUri>
+  <TsoProject>C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vtsoproj</TsoProject>
+  <TsoProjectRelative>.\..\..\..\..\..\..\..\..\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vtsoproj</TsoProjectRelative>
+  <ProjectGuid>b6anpsa9odd1</ProjectGuid>
+  <EditableSources>false</EditableSources>
+  <ContainsVsDll>false</ContainsVsDll>
+  <GlobalSysVarTypeLibBinary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="b6anpsa9odd1_cfg_sysvars.dll" /&gt;</GlobalSysVarTypeLibBinary>
+  <TestSysVarTypeLibBinary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="b6anpsa9odd1_TestSysVars.dll" /&gt;</TestSysVarTypeLibBinary>
+  <COTypeLibBinary></COTypeLibBinary>
+  <UserCaplExportTableHash>6359861895986911925</UserCaplExportTableHash>
+  <CaplArraySize>8192</CaplArraySize>
+  <CaplDiagArraySize>8192</CaplDiagArraySize>
+  <TraceItemsFile>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystem.vtraceitem" /&gt;</Source>
+  </TraceItemsFile>
+  <TestCaseAttributesFile>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystem.vattribute" /&gt;</Source>
+  </TestCaseAttributesFile>
+  <BuildInfo>
+    <CaplCompiler>15.3.89.0</CaplCompiler>
+    <MinRequiredCANoeVersion>12.0.167</MinRequiredCANoeVersion>
+    <TsoVersion>6.3.75.0</TsoVersion>
+    <NetApiVersion>15.3.89.0</NetApiVersion>
+    <NetFrameworkVersion>4.0</NetFrameworkVersion>
+    <PythonRuntimeVersion>3.9</PythonRuntimeVersion>
+  </BuildInfo>
+  <NetTypeLibGenerator>
+    <NamespaceGeneration>NoNamespace</NamespaceGeneration>
+    <NetTypeLibs />
+  </NetTypeLibGenerator>
+  <VariantProperties>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystemTest_ctrlvars1.vvarprop" /&gt;</Source>
+  </VariantProperties>
+  <Sources>
+    <CaplFiles>
+      <CaplFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Utilities.can" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Utilities.cbf" /&gt;</Binary>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\Utilities.can.export.xml" /&gt;</ExportTable>
+      </CaplFile>
+      <CaplTypeLibBinary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="13nqkdrr6o07_CA.dll" /&gt;</CaplTypeLibBinary>
+    </CaplFiles>
+    <CaplIncludeFiles />
+    <NetFiles>
+      <NetFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingTestLibrary.cs" /&gt;</Source>
+      </NetFile>
+      <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystemTest.dll" /&gt;</Binary>
+      <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\CentralLockingSystemTest_CS.export.xml" /&gt;</ExportTable>
+    </NetFiles>
+    <NetBinaries />
+    <VttFiles>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingSystemTester.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingSystemTester.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingSystemTester.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingSystemTester.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\LockingSystemTester.vtt.export.xml" /&gt;</ExportTable>
+      </VttFile>
+      <VttFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vtt" /&gt;</Source>
+        <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vxtx" /&gt;</Binary>
+        <CaplFile>
+          <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vxtx.can" /&gt;</Source>
+          <Binary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vxtx.cbf" /&gt;</Binary>
+        </CaplFile>
+        <ExportTable>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\VelocityWaveform.vwf.export.xml" /&gt;</ExportTable>
+      </VttFile>
+    </VttFiles>
+    <ParameterFiles>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestParameters.vparam" /&gt;</Source>
+      </ParameterFile>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VariantSpecificParameters.vparam" /&gt;</Source>
+      </ParameterFile>
+      <ParameterFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="DoorLockData.vct.vparam" /&gt;</Source>
+      </ParameterFile>
+      <ParamDbTypeLibBinary>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="13nqkdrr6o07_PA.dll" /&gt;</ParamDbTypeLibBinary>
+    </ParameterFiles>
+    <WaveformFiles>
+      <WaveformFile>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf" /&gt;</Source>
+      </WaveformFile>
+    </WaveformFiles>
+    <WaveformBinaries>
+      <WaveformBinary>
+        <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.sti" /&gt;</Source>
+      </WaveformBinary>
+    </WaveformBinaries>
+    <CaplDlls />
+    <PythonFiles />
+  </Sources>
+  <TestSysVar>
+    <Source>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</Source>
+  </TestSysVar>
+  <ExternalReferences />
+  <SutEnvironment>
+    <Networks>
+      <Network>
+        <Name>CAN</Name>
+        <ChannelType>CAN</ChannelType>
+        <Databases>
+          <Database>
+            <DatabaseFile>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="..\..\..\CANoeConfiguration\DataSources\comfort.dbc" /&gt;</DatabaseFile>
+            <DatabaseName>comfort</DatabaseName>
+            <OpenInfoString>*17*AFDXPDUMode*0*ASRNamesSuffixMode*0*ASRNormalizeTimings*0*ASRPDULayerMode*0*ASRShortNameUsage*0*ASRTextTableNamingMode*0*CalculateUpdateBit*0*DatabaseFile*C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\CANoeConfiguration\DataSources\comfort.dbc*DoNormalization*1*EncodingForNETStringConversions*0*FilterUnrecognizedNodes*0*FlexRayABMode*0*FlexRayPostfixOption*0*IgnoredNodes**IsConvertedLinDbc*0*IsLDFEditorMode*0*LanguageCode**LinChannelPostfix*1*NetworkName**NetworkType*0</OpenInfoString>
+          </Database>
+        </Databases>
+      </Network>
+    </Networks>
+    <UseAllNetworks>false</UseAllNetworks>
+  </SutEnvironment>
+  <TUProperties>
+    <Caption>Central locking system test</Caption>
+    <Description>Tests the states of the Central Locking System (CLS) that are depending on the lock/unlock requests by using the remote control within the key, and that are depending on the velocity and the crash sensor of the vehicle.</Description>
+    <Version>1.0</Version>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+    <TestDesigners>
+      <Columns>
+        <Column>
+          <Caption>Name</Caption>
+        </Column>
+        <Column>
+          <Caption>Department</Caption>
+        </Column>
+      </Columns>
+      <TestDesignerEntries>
+        <TestDesignerEntry>
+          <TestDesignerValues>
+            <TestDesignerValue>
+              <Value>Peter Tester</Value>
+            </TestDesignerValue>
+            <TestDesignerValue>
+              <Value>Test1</Value>
+            </TestDesignerValue>
+          </TestDesignerValues>
+        </TestDesignerEntry>
+        <TestDesignerEntry>
+          <TestDesignerValues>
+            <TestDesignerValue>
+              <Value>John Sample</Value>
+            </TestDesignerValue>
+            <TestDesignerValue>
+              <Value>Test2</Value>
+            </TestDesignerValue>
+          </TestDesignerValues>
+        </TestDesignerEntry>
+      </TestDesignerEntries>
+    </TestDesigners>
+    <TUInfos />
+  </TUProperties>
+  <NodeLayerDlls />
+  <UserFiles />
+  <TetEntries>
+    <TetEntry>
+      <Type>vtt</Type>
+      <Identifier>LockingSystemTester.vtt</Identifier>
+    </TetEntry>
+  </TetEntries>
+</Manifest>

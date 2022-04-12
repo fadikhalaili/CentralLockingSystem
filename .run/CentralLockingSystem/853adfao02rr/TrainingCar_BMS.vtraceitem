@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TraceItems>
+  <FileFormatVersion>4</FileFormatVersion>
+  <TraceItemsRoot>
+    <Folder>
+      <UniqueID>6b0f8ccc-a78c-4743-964a-8b817b5e8e03</UniqueID>
+      <ReadableID>V1</ReadableID>
+      <Product>BMS forTrainingCar</Product>
+      <VersionIdentification>24.02.2021 09:41:30</VersionIdentification>
+      <Name>Vehicle System</Name>
+      <Reference>NA</Reference>
+      <DataSource>Treq</DataSource>
+      <ChangeFlag>Modified</ChangeFlag>
+      <Folder>
+        <UniqueID>77383723-ac7e-42a8-b2f0-282c17d53471</UniqueID>
+        <ReadableID>CAR_DRIVING</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>25.05.2020 08:08:32</VersionIdentification>
+        <Name>Driving</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>c229f83a-1154-432b-b0d8-4ccabc92ff57</UniqueID>
+          <ReadableID>DRV_ACC_BRK</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>25.05.2020 08:09:03</VersionIdentification>
+          <Name>Acceleration and Braking</Name>
+          <Description>It is possible to accelerate the car to 100km/h and to brake till 0.0 km/h.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>cf8089ab-f237-43a0-8c52-da32f3fbf0ca</UniqueID>
+          <ReadableID>DRV_AGRE</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 06:53:10</VersionIdentification>
+          <Name>Agility / Recuperations modes can be combined </Name>
+          <Description>Every combination of drive mode (eco comfort sport) and recuperation (none medium max) shall be tested with an acceleration (full throttle) to 100km/h.
+
+During the test there shouldn't be any sigAlertControllerCurrentLimit alarm.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>6d06452e-16d6-4f3d-a999-46aaf91e39a8</UniqueID>
+          <ReadableID>DRV_RESP</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 06:59:10</VersionIdentification>
+          <Name>Recuperation in sport mode</Name>
+          <Description>When the variant is set to 'RACING' the sport mode shall not use any recuperation.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>615cf703-a005-4f62-8619-4dfe474d301d</UniqueID>
+        <ReadableID>V1</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>24.02.2021 09:22:03</VersionIdentification>
+        <Name>Driving User Behavior</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>43087bfe-18e2-483a-9c20-8293dd1c5770</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 08:49:37</VersionIdentification>
+          <Name>Start &amp; Brake</Name>
+          <Description>The car can be started with brake being pushed or not. It will enter the LIVING mode (Parking and ECUs running)</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>75126e84-2456-46a8-8030-c6d982803db3</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 09:25:33</VersionIdentification>
+          <Name>Toggling Start Button</Name>
+          <Description>ECUs have to survive toggling start attempts.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>2f6e43ea-78cb-4f07-a9b7-d149abaa2e7b</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 09:26:39</VersionIdentification>
+          <Name>Drive &amp; Brake Level</Name>
+          <Description>The car cannot be switched from PARKING to DRIVE when the brake is pushed with less than 60%.
+When the brake force is higher or equal to 60% the DRIVE mode is allowed.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>b3a48744-7a5e-4445-bd2b-b7587f498754</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 09:30:14</VersionIdentification>
+          <Name>Safety: Acceleration Conditions</Name>
+          <Description>The car cannot accelerate (throttle or speed control)  when in
+- PARKING &amp; Brake 100%
+- PARKING &amp; Brake 0%
+- CAR is switched OFF 
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>feb1f4a8-f9de-4164-a5f9-19a89ae9b22e</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 09:34:29</VersionIdentification>
+          <Name>Car Acceleration</Name>
+          <Description>car shall accelerate when in DRIVE mode and
+- Brake=100 and then Throttle is pushed (Brake is then released)
+- Brake=0 and then Throttle is pushed (Brake is then released)
+- Brake is 0 and speed control activated
+
+The Car shall not accelerate when brake &gt;60 and Speed control switched on.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>b7870ada-2814-42c6-b7df-002d83bc88e2</UniqueID>
+          <ReadableID>V1</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>24.02.2021 09:37:51</VersionIdentification>
+          <Name>Parking while the Car is running</Name>
+          <Description>when speed &gt; 0.0  the 'crazy driver' shall not be able to enter the PARKING mode when
+- brake is released
+- brake is 10%
+- brake is 100%
+
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+    </Folder>
+    <Folder>
+      <UniqueID>e46caa8b-e556-4d59-b5a1-a2d4c67d8f98</UniqueID>
+      <ReadableID>V1</ReadableID>
+      <Product>BMS forTrainingCar</Product>
+      <VersionIdentification>17.03.2020 06:56:54</VersionIdentification>
+      <Name>BMS Requirements</Name>
+      <Reference>NA</Reference>
+      <DataSource>Treq</DataSource>
+      <ChangeFlag>Modified</ChangeFlag>
+      <Folder>
+        <UniqueID>b959f698-aa56-4b0c-abf9-5c416ef931e9</UniqueID>
+        <ReadableID>BMS_AF</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 06:18:50</VersionIdentification>
+        <Name>Alarm forwarding</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>ec8b65ef-c8c1-4160-a528-f68bb9bf29e1</UniqueID>
+          <ReadableID>BMS_ALF_00_SC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 06:48:11</VersionIdentification>
+          <Name>BPC_00  sigAlertShortcut forwarding</Name>
+          <Description> pduStateBPC_00::sigAlertShortcut has to be forwarded to frmAlarmsBPC_00::sigAlertShortcut.
+The BMS processing time shall be &lt; 50ms.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>7fe8431d-978c-4185-b11e-c0478ef37d73</UniqueID>
+          <ReadableID>BMS_ALF_01_SC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 08:06:58</VersionIdentification>
+          <Name>BPC_01  sigAlertShortcut forwarding</Name>
+          <Description>pduStateBPC_01::sigAlertShortcut has to be forwarded to frmAlarmsBPC_01::sigAlertShortcut.
+The BMS processing time shall be &lt; 50ms.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>8fd0edf0-845a-456b-ab78-3334a04bc65d</UniqueID>
+          <ReadableID>BMS_ALF_01_BP</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 08:06:54</VersionIdentification>
+          <Name>BPC_01  sigAlertBypass forwarding</Name>
+          <Description>pduStateBPC_01::sigAlertBypass has to be forwarded to frmAlarmsBPC_01::sigAlertBypassed
+The BMS processing time shall be &lt; 50ms.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>742ca679-cfa7-4a79-8a36-2af077aba527</UniqueID>
+          <ReadableID>ALF_XX_BP</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:01:14</VersionIdentification>
+          <Name>Bypass alarms shall be forwarded</Name>
+          <Description>For all BPCs the bypass alarm shall be forwarded.
+BMS processing time shall be &lt; 50ms.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>13dc282b-815d-48a8-a2ae-212b09c41b79</UniqueID>
+          <ReadableID>ALF_XX_SC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>07.05.2020 10:55:41</VersionIdentification>
+          <Name>Shortcut alarms shall be forwarded</Name>
+          <Description>For all BPCs the shortcut alarm shall be forwarded.
+The BMS processing time shall be &lt; 50ms.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>faea71d9-8092-4a34-bfdc-d7ecad6be0ed</UniqueID>
+        <ReadableID>BMS_BV</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 09:16:45</VersionIdentification>
+        <Name>Battery Voltage</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>12ea6f32-a0c4-4100-8bb3-4def8fa6358b</UniqueID>
+          <ReadableID>PROC_BV</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 09:17:13</VersionIdentification>
+          <Name>Every BPC voltage contributes to sigBatteryVoltage</Name>
+          <Description>BMS shall calculate the sigBatteryVoltage from all BPC 00-15 pack voltages.
+
+for each BPC in  [BPC_00...BPC_15]
+   for each BaseVoltage  in [15 , 20, 32]
+       for each ProbeVoltage  18, 24, 36, 42
+              set sysvar::VehicleControl::All_BPC::CellPackVoltage to BaseVoltage  
+              wait 500ms
+              set BPC.sigBpcVoltage to ProbeVoltage  
+              check that the batteryVoltage == 15*BaseVoltage   + ProbeVoltage   // CAPL calculation is argument
+
+During this test the requirement frmBatteryState cycle time shall be checked.
+
+
+
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>5f6488ce-2217-4447-b481-d957b9c582c3</UniqueID>
+        <ReadableID>BMS_UB</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 11:22:25</VersionIdentification>
+        <Name>Unbalanced Alarm</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>1c7dbd2c-ec52-46f8-8942-9e03ccc9ea5e</UniqueID>
+          <ReadableID>PRO_UA</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:22:56</VersionIdentification>
+          <Name>Unbalanced Alarm</Name>
+          <Description>For every BPC the BMS creates an unbalanced alarm when 
+
+sigCellColtageMax - sigCellVoltageMin &gt; Threshold.
+
+The threshold in [V] depends on internal BPC conditions
+- sigTemperature
+- sigCellVoltageMin
+
+
+                         &lt; 2.8  V             &lt;3.6 V              other          sigCellVoltageMin [Volt]
+&lt; 5 °C                  0.1                  0.04                 0.13
+ other  °C             0.15                0.06                 0.17
+
+
+E.g. at T=-10°C and V = 3.0V  the threshold is 0.1V
+
+
+The test procedure should use 
+- a classification tree to describe the above table
+- a struct list to keep all needed signal references for  the BPCs
+- a test sequence that is called for all BPCs 
+- In the test sequence the test procedure (see below)  is done with the data from the classification tree 
+  and the signal references for one BPC
+- a test procedure
+  ttc_UnbalanceAlarm (pSigMinVoltage, pSigMaxVoltage,pSigTempature, pSigUnbalanced, 
+                                    pMinVoltage, pTemperature, pThreshold)
+  with a proceeding like this:
+
+      pSigTemperature &lt;-  pTemperature // set the temperature of the BPC
+      pSigMinVoltage &lt;- MinVoltage
+
+vary the maxVoltage aroung PminVoltage+threshold and check the alarm
+
+It shall be executed for all BPCs, temperatures, minVoltages. </Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>003b55ff-2b59-40ee-99d0-9f4a14d92932</UniqueID>
+          <ReadableID>PRO_SUA</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>19.05.2020 12:33:11</VersionIdentification>
+          <Name>Unbalanced Summary Alarm</Name>
+          <Description>As soon as one or more unbalanced alarm is detected BMS shall set the sigAlertAnyUnbalanced alarm on PowerTrain.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>6f6ed9a6-1536-4888-b648-2fe46bd9c8a6</UniqueID>
+        <ReadableID>BMS_CO</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>14.05.2020 13:16:42</VersionIdentification>
+        <Name>Communication</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>456a9523-c108-4be0-84e2-30384e79b122</UniqueID>
+          <ReadableID>BMS_CO_CY</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>14.05.2020 13:18:04</VersionIdentification>
+          <Name>frmBatteryState cycle time</Name>
+          <Description>The frmBatteryState cycle for must be +/- 5% the database settings.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>08c203c9-89e1-476f-9863-54772674255d</UniqueID>
+        <ReadableID>V1</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>28.05.2020 12:33:02</VersionIdentification>
+        <Name>Battery State</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>8443923c-0503-4fc4-b7e5-6c1100a191ab</UniqueID>
+          <ReadableID>BMS_BS_CL</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>28.05.2020 12:33:26</VersionIdentification>
+          <Name>Battery State Charge Level</Name>
+          <Description>The BMS shall report the following states:
+
+FULL :          every BPC sends a BPC voltage 33 V
+NORMAL:    every BPC sends a BPC voltage  27 V
+CRITICAL:   every BPC sends a BPC voltage  21 V 
+DEEPLY:     every BPC sends a BPC voltage  18 V
+
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>07b72177-5751-4ff1-9b89-37ee7cce6b43</UniqueID>
+          <ReadableID>BMS_BS_BYPA</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>28.05.2020 12:42:03</VersionIdentification>
+          <Name>Battery State and Bypassed BPCs</Name>
+          <Description>As soon as one or more BPCs is in Bypassed Mode, the state shall be
+BYPASSED.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>f18e0513-f73f-43c8-a43c-1635a669efef</UniqueID>
+          <ReadableID>BMS_BS_SCU</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>28.05.2020 12:43:26</VersionIdentification>
+          <Name>Battery State and Shortcut BPC</Name>
+          <Description>As soon as one or more BPCs are in Shortcut mode, the state shall be
+SHORTCUT</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>57a0c6a2-b128-418c-bea0-c7bb9e6031fa</UniqueID>
+          <ReadableID>BMS_BS_PRIO</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>28.05.2020 12:44:57</VersionIdentification>
+          <Name>Battery State Priority</Name>
+          <Description>From highest to lowest priority:
+
+DEEPLY DISCHARGED
+SHORTCUT
+BYPASSED
+CRITICAL
+NORMAL
+FULL
+
+i.e. when a BPC is in ShortCut and the battery is deeply disscharged the state is DEEPLY DISCHARGED.
+
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>d4cef0d0-019d-4aae-b96b-fc3d2b2256f8</UniqueID>
+          <ReadableID>BMS_BS_LED</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>28.05.2020 12:48:43</VersionIdentification>
+          <Name>Battery State External LED Indicator</Name>
+          <Description>At the battery  housing an LED group shall indicate the state:
+
+LED fatal:            BYPASSED or DEEPLEY DISSCHARGED or SHORTCUT
+LED critical:         CRITICAL or NORMAL or FULL
+LED normal:         NORMAL or FULL
+LED full:               FULL
+
+When an LED is switched on the BMS provides a voltage of 5.0 V +/- 100mV at the IO pin.
+In OFF mode the voltage is +/-80mV.
+
+The I/O voltages shall be observed with a VT1004 Module.
+
+Naming must be exactly like this:
+
+Module name: BatteryStateIndicator
+Channel1:       BatteryStateFatal
+Channel2:       BatteryStateCritical
+Channel3:       BatteryStateNormal
+Channel4:       BatteryStateFull
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+    </Folder>
+    <Folder>
+      <UniqueID>2f79f184-d43c-4ae4-9145-64f16ed28577</UniqueID>
+      <ReadableID>BPC</ReadableID>
+      <Product>BMS forTrainingCar</Product>
+      <VersionIdentification>02.06.2020 13:02:55</VersionIdentification>
+      <Name>BPC </Name>
+      <Reference>NA</Reference>
+      <DataSource>Treq</DataSource>
+      <ChangeFlag>Modified</ChangeFlag>
+      <Folder>
+        <UniqueID>287cc6eb-9df9-4ffd-9cd1-5c29cb293867</UniqueID>
+        <ReadableID>BPC_DIAG</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>02.06.2020 13:02:14</VersionIdentification>
+        <Name>Diagnostics</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>54158bab-d619-4517-9b7b-cdb811fb4116</UniqueID>
+          <ReadableID>BPC_SNR</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 13:03:49</VersionIdentification>
+          <Name>Serial Number can be read</Name>
+          <Description>The serial number cn b read from BPC_00 with 
+
+Service = SerialNumber_Read
+</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+    </Folder>
+    <Folder>
+      <UniqueID>0cf125a7-595f-419f-88c1-24223ecd7701</UniqueID>
+      <ReadableID>V1</ReadableID>
+      <Product>BMS forTrainingCar</Product>
+      <VersionIdentification>17.03.2020 06:47:14</VersionIdentification>
+      <Name>Trainee Requirements</Name>
+      <Reference>NA</Reference>
+      <DataSource>Treq</DataSource>
+      <ChangeFlag>Modified</ChangeFlag>
+      <Folder>
+        <UniqueID>be142600-aa3d-4ac7-a14b-fd1c31b12625</UniqueID>
+        <ReadableID>UR_Basic</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 06:49:23</VersionIdentification>
+        <Name>Basic</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>783f19fe-bb31-4930-8660-f4e39d2748c9</UniqueID>
+          <ReadableID>UR_Setup</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 06:49:42</VersionIdentification>
+          <Name>vTESTstudio Project Setup done</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>77368225-2613-4afc-9506-24aad3db0d7c</UniqueID>
+          <ReadableID>UR_Folder</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.06.2020 09:12:10</VersionIdentification>
+          <Name>Folder created</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>5c29606f-a34e-4e40-9c25-fc4056b7f897</UniqueID>
+          <ReadableID>UR_FiTC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 06:51:23</VersionIdentification>
+          <Name>FirstTest Case created</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>a8bf6dff-da5c-4fbd-8f65-60ef24d1dad9</UniqueID>
+          <ReadableID>UR_FIX</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.06.2020 09:11:24</VersionIdentification>
+          <Name>Test Fixture created</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>b3cfe4c6-ca60-43a9-bb07-a073143780ee</UniqueID>
+          <ReadableID>UR_Configurations</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>06.05.2020 09:30:54</VersionIdentification>
+          <Name>CANoe Test Unit Configuration configured</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>0e554286-f727-4c04-bc2e-f75aaa52b753</UniqueID>
+          <ReadableID>UR_AF1-5</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 06:58:50</VersionIdentification>
+          <Name>Alarm Forwarding Bugs 1-5 detected</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>63409487-c064-4121-9a54-4349f2991b76</UniqueID>
+        <ReadableID>UR_Functions</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 08:10:32</VersionIdentification>
+        <Name>Functions</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>586d5a1d-ae4f-4b7e-832d-5a9124f77967</UniqueID>
+          <ReadableID>UR_TF</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 08:10:20</VersionIdentification>
+          <Name>First test table function created</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>7c915fd3-7dd9-4caa-8f91-e5bbc876b00e</UniqueID>
+          <ReadableID>UR_TC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>03.04.2020 12:47:38</VersionIdentification>
+          <Name>A  test case in the function area created</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>bb820ed4-1725-402b-8a04-82998edc68ec</UniqueID>
+          <ReadableID>UR_TC+TF</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>11.05.2020 08:55:56</VersionIdentification>
+          <Name>Test case uses a function</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>3fe348c6-dc09-42aa-a56d-b66909d0f983</UniqueID>
+          <ReadableID>UR_BOF</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>03.04.2020 12:49:59</VersionIdentification>
+          <Name>Break On Fail is activated / deactivated</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>32d64900-9d14-4702-ba29-de5c69c27c2a</UniqueID>
+          <ReadableID>UR_AF6</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 09:03:30</VersionIdentification>
+          <Name>Alarm Forwarding Bug 6 detected</Name>
+          <Description>With the "Testing Failures" panel,  "Alarm Forwarding 5-8" you can simulate  further different failures. 
+
+Is your test clearly indicating what is going wrong? Does it detect all problems?
+
+Failure 6: Even if your tester does not detect any probblem there is one. Look at the graphics window!
+Failure 7 + 8: Even if your tester does not detect any probblem and the graphic windows might not give you a clue. 
+    There are bugs - look at the graphics window when you extend the shortcut alarm on time to 500ms.
+
+ </Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>f1b8eea6-6ba7-4e12-872f-7da4ae51c1a7</UniqueID>
+        <ReadableID>UR_LISTS</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 10:07:15</VersionIdentification>
+        <Name>Parameter</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>9e80754c-6fa8-4a3d-8ddd-cff8ba758f09</UniqueID>
+          <ReadableID>UR_SL</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>11.05.2020 08:20:13</VersionIdentification>
+          <Name>Creation of Struct Lists and Application</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>d03be3d9-9850-4b4b-a5f1-bd730eaf3b34</UniqueID>
+          <ReadableID>UR_AF_BUGS</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 10:37:26</VersionIdentification>
+          <Name>Fault Detection Alarm Forwarding</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>289ded8e-0e86-4d7f-8538-de385fb8f3e6</UniqueID>
+          <ReadableID>UR_PL</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 10:07:21</VersionIdentification>
+          <Name>Parameter List Creation</Name>
+          <Description>You are able to create parameter lists.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>94dcec33-9660-4444-b110-7f97277bfc55</UniqueID>
+          <ReadableID>UR_COLI</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 10:13:52</VersionIdentification>
+          <Name>Parameter lists and combinatorial</Name>
+          <Description>You are able to use parameter list in combinatorial mode</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>0b5398b2-6d3e-4065-88a7-8c9faa7d3e78</UniqueID>
+          <ReadableID>UR_TFP</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 10:10:11</VersionIdentification>
+          <Name>Test Fixture with Preparation</Name>
+          <Description>You are able to create Test Fixtures with a preparation block</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>dfe0ed01-4d4f-494f-adc1-0a5bb30c371f</UniqueID>
+          <ReadableID>UR_BO</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 10:56:45</VersionIdentification>
+          <Name>Background Observation</Name>
+          <Description>While the test is running the cycle time of frmBatteryState shall be observed.
+The deviation from the database may be up to +/- 3%.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>156b6079-d1dc-497f-b7d6-c88cfe0e4d8c</UniqueID>
+        <ReadableID>UR_SLIST</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 10:06:53</VersionIdentification>
+        <Name>Struct List</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>2336c33e-7627-4ad6-abff-6599c592c1dc</UniqueID>
+          <ReadableID>UR_SL</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:10:22</VersionIdentification>
+          <Name>Struct List Creation</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>b2b207fd-3a86-4ec0-8c13-2bf6f007a94b</UniqueID>
+          <ReadableID>UR_SLU</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:12:05</VersionIdentification>
+          <Name>Struct List Usage</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>0e367b33-8491-4dd6-a99f-defcd51a08f3</UniqueID>
+        <ReadableID>UR_CLASSTREE</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>17.03.2020 11:21:54</VersionIdentification>
+        <Name>Classification Tree</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>2044b599-3304-488f-ae43-361cfe000435</UniqueID>
+          <ReadableID>UR_EC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:33:22</VersionIdentification>
+          <Name>You can use External Components</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>1303b187-0985-40e9-a0f6-3a3302261e1a</UniqueID>
+          <ReadableID>UR_UA_BUGS</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>17.03.2020 11:39:38</VersionIdentification>
+          <Name>Fault Detection Classification Tree </Name>
+          <Description>You've found all problems 1-5.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>63ee9460-970b-45b5-82f2-f2f1276bbb96</UniqueID>
+          <ReadableID>UR_CL_EXT</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 12:54:27</VersionIdentification>
+          <Name>Extension of ttf_Unbalanced</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>21827d32-97a5-45ee-aa87-73327194cf4e</UniqueID>
+          <ReadableID>UR_UA_BUG_6</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 12:55:29</VersionIdentification>
+          <Name>Details for bug 6</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>00b3b03f-c726-4a43-9612-21e210f6d04a</UniqueID>
+        <ReadableID>UR_VAR</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>02.06.2020 13:08:58</VersionIdentification>
+        <Name>Variants</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>7df7b7f1-05e0-4efa-a561-3e4ea8323e9a</UniqueID>
+          <ReadableID>UR_VAR_CRE</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 13:09:23</VersionIdentification>
+          <Name>Variant Creation</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>8987de29-1e46-4596-bd36-4314df1e9a3c</UniqueID>
+          <ReadableID>UR_DIAG_SERV</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 13:09:57</VersionIdentification>
+          <Name>Diagnostics Service</Name>
+          <Description>Can be applied</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>653210ab-c535-45a4-8ea1-69485685acdd</UniqueID>
+        <ReadableID>CAPL</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>20.05.2020 12:35:31</VersionIdentification>
+        <Name>CAPL</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>ad2042d8-9270-4e73-b3e6-94adb9709bb3</UniqueID>
+          <ReadableID>UR_CAPL</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>20.05.2020 12:35:55</VersionIdentification>
+          <Name>Faster Shortcut Alarm Testing </Name>
+          <Description>You are able to program CAPL  libraries.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>53c080e3-24b8-4155-a193-51a9d5b1d004</UniqueID>
+        <ReadableID>UR_Diagrams</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>26.05.2020 07:06:45</VersionIdentification>
+        <Name>Diagrams</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>77a079d6-20b3-4327-b4fb-0b7e3ebb5724</UniqueID>
+          <ReadableID>UR_SIDI</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 07:06:53</VersionIdentification>
+          <Name>You can create simple diagrams</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>77772610-ff0a-4093-b031-652ca8ab8ac7</UniqueID>
+          <ReadableID>UR_PAPAMUX</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 07:07:47</VersionIdentification>
+          <Name>You can use partial paths and multiplexers</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>3f5c6d5b-c85b-4b37-85bc-7c79982b2bf8</UniqueID>
+          <ReadableID>UR_VADEC</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 07:08:50</VersionIdentification>
+          <Name>You are able to take variant decsions</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+        <TraceItem>
+          <UniqueID>4ea654e7-7386-404d-9abb-e3d2f7768008</UniqueID>
+          <ReadableID>UR_ANNO</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>26.05.2020 07:40:54</VersionIdentification>
+          <Name>You are able to annotate a diagram</Name>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+      <Folder>
+        <UniqueID>16a19bc9-9d6b-4881-a95c-de17a29ea8ee</UniqueID>
+        <ReadableID>UR_REUS</ReadableID>
+        <Product>BMS forTrainingCar</Product>
+        <VersionIdentification>02.06.2020 13:48:05</VersionIdentification>
+        <Name>Reuse</Name>
+        <Reference>NA</Reference>
+        <DataSource>Treq</DataSource>
+        <ChangeFlag>Modified</ChangeFlag>
+        <TraceItem>
+          <UniqueID>df78cf2a-be61-473c-86ad-75ac68f6282e</UniqueID>
+          <ReadableID>UR_GEN_GWT</ReadableID>
+          <Product>BMS forTrainingCar</Product>
+          <VersionIdentification>02.06.2020 13:49:33</VersionIdentification>
+          <Name>Generic Gateway Test</Name>
+          <Description>You are able to integrate a generic test library.</Description>
+          <Reference>NA</Reference>
+        </TraceItem>
+      </Folder>
+    </Folder>
+  </TraceItemsRoot>
+</TraceItems>

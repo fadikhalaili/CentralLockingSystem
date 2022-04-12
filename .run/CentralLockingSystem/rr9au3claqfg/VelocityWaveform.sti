@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SignalDescriptionFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hilnormung.de/stimulusgeneration/stimulusfile SignalDescriptionFormat.xsd" version="1" xmlns="http://www.hilnormung.de/stimulusgeneration/stimulusfile">
+    <SignalDescriptionSet>
+        <SignalDescription name="LockAutomaticallyTester::StimulateVelocity" id="ID_SIGNAL_LockAutomaticallyTester::StimulateVelocity">
+            <SegmentSignalDescription>
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>1.5</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>0</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>50</Value>
+                    </Stop>
+                </RampSegment>
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>0.5</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>50</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>50</Value>
+                    </Stop>
+                </RampSegment>
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>1.5</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>50</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>0</Value>
+                    </Stop>
+                </RampSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+        <SignalDescription name="LockAutomaticallyTester::ExpectedLockState" id="ID_SIGNAL_LockAutomaticallyTester::ExpectedLockState">
+            <SegmentSignalDescription>
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>1.5</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>0</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>0</Value>
+                    </Stop>
+                </RampSegment>
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>2</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>1</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>1</Value>
+                    </Stop>
+                </RampSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+    </SignalDescriptionSet>
+</SignalDescriptionFile>
+

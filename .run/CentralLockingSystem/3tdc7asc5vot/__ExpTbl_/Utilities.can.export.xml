@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testfunction name="AccelerateDecelerateToTargetSpeed" id="1702117505" comment="Simulates increasing/decreasing velocity slowly as if controlled by driver." signature="testfunction AccelerateDecelerateToTargetSpeed(float targetSpeed)" file="C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can" SourceFilePersistencyGuid="7mrblem9tbhn" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="targetSpeed" type="float" raw_type="float" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>134</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </testfunction>
+</tclibrary>

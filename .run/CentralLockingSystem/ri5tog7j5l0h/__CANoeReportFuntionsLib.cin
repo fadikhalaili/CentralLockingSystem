@@ -1,0 +1,946 @@
+﻿/* !Encoding: 65001  */
+variables
+{
+  enum EnumNumRep { EnumHexRepresentation = 0, EnumDecRepresentation = 1};
+  char __cArrayCell[8192];
+  long __tableHandle;
+  long __numRepresentation = EnumDecRepresentation;
+  long __bSetInCheckAlignment = 0;
+}
+
+
+void __ReportCell(char value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%d", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], char rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%d (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(byte value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%u", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], byte rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%u", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%u (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(int value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%ld", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], int rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%ld", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%ld (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(word value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%lu", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], word rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%lu", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%lu (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(long value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%ld", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], long rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%ld", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%ld (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(dword value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%lu", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], dword rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%lu", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%lu (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(int64 value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%I64d", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], int64 rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%I64d", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%I64d (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(qword value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%I64u", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], qword rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%I64u", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%I64u (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(float value)
+{
+  snprintf(__cArrayCell, elcount(__cArrayCell), "%.15g", value);
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], float rValue, char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%.15g", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%.15g (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle,__cArrayCell);
+}
+
+void __ReportCell(char value[])
+{
+  testInfoCell(__tableHandle, value);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], char rValue[], char rValueName[])
+{
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s", rValue);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s (%s)", rValue, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+void __ReportCell(byte bytes[], long count)
+{
+  const long dataMaxDisplayCnt = 32;
+  const long textCount = dataMaxDisplayCnt * 3 + 15;
+  char text[textCount];
+  WriteHexDataToStrBuf(text, textCount, bytes, count);
+  testInfoCell(__tableHandle, text);
+}
+
+void __ReportTableRow(long indent, char lValueReport[], char op[], byte rValue[], long valueInCnt, char rValueName[])
+{
+  const long dataStrBufCount = 32*3 + 15;
+  char dataStrBuf[dataStrBufCount];
+  WriteHexDataToStrBuf(dataStrBuf, dataStrBufCount, rValue, valueInCnt);
+
+  __ReportLValue(indent, lValueReport, op);
+
+  if (strlen(rValueName) == 0)
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s", dataStrBuf);
+  else
+    snprintf(__cArrayCell, elCount(__cArrayCell), "%s (%s)", dataStrBuf, rValueName);
+
+  if (__bSetInCheckAlignment)
+    testInfoCell(__tableHandle, __cEmpty);
+
+  testInfoCell(__tableHandle, __cArrayCell);
+}
+
+__Report2CANoeString(char report[], char leftSide[], char operator[], char rValue[], char rName[])
+{
+  if (strlen(rName) == 0)
+    snprintf(report, elCount(report), "%s %s %s", leftSide, operator, rValue);
+  else
+    snprintf(report, elCount(report), "%s %s %s (%s)", leftSide, operator, rValue, rName);
+}
+
+__Report2CANoeString(char report[], char leftSide[], char operator[], char rightSide[])
+{
+  snprintf(report, elCount(report), "%s %s %s", leftSide, operator, rightSide);
+}
+
+
+void __ReportSetLValueOrSignalNotOnline(signal * sig, char inReport[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", inReport, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", inReport);
+}
+
+void __ReportSetLValueOrSignalNotOnline(serviceSignalNumber * sig, char inReport[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", inReport, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", inReport);
+}
+
+void __ReportSetLValueOrSignalNotOnline(serviceSignalString * sig, char inReport[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", inReport, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", inReport);
+}
+
+void __ReportSetLValueOrSignalNotOnline(serviceSignalData * sig, char inReport[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", inReport, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", inReport);
+}
+
+
+void __ReportRNameOrSignalNotOnline(signal * sig, char sigName[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", sigName, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", sigName);
+}
+
+void __ReportRNameOrSignalNotOnline(serviceSignalNumber * sig, char sigName[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", sigName, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", sigName);
+}
+
+void __ReportRNameOrSignalNotOnline(serviceSignalString * sig, char sigName[], char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s %s", sigName, __cNotOnlineYet);
+  else
+    snprintf(report, 8192, "%s", sigName);
+}
+
+void __ReportRNameOrSignalNotOnline(serviceSignalData * sig, char sigName[], char report[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(report, 8192, "%s %s", sigName, __cNotOnlineYet);
+  else
+   snprintf(report, 8192, "%s", sigName);
+}
+
+void __ReportLValueOrSignalNotOnline(signal * sig, char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s", __cNotOnlineYet);
+  else
+    WriteToBuffer($sig.phys, report, elCount(report)); 
+}
+
+void __ReportLValueOrSignalNotOnline(serviceSignalNumber * sig, char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s", __cNotOnlineYet);
+  else
+    WriteToBuffer($sig.phys, report, elCount(report)); 
+}
+
+void __ReportLValueOrSignalNotOnline(serviceSignalString * sig, char report[])
+{
+  if (0 == getSignalTime(sig))
+    snprintf(report, 8192, "%s", __cNotOnlineYet);
+  else
+    getServiceSignalString(sig, report, elCount(report));
+}
+
+void __ReportLValueOrSignalNotOnline(serviceSignalData * sig, char report[])
+{
+  if (0 == getSignalTime(sig))
+   snprintf(report, 8192, "%s", __cNotOnlineYet);
+  else
+  {
+    byte data[8192];
+    long dataLen;
+    dataLen = getServiceSignalData(sig, data, elCount(data));
+    WriteToBuffer(data, dataLen, report, elCount(report));
+  }
+}
+
+void __ReportCell(signal * rValueAsSignal, float rValuePhys)
+{
+  if (0 == getSignalTime(rValueAsSignal))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell(rValuePhys);
+}
+
+
+void __ReportCellResult(long condition, int flag)
+{
+  if(condition)
+    if (flag)
+     testInfoCell(__tableHandle, "pass");
+    else
+     testInfoCell(__tableHandle, "true");
+  else
+  {
+    if (flag)
+      testInfoCell(__tableHandle, "fail");
+    else
+      testInfoCell(__tableHandle, "false");
+  }
+}
+
+void __ReportLValue(long indent, char lValueReport[], char op[])
+{
+  if (__oneOfFlag == 0)
+  {
+    testInfoRow(__tableHandle, indent, lValueReport);
+    testInfoCell(__tableHandle, op);
+  }
+  else if (__oneOfFlag == 1)
+  {
+    testInfoRow(__tableHandle, indent,  lValueReport);
+    testInfoCell(__tableHandle, "One Of");
+  }
+  else if (__oneOfFlag == 2)
+  {
+    testInfoRow(__tableHandle, indent, "");
+    testInfoCell(__tableHandle, "");
+  }
+}
+
+void __ReportTableHead2Columns(char caption[], char c1[], char c2[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead3Columns(char caption[], char c1[], char c2[], char c3[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead4Columns(char caption[], char c1[], char c2[], char c3[], char c4[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead5Columns(char caption[], char c1[], char c2[], char c3[], char c4[], char c5[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoCell(__tableHandle, c5);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableHead6Columns(char caption[], char c1[], char c2[], char c3[], char c4[], char c5[], char c6[])
+{
+  __tableHandle = testInfoTable(caption);
+  testInfoHeadingBegin(__tableHandle, 0);
+  testInfoCell(__tableHandle, c1);
+  testInfoCell(__tableHandle, c2);
+  testInfoCell(__tableHandle, c3);
+  testInfoCell(__tableHandle, c4);
+  testInfoCell(__tableHandle, c5);
+  testInfoCell(__tableHandle, c6);
+  testInfoHeadingEnd(__tableHandle);
+}
+
+void __ReportTableEndTestStep(char step[])
+{
+  testStep(2, step, __tableHandle, 0, 0);
+}
+
+void __ReportTableEndVerdict(char step[], long verdict)
+{
+  if(verdict == __eVerdictPass)
+  {
+    testStepPass(2, step, __tableHandle);
+  }
+  else
+  {
+    testStepFail(0, step, __tableHandle);
+  }
+}
+
+void __ReportConditionTableHead(char inCondition[], int bCondition)
+{
+  char buffer[8192];
+
+  snprintf(buffer, elCount(buffer), "%s: ", inCondition);
+  if(bCondition)
+    strncat(buffer, "true", elCount(buffer));
+  else
+    strncat(buffer, "false", elCount(buffer));
+
+  __ReportTableHead5Columns(buffer, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+}
+
+void __ReportTableEndCondition(char testStepName[])
+{
+  testStepWithName(testStepName, 2, __cEmpty, __tableHandle, 0, 2);
+}
+
+void __ReportTableEndCondition(char testStepName[], int restriction)
+{
+  testStepWithName(testStepName, 2, __cEmpty, __tableHandle, 0, restriction);
+}
+
+void __ReportTableEndCondition()
+{
+  testStep(2, __cEmpty, __tableHandle, 0, 2);
+}
+
+void __ReportAwaitSignalsAvailableRow(long indent, long eventId, char reportIdent[])
+{
+  testInfoRow(__tableHandle,indent, reportIdent);
+  if (eventId >= 0)
+  {
+    if (eventId == 0)
+    {
+      testInfoCell(__tableHandle, "already online");
+      __ReportCellResult(1, 1);
+    }
+    else
+    {
+      int64 time;
+      long occurred;
+      occurred = testGetJoinedEventOccured(eventId, time);
+      if (occurred)
+         testInfoCell(__tableHandle, "online");
+      else
+        testInfoCell(__tableHandle, __cNotOnlineYet);
+      __ReportCellResult(occurred, 1);
+    }
+  }
+  else
+  {
+     testInfoCell(__tableHandle, "-", 1);
+    __ReportCellResult(0, 1);
+  }
+}
+
+void __ReportRequestResponseResult(long res, long expectTimeout)
+{
+  char buffer[8192];
+  
+  if (res < 0)
+  {
+    switch (res)
+    {
+      case -1:
+      default:
+        testStepErrorInTestSystem(0, "Resp", "Error waiting for response parameter(s) (code: %d).", res);
+        break;
+      case -2:
+        testStepFail(0, "Resp", "Constraint violation while waiting for response parameter(s) (code: %d).", res);
+        break;
+      case -999:
+        testStepInconclusive(0, "Resp", "Condition aborted while waiting for response parameter(s) (code: %d).", res);
+        break;
+    }
+    return;
+  }
+  if (res == 0)
+    snprintf(buffer, elCount(buffer), "Timeout waiting for response parameter(s).");
+  else
+    snprintf(buffer, elCount(buffer), "Response received successfully.");
+  if(expectTimeout ? (res == 0) : (res > 0))
+    testStepPass(0, "Resp", buffer);
+  else
+    testStepFail(0, "Resp", buffer);
+}
+
+
+void __ReportRange(int64 minValue, int64 maxValue, char minValueReport[], char maxValueReport[], char output[])
+{
+  char cMinValue[64];
+  char cMaxValue[64];
+    
+  snprintf(cMinValue, 64, "%I64d", minValue);
+  snprintf(cMaxValue, 64, "%I64d", maxValue);
+
+  __ReportRange(cMinValue, cMaxValue, minValueReport, maxValueReport, output);
+}
+
+void __ReportRange(int64 minValue, double maxValue, char minValueReport[], char maxValueReport[], char output[])
+{
+  char cMinValue[64];
+  char cMaxValue[64];
+    
+  snprintf(cMinValue, 64, "%I64d", minValue);
+  snprintf(cMaxValue, 64, "%.15g", maxValue);
+
+  __ReportRange(cMinValue, cMaxValue, minValueReport, maxValueReport, output);
+}
+
+void __ReportRange(double minValue, int64 maxValue, char minValueReport[], char maxValueReport[], char output[])
+{
+  char cMinValue[64];
+  char cMaxValue[64];
+    
+  snprintf(cMinValue, 64, "%.15g", minValue);
+  snprintf(cMaxValue, 64, "%I64d", maxValue);
+
+  __ReportRange(cMinValue, cMaxValue, minValueReport, maxValueReport, output);
+}
+
+void __ReportRange(double minValue, double maxValue, char minValueReport[], char maxValueReport[], char output[])
+{
+  char cMinValue[64];
+  char cMaxValue[64];
+    
+  snprintf(cMinValue, 64, "%.15g", minValue);
+  snprintf(cMaxValue, 64, "%.15g", maxValue);
+
+  __ReportRange(cMinValue, cMaxValue, minValueReport, maxValueReport, output);
+}
+
+void __ReportRange(char minValue[], char maxValue[], char minValueReport[], char maxValueReport[], char output[])
+{
+  if ((strlen(minValueReport) == 0) && (strlen(maxValueReport) == 0))
+  {
+    snprintf(output, elCount(output), "%s..%s", minValue, maxValue);
+
+    return;
+  }
+
+  if (strlen(minValueReport) == 0)
+  {
+    snprintf(minValueReport, 8192, "%s", minValue);
+  }
+
+  if (strlen(maxValueReport) == 0)
+  {
+    snprintf(maxValueReport, 8192, "%s", maxValue);
+  }
+
+  snprintf(output, elCount(output), "%s..%s (%s..%s)", minValue, maxValue, minValueReport, maxValueReport);
+}
+
+
+void __ReportRangeTolerance(int64 baseValue, int64 lowerToleranceValue, int64 upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%I64d", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%I64d", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%I64d", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(int64 baseValue, int64 lowerToleranceValue, double upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%I64d", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%I64d", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%.15g", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(int64 baseValue, double lowerToleranceValue, int64 upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%I64d", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%.15g", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%I64d", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(int64 baseValue, double lowerToleranceValue, double upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%I64d", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%.15g", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%.15g", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(double baseValue, int64 lowerToleranceValue, int64 upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%.15g", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%I64d", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%I64d", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(double baseValue, int64 lowerToleranceValue, double upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%.15g", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%I64d", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%.15g", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(double baseValue, double lowerToleranceValue, int64 upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{  
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%.15g", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%.15g", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%I64d", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(double baseValue, double lowerToleranceValue, double upperToleranceValue, char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{  
+  double minValue;
+  double maxValue;
+
+  minValue = baseValue - abs(baseValue)*lowerToleranceValue;
+  maxValue = baseValue + abs(baseValue)*upperToleranceValue;
+
+  {
+    char cBaseValue[64];
+    char cLowerToleranceValue[64];
+    char cUpperToleranceValue[64];
+
+    snprintf(cBaseValue, 64, "%.15g", baseValue);
+    snprintf(cLowerToleranceValue, 64, "%.15g", lowerToleranceValue);
+    snprintf(cUpperToleranceValue, 64, "%.15g", upperToleranceValue);
+
+    __ReportRangeTolerance(minValue, maxValue, cBaseValue, cLowerToleranceValue, cUpperToleranceValue, baseValueReport, lowerToleranceValueReport,  lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription, output);
+  }
+}
+
+void __ReportRangeTolerance(double minValue, double maxValue, char baseValue[], char lowerToleranceValue[], char upperToleranceValue[], char baseValueReport[], char lowerToleranceValueReport[], char lowerToleranceDescription[], char upperToleranceValueReport[], char upperToleranceDescription[], char output[])
+{
+  if (strncmp(lowerToleranceDescription, "(abs)", elCount(lowerToleranceDescription)) == 0)
+  {
+    snprintf(lowerToleranceDescription, elCount(lowerToleranceDescription), "");
+  }
+
+  if (strncmp(upperToleranceDescription, "(abs)", elCount(upperToleranceDescription)) == 0)
+  {
+    snprintf(upperToleranceDescription, elCount(upperToleranceDescription), "");
+  }
+
+  if ((strlen(baseValueReport) == 0) && (strlen(lowerToleranceValueReport) == 0) && (strlen(upperToleranceValueReport) == 0))
+  {
+    snprintf(output, elCount(output), "%s[-%s%s..+%s%s]", baseValue, lowerToleranceValue, lowerToleranceDescription, upperToleranceValue, upperToleranceDescription);  
+
+    return;
+  }
+
+  if (strlen(baseValueReport) == 0)
+  {
+    snprintf(baseValueReport, 8192, "%s", baseValue);
+  }
+
+  if (strlen(lowerToleranceValueReport) == 0)
+  {
+    snprintf(lowerToleranceValueReport, 8192, "%s", lowerToleranceValue);
+  }
+
+  if (strlen(upperToleranceValueReport) == 0)
+  {
+    snprintf(upperToleranceValueReport, 8192, "%s", upperToleranceValue);
+  }
+
+  snprintf(output, elCount(output), "%s[-%s%s..+%s%s] (%s[-%s%s..+%s%s])", baseValue, lowerToleranceValue, lowerToleranceDescription, upperToleranceValue, upperToleranceDescription, baseValueReport, lowerToleranceValueReport, lowerToleranceDescription, upperToleranceValueReport, upperToleranceDescription);
+}
+
+
+void __ReportSignalFunctionParameter(signal * sig, char buffer[])
+{
+  GetLastQualifier(sig.name, buffer, elCount(buffer));
+}
+
+void __ReportSignalSymbolParameter(signal * sig, char displayName[], char buffer[])
+{
+  char tmp[8192];
+
+  GetLastQualifier(sig.name, tmp, 8192);
+
+  snprintf(buffer, 8192, "%s (%s)", tmp, displayName);
+}
+
+void __ReportCell(signal * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell($rValue.phys);
+}
+
+void __ReportCell(envvarInt * rValue)
+{
+  __ReportCell(@rValue);
+}
+
+void __ReportCell(envvarFloat * rValue)
+{
+  __ReportCell(@rValue);
+}
+
+void __ReportCell(envvarData * rValue)
+{
+  byte buffer[8192];
+  long bufferLen;
+  bufferLen = getValue(rValue, buffer);
+  __ReportCell(buffer, bufferLen);
+}
+
+void __ReportCell(envvarString * rValue)
+{
+  char buffer[8192];
+  getValue(rValue, buffer);
+  __ReportCell(buffer);
+}
+
+
+void __ReportCell(sysvarString * rValue)
+{
+  char buffer[8192];
+  sysGetVariableString(rValue, buffer, elCount(buffer));
+  __ReportCell(buffer);
+}
+
+void __ReportCell(sysvarData * rValue)
+{
+  byte buffer[8192];
+  long bufferLen;
+  sysGetVariableData(rValue, buffer, bufferLen);
+  __ReportCell(buffer, bufferLen);
+}
+
+void __ReportCell(sysvarIntArray * rValue, int index)
+{
+  __ReportCell(@rValue[index]);
+}
+
+void __ReportCell(sysvarFloatArray * rValue, int index)
+{
+  __ReportCell(@rValue[index]);
+}
+
+void __ReportCell(serviceSignalNumber * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+    __ReportCell($rValue.phys);
+}
+
+void __ReportCell(ServiceSignalString * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+  {
+    char buffer[8192];
+    getServiceSignalString(rValue, buffer, elCount(buffer));
+    __ReportCell(buffer);
+  }
+}
+void __ReportCell(ServiceSignalData * rValue)
+{
+  if (0 == getSignalTime(rValue))
+    testInfoCell(__tableHandle, __cNotOnlineYet);
+  else
+  {
+    byte buffer[8192];
+    long bufferLen;
+    bufferLen = getServiceSignalData(rValue, buffer, elCount(buffer));
+    __ReportCell(buffer, bufferLen);
+  }
+}

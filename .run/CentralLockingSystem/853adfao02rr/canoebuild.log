@@ -1,0 +1,5 @@
+"10:47:22.553";"Starting build";"mode = make"
+"10:47:22.610";"Load test unit";""
+"10:47:22.703";"Transformation of test system variables";""
+"10:47:22.731";"Initialization of parameter scopes";""
+"10:47:23.174";"Build finished";"result = NOK"

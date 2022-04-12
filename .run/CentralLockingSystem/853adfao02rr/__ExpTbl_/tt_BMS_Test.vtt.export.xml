@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testsequence name="tts_ShortcutAlarmsFastAndFlexible" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt" SourceFilePersistencyGuid="466d41pcjksj" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="7f3fbd58-8548-4ab3-b34b-7a9a7f81f833">
+    <parameter name="pIdxMin" type="int64" raw_type="int" />
+    <parameter name="pIdxMax" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/ts_definitions[1]/ts_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+    <nestedTcIds>ff9cf25a-8ce4-48f0-b1db-7c7dadc434f0</nestedTcIds>
+  </testsequence>
+  <testsequence name="tts_ShortcutAlarmsFastAndFlexible_Expert" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt" SourceFilePersistencyGuid="466d41pcjksj" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="d278472b-35a0-4387-aae8-39dccf8aba28">
+    <parameter name="pIdxMin" type="int64" raw_type="int" />
+    <parameter name="pIdxMax" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/ts_definitions[1]/ts_definition[2]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+    <nestedTcIds>145b4274-95ce-4795-acde-2fbe58a717d2</nestedTcIds>
+  </testsequence>
+  <testcase name="ttc_TestGatewayAlarm" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt" SourceFilePersistencyGuid="466d41pcjksj" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="75d2d865-a734-4a38-b79c-c8c578053c5c">
+    <parameter name="pSigSrc" type="signal" raw_type="signal" />
+    <parameter name="pSigDst" type="signal" raw_type="signal" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+  <function name="ttf_TestGatewayAlarm" id="0" comment="" signature="" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\tt_BMS_Test.vtt" SourceFilePersistencyGuid="466d41pcjksj" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="ae5bd504-9bd7-4f69-a183-c7eda06eed76">
+    <parameter name="pSigSrc" type="signal" raw_type="signal" />
+    <parameter name="pSigDst" type="signal" raw_type="signal" />
+    <parameter name="pValue" type="float" raw_type="float" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/function_definitions[1]/function_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </function>
+</tclibrary>

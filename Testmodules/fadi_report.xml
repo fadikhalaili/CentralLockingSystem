@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<testmodule starttime="2022-04-08 11:06:30" timestamp=" 363.710000" verdicts="2_basic" measurementid="65b8ef28-c159-4caa-9921-d5fa582e52bb">
-  <testcase starttime="2022-04-08 11:06:30" timestamp=" 363.710000">
-    <teststep timestamp=" 363.710000" type="user" ident="" result="pass"></teststep>
-    <verdict time="2022-04-08 11:06:30" timestamp=" 363.710000" endtime="2022-04-08 11:06:30" endtimestamp=" 363.710000" result="pass" />
+<testmodule starttime="2022-04-12 10:27:06" timestamp=" 408.300000" verdicts="2_basic" measurementid="458dca19-2dd9-4e10-89e5-4662b8bcea51">
+  <testcase starttime="2022-04-12 10:27:06" timestamp=" 408.300000">
+    <teststep timestamp=" 408.300000" type="user" ident="" result="pass"></teststep>
+    <verdict time="2022-04-12 10:27:06" timestamp=" 408.300000" endtime="2022-04-12 10:27:06" endtimestamp=" 408.300000" result="pass" />
     <title>tc1</title>
   </testcase>
-  <verdict time="2022-04-08 11:06:30" timestamp=" 363.710000" endtime="2022-04-08 11:06:30" endtimestamp=" 363.710000" result="pass" />
+  <verdict time="2022-04-12 10:27:06" timestamp=" 408.300000" endtime="2022-04-12 10:27:06" endtimestamp=" 408.300000" result="pass" />
   <title>fadi</title>
   <testlogfiles>
   </testlogfiles>
@@ -18,7 +18,7 @@
   <testsetup>
     <xinfo>
       <name>Version</name>
-      <description>CANoe.ISO11783.J1939.CANopen.CAN.LIN.MOST.FlexRay.J1587.Ethernet.Car2x.AFDX.A429.AMD/XCP.Scope.Sensor.SmartCharging.ForEtherCAT /pro 15.3.89 (SP3)</description>
+      <description>CANoe.CAN.Ethernet /pro 15.3.89 (SP3)</description>
     </xinfo>
     <xinfo>
       <name>Configuration</name>
@@ -75,4 +75,4 @@
   </testsetup>
   <extendedinfo type="html"><![CDATA[<b>Measurement was performed with simulation running as fast as possible.</b>]]></extendedinfo>
 </testmodule>
-<!--footprint="70bffe05b08af4314d4e41dae2584c77" version="1"-->
+<!--footprint="1bc14494f9550a434dcf393674847e71" version="1"-->

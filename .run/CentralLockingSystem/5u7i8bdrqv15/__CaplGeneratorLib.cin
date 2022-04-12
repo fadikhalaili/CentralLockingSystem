@@ -1,0 +1,169 @@
+﻿/* !Encoding: 65001  */
+void __SetBusContext(char bus[], int saveCurrentBusContext)
+{
+  __nBusContextOk = 1;
+  __nBusContextNew = GetBusNameContext(bus);
+  if(__nBusContextNew == 0)
+  {
+    __nBusContextOk = 0;
+    testStepErrorInTestSystem("", "Unable to determine context for bus: '%s'. Please check input parameter.", bus);
+    __nBusContextOld = 0;
+    return;
+  }
+  if(saveCurrentBusContext == __eSaveCurrent)
+  {
+    __nBusContextOld = SetBusContext(__nBusContextNew);
+  }
+  else
+  {
+    SetBusContext(__nBusContextNew);
+  }
+}
+
+void __ResetBusContext()
+{
+  if(__nBusContextOld > 0)
+  {
+    SetBusContext(__nBusContextNew);
+  }
+}
+
+int __BusContextOk()
+{
+  return __nBusContextOk;
+}
+
+void __Wait(char step[], int64 timeInNs, int64 unitInNs, char name[])
+{
+  char buffer[8192];
+  double timeValueByUnit;
+
+  timeValueByUnit = (double)timeInNs / (double)unitInNs;
+
+  if(unitInNs == 1000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 8192, "%.3f us", timeValueByUnit);
+    else
+      snprintf(buffer, 8192, "%.3f (%s) us", timeValueByUnit, name);
+  }
+  else if(unitInNs == 1000000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 8192, "%.3f ms", timeValueByUnit);
+    else
+      snprintf(buffer, 8192, "%.3f (%s) ms", timeValueByUnit, name);
+  }
+  else if(unitInNs == 1000000000LL)
+  {
+    if(name[0] == 0)
+      snprintf(buffer, 8192, "%.3f s", timeValueByUnit);
+    else
+      snprintf(buffer, 8192, "%.3f (%s) s", timeValueByUnit, name);
+  }
+  else
+  {
+    testStepErrorInTestSystem(0, step, "Unable to wait, unknown time unit %I64d.", unitInNs);
+    return;
+  }
+  if(timeInNs > 0)
+  {
+    if(0 == testWaitForTimeoutNSDBSilent(timeInNs))
+      testStepEndWait(2, step, "Waited for %s", buffer);
+    else
+    {
+      testStepErrorInTestSystem(0, step, "Waited for %s", buffer);
+      return;
+    }
+  }
+  else if(timeInNs == 0)
+  {
+    testStepEndWait(2, step, "Waited for %s", buffer);
+  }
+  else
+  {
+    testStepErrorInTestSystem(0, step, "Unable to wait for %s. Please check input parameter.", buffer);
+  }
+}
+
+int __LoopIsBlocking()
+{ 
+  int64 timeLoopNow, timeLoopOld, cntTimeEqual;
+  timeLoopNow = timeNowInt64();
+  if(timeLoopNow > timeLoopOld)
+  {
+    cntTimeEqual = 0;
+  }
+  else
+  {
+    ++cntTimeEqual;
+    if(cntTimeEqual >= 1000)
+    {
+      testStepErrorInTestSystem(0, "", "Blocking loop detected and canceled. 1000 cycles have been performed at the same time.");
+      return 1;
+    }
+  }
+  timeLoopOld = timeLoopNow;
+  return 0;
+}
+
+int __DoElseIf(int bDone)
+{
+  if(bDone)
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "Previous condition matched, skipping block.");
+    return 0;
+  }
+  return 1;
+}
+
+int __DoElse(int bDone)
+{
+  if(bDone)
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "Previous condition matched, skipping block.");
+    return 0;
+  }
+  else
+  {
+    testStepWithName(__cIfControlFlow, 0, "", "No condition matched, executing 'else' block.");
+    return 1;
+  }
+}
+
+void InjectTestControlStructEnd(long num, long verdict)
+{
+  int x;
+
+  for(x=0; x<num; x++)
+  {
+    TestControlStructEnd(verdict);
+  }
+}
+
+void __WriteHexData(char orig[], byte data[], long dataCnt)
+{
+  char tmp[8192];
+  WriteHexDataToStrBuf(tmp, 8192, data, dataCnt);
+  write("Orig (char[]) %s", orig);
+  write("HexDump:%s", tmp);
+}
+
+long __CopyBytes(byte from[], long fromCtr, byte to[])
+{
+  int i;
+  
+  if (fromCtr > elCount(from) || fromCtr > elCount(to))
+  {
+    testStepErrorInTestSystem("Unable to copy byte arrays.");
+    
+    return -1;
+  }
+
+  for(i=0; i<fromCtr; i++)
+  {
+    to[i] = from[i];
+  }
+  
+  return fromCtr;
+}

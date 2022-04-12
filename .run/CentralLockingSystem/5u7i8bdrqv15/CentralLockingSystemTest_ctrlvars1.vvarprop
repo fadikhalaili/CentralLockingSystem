@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectVariantPropertyModel>
+  <FileFormatVersion>3</FileFormatVersion>
+  <ProjectVariantProperties>
+    <VariantProperties>
+      <VariantProperty>
+        <Name>Region</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>false</Modifiable>
+        <TUStartValueRef>d50f3eee-fe9c-4d03-9c58-5cadac5c051b</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>d50f3eee-fe9c-4d03-9c58-5cadac5c051b</PersistencyGuid>
+            <IntegerValue>0</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>false</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <PossibleValues />
+        <ValueTable>
+          <RestrictValuesToValueTable>false</RestrictValuesToValueTable>
+          <ValueTableEntries>
+            <ValueTableEntry>
+              <IntValue>0</IntValue>
+              <StrValue>US</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>1</IntValue>
+              <StrValue>Europe</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>2</IntValue>
+              <StrValue>Asia</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+          </ValueTableEntries>
+        </ValueTable>
+      </VariantProperty>
+      <VariantProperty>
+        <Name>Coverage</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef>47829bd2-dbd8-4a81-aee6-d4db139b529f</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>47829bd2-dbd8-4a81-aee6-d4db139b529f</PersistencyGuid>
+            <IntegerValue>1</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>false</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <PossibleValues />
+        <ValueTable>
+          <RestrictValuesToValueTable>false</RestrictValuesToValueTable>
+          <ValueTableEntries>
+            <ValueTableEntry>
+              <IntValue>1</IntValue>
+              <StrValue>Medium</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>2</IntValue>
+              <StrValue>Full</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>0</IntValue>
+              <StrValue>Low</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+          </ValueTableEntries>
+        </ValueTable>
+      </VariantProperty>
+    </VariantProperties>
+    <ModifiableParameters />
+  </ProjectVariantProperties>
+</ProjectVariantPropertyModel>

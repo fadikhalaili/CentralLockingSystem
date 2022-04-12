@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testcase name="AmbiguousKeyRequest" id="0" comment="Checks that a corresponding fault memory entry is created when ambiguous values of KeyUp and KeyDown occur" signature="" file="C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt" SourceFilePersistencyGuid="t604lgsgmuou" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="3c7f2b05-c303-4508-a196-5306a8df989f">
+    <parameter name="engineRunning" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+  <testcase name="LockingBehavior" id="0" comment="" signature="" file="C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt" SourceFilePersistencyGuid="t604lgsgmuou" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="ecd1d157-445c-4f4b-af6f-a7b719e1c688">
+    <parameter name="engineRunning" type="int64" raw_type="int" />
+    <parameter name="isMoving" type="int64" raw_type="int" />
+    <parameter name="crash" type="int64" raw_type="int" />
+    <parameter name="expectedLockState" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[2]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+  <function name="ResetSignals" id="0" comment="Resets all input signals of the door lock tests" signature="" file="C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt" SourceFilePersistencyGuid="t604lgsgmuou" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="47337ac5-56d6-4b6d-865c-2286877a2d2b">
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/function_definitions[1]/function_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </function>
+</tclibrary>

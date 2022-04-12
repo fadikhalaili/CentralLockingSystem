@@ -1,0 +1,25 @@
+Vector Parameter	1.0
+
+StructListSingleRecord
+
+StructName	sl_ShortcutAlarms
+ParameterName		SigSrc	SigDst
+Type		Signal	Signal
+Info			
+Values		BATTERY::BPC_00::pduStateBPC_00::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_00::sigAlertShortcut
+		BATTERY::BPC_01::pduStateBPC_01::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_01::sigAlertShortcut
+		BATTERY::BPC_02::pduStateBPC_02::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_02::sigAlertShortcut
+		BATTERY::BPC_03::pduStateBPC_03::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_03::sigAlertShortcut
+		BATTERY::BPC_04::pduStateBPC_04::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_04::sigAlertShortcut
+		BATTERY::BPC_05::pduStateBPC_05::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_05::sigAlertShortcut
+		BATTERY::BPC_06::pduStateBPC_06::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_06::sigAlertShortcut
+		BATTERY::BPC_07::pduStateBPC_07::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_07::sigAlertShortcut
+		BATTERY::BPC_08::pduStateBPC_08::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_08::sigAlertShortcut
+		BATTERY::BPC_09::pduStateBPC_09::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_09::sigAlertShortcut
+		BATTERY::BPC_10::pduStateBPC_10::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_10::sigAlertShortcut
+		BATTERY::BPC_11::pduStateBPC_11::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_11::sigAlertShortcut
+		BATTERY::BPC_12::pduStateBPC_12::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_12::sigAlertShortcut
+		BATTERY::BPC_13::pduStateBPC_13::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_13::sigAlertShortcut
+		BATTERY::BPC_14::pduStateBPC_14::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_14::sigAlertShortcut
+		BATTERY::BPC_15::pduStateBPC_15::sigAlertShortcut	POWERTRAIN::BMS::frmAlarmsBPC_15::sigAlertShortcut
+

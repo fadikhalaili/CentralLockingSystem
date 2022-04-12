@@ -1,0 +1,248 @@
+﻿10:49:34 # Build of test unit 'CentralLockingSystemTest' started...
+10:49:34 - Build Step #0: BuildPreparation (ArtefactID: -1)
+10:49:34 - ------------------------------------------------
+10:49:34 - ============================== Build Step #0 finished ==============================
+10:49:34 - Build Step #1: PreBuildEvent (ArtefactID: -1)
+10:49:34 - ---------------------------------------------
+10:49:34 - ============================== Build Step #1 finished ==============================
+10:49:34 - Build Step #2: BuildTestSequenceDiagramDependencyTree (ArtefactID: -1)
+10:49:34 - ----------------------------------------------------------------------
+10:49:34 - Nothing to do (no Test Sequence Diagram Files)
+10:49:34 - ============================== Build Step #2 finished ==============================
+10:49:34 - Build Step #3: TraceArtefactIds (ArtefactID: -1)
+10:49:34 - ------------------------------------------------
+10:49:34 - Artefact IDs:
+10:49:34 -   0 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt
+10:49:34 -   1 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingTestLibrary.cs
+10:49:34 -   2 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can
+10:49:34 -   3 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf
+10:49:34 -   4 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam
+10:49:34 -   5 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam
+10:49:34 -   6 C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\DoorLockData.vct
+10:49:34 - ============================== Build Step #3 finished ==============================
+10:49:34 - Build Step #4: FuzzTestDetection (ArtefactID: -1)
+10:49:34 - -------------------------------------------------
+10:49:34 - ============================== Build Step #4 finished ==============================
+10:49:34 - Build Step #5: ValidateTestUnit (ArtefactID: -1)
+10:49:34 - ------------------------------------------------
+10:49:34 # Checking test unit consistency
+10:49:34 - ============================== Build Step #5 finished ==============================
+10:49:34 - Build Step #6: CopyParameterFile (ArtefactID: 4)
+10:49:34 - ------------------------------------------------
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\TestParameters.vparam' is outdated
+10:49:34 - Reason: System Environment has changed
+10:49:34 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\TestParameters.vparam'
+10:49:34 - ============================== Build Step #6 finished ==============================
+10:49:34 - Build Step #7: CopyParameterFile (ArtefactID: 5)
+10:49:34 - ------------------------------------------------
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VariantSpecificParameters.vparam' is outdated
+10:49:34 - Reason: System Environment has changed
+10:49:34 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VariantSpecificParameters.vparam'
+10:49:34 - ============================== Build Step #7 finished ==============================
+10:49:34 - Build Step #8: CopyParameterFile (ArtefactID: 6)
+10:49:34 - ------------------------------------------------
+10:49:34 - ============================== Build Step #8 finished ==============================
+10:49:34 - Build Step #9: BuildParameterTypeLibs (ArtefactID: -1)
+10:49:34 - ------------------------------------------------------
+10:49:34 - Output file: C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_PA.dll
+10:49:34 - Source files:
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\DoorLockData.vct
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07=VP.vvarprop
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_PA.dll' is outdated
+10:49:34 - Reason: System Environment has changed
+10:49:34 # Creating type libraries for parameters and variant properties
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_PA.dll' generated successfully
+10:49:34 - ============================== Build Step #9 finished ==============================
+10:49:34 - Build Step #10: BuildCaplTypeLibs (ArtefactID: -1)
+10:49:34 - --------------------------------------------------
+10:49:34 - Output file: C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_CA.dll
+10:49:34 - Source files:
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~0-0.
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_CA.dll' is up to date (regarding to export table hash)
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_CA.dll' is outdated because changed system environment beats unchanged export table hash
+10:49:34 # Creating type libraries for CAPL export functions
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\13nqkdrr6o07_CA.dll' generated successfully
+10:49:34 - ============================== Build Step #10 finished ==============================
+10:49:34 - Build Step #11: BuildSysVarTypeLibs (ArtefactID: -1)
+10:49:34 - ----------------------------------------------------
+10:49:34 - Output file: C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll
+10:49:34 - Source files:
+10:49:34 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\ufj9uirk3n6g-MTSV
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll' is outdated
+10:49:34 - Reason: System Environment has changed
+10:49:34 # Creating type libraries for test system variables
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll' generated successfully
+10:49:34 - ============================== Build Step #11 finished ==============================
+10:49:34 - Build Step #12: BuildCoTypeLib (ArtefactID: -1)
+10:49:34 - -----------------------------------------------
+10:49:34 - Nothing to do (no C# documents and no .NET assemblies or no CO-Lib)
+10:49:34 - ============================== Build Step #12 finished ==============================
+10:49:34 - Build Step #13: ValidateTteFile (ArtefactID: 0)
+10:49:34 - -----------------------------------------------
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt' is up to date (regarding to export table hash)
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt' is outdated because changed system environment beats unchanged export table hash
+10:49:34 # Compiling file 'LockingSystemTester.vtt' in test unit 'CentralLockingSystemTest'
+10:49:34 # Compilation succeeded (10:49:34) -- 0 errors, 0 warnings
+10:49:34 - ============================== Build Step #13 finished ==============================
+10:49:34 - Build Step #14: ValidateCSharp (ArtefactID: -1)
+10:49:34 - -----------------------------------------------
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\CentralLockingSystemTest.dll' is up to date (regarding to export table hash)
+10:49:34 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__TsoBuildFiles_\CentralLockingSystemTest.dll' is outdated because changed system environment beats unchanged export table hash
+10:49:35 # Compiling C# files in test unit 'CentralLockingSystemTest'
+10:49:38 #  Vector.PostCompiler - Aspect weaving .NET Assembly post-compiler
+10:49:38 #  Copyright © Vector Informatik GmbH 2015
+10:49:38 #  Post compilation complete
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #14 finished ==============================
+10:49:38 - Build Step #15: ValidateCaplFiles (ArtefactID: -1)
+10:49:38 - --------------------------------------------------
+10:49:38 - CAPL file dependencies (direct dependencies only):
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can --> <TestParameters.vparam>, <VariantSpecificParameters.vparam>, <DoorLockData.vct>, <13nqkdrr6o07=VP.vvarprop>
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can' is outdated
+10:49:38 - Reason: System Environment has changed
+10:49:38 - BuildStepUtilities.ValidateCaplFile: 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can'
+10:49:38 # Compiling file 'Utilities.can' in test unit 'CentralLockingSystemTest'
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #15 finished ==============================
+10:49:38 - Build Step #16: ValidateWfeFile (ArtefactID: 3)
+10:49:38 - -----------------------------------------------
+10:49:38 - Dependent files (direct and indirect dependencies):
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\DoorLockData.vct
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07=VP.vvarprop
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vtraceitem
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vattribute
+10:49:38 - There are currently more actual dependencies than stored in MAKE database. Adding new dependencies:
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf' is up to date (regarding to export table hash)
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf' is outdated because changed system environment beats unchanged export table hash
+10:49:38 # Compiling file 'VelocityWaveform.vwf' in test unit 'CentralLockingSystemTest'
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #16 finished ==============================
+10:49:38 - Build Step #17: ValidateParameterFile (ArtefactID: 4)
+10:49:38 - -----------------------------------------------------
+10:49:38 - Dependent files:
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07=VP.vvarprop
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam' is outdated
+10:49:38 - Reason: System Environment has changed
+10:49:38 # Compiling file 'TestParameters.vparam' in test unit 'CentralLockingSystemTest'
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #17 finished ==============================
+10:49:38 - Build Step #18: ValidateParameterFile (ArtefactID: 5)
+10:49:38 - -----------------------------------------------------
+10:49:38 - Dependent files:
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\TestParameters.vparam
+10:49:38 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07=VP.vvarprop
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\VariantSpecificParameters.vparam' is outdated
+10:49:38 - Reason: System Environment has changed
+10:49:38 # Compiling file 'VariantSpecificParameters.vparam' in test unit 'CentralLockingSystemTest'
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #18 finished ==============================
+10:49:38 - Build Step #19: ValidateClassificationTree (ArtefactID: 6)
+10:49:38 - ----------------------------------------------------------
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\Shareable Folders\ParameterLibrary\DoorLockData.vct' is outdated
+10:49:38 - Reason: System Environment has changed
+10:49:38 # Compiling file 'DoorLockData.vct' in test unit 'CentralLockingSystemTest'
+10:49:38 # Compilation succeeded (10:49:38) -- 0 errors, 0 warnings
+10:49:38 - ============================== Build Step #19 finished ==============================
+10:49:38 - Build Step #20: ConditionalBuildAbort (ArtefactID: -1)
+10:49:38 - ------------------------------------------------------
+10:49:38 - All Validation succeeded - continue build.
+10:49:38 - ============================== Build Step #20 finished ==============================
+10:49:38 - Build Step #21: CompileVwf2Sti (ArtefactID: 3)
+10:49:38 - ----------------------------------------------
+10:49:38 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VelocityWaveform.sti' is outdated
+10:49:38 - Reason: System Environment has changed
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\VelocityWaveform.vwf' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VelocityWaveform.vwf'
+10:49:39 - Generated files for VelocityWaveform.vwf --> <C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VelocityWaveform.sti>
+10:49:39 - ============================== Build Step #21 finished ==============================
+10:49:39 - Build Step #22: CompileVwf2Vtt (ArtefactID: 3)
+10:49:39 - ----------------------------------------------
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\VelocityWaveform.vwf.vtt' is outdated
+10:49:39 - Reason: System Environment has changed
+10:49:39 - Export table file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~4-0.' not copied to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__ExpTbl_\VelocityWaveform.vwf.export.xml' because export tables have not changed
+10:49:39 - ============================== Build Step #22 finished ==============================
+10:49:39 - Build Step #24: CollectNavigationInfo (ArtefactID: 0)
+10:49:39 - -----------------------------------------------------
+10:49:39 - ============================== Build Step #24 finished ==============================
+10:49:39 - Build Step #25: CopyVttFile (ArtefactID: 0)
+10:49:39 - -------------------------------------------
+10:49:39 - Export table file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~3-0.' not copied to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__ExpTbl_\LockingSystemTester.vtt.export.xml' because export tables have not changed
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingSystemTester.vtt' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\LockingSystemTester.vtt'
+10:49:39 - ============================== Build Step #25 finished ==============================
+10:49:39 - Build Step #23: CopyVttFile (ArtefactID: 3)
+10:49:39 - -------------------------------------------
+10:49:39 - Export table file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~4-0.' not copied to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__ExpTbl_\VelocityWaveform.vwf.export.xml' because export tables have not changed
+10:49:39 - ============================== Build Step #23 finished ==============================
+10:49:39 - Build Step #26: MergeCaplDocument (ArtefactID: 2)
+10:49:39 - -------------------------------------------------
+10:49:39 - CAPL file dependencies (direct dependencies only):
+10:49:39 - C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\Utilities.can --> <TestParameters.vparam>, <VariantSpecificParameters.vparam>, <DoorLockData.vct>, <13nqkdrr6o07=VP.vvarprop>
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\Utilities.can' is outdated
+10:49:39 - Reason: System Environment has changed
+10:49:39 - Export table file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~0-0.' not copied to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__ExpTbl_\Utilities.can.export.xml' because export tables have not changed
+10:49:39 - ============================== Build Step #26 finished ==============================
+10:49:39 - Build Step #27: MoveCSharpXmlDocumentation (ArtefactID: -1)
+10:49:39 - -----------------------------------------------------------
+10:49:39 - MoveCSharpXmlDocumentation: Skipped because option is deactivated
+10:49:39 - ============================== Build Step #27 finished ==============================
+10:49:39 - Build Step #28: CopyCSharpFile (ArtefactID: 1)
+10:49:39 - ----------------------------------------------
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\LockingTestLibrary.cs' is up to date (regarding to export table hash)
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\LockingTestLibrary.cs' is outdated because changed system environment beats unchanged export table hash
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystemTest\LockingTestLibrary.cs' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\LockingTestLibrary.cs'
+10:49:39 - Export table file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07~1-0.' not copied to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\__ExpTbl_\CentralLockingSystemTest_CS.export.xml' because export tables have not changed
+10:49:39 - ============================== Build Step #28 finished ==============================
+10:49:39 - Build Step #29: ValidateTteFile (ArtefactID: 0)
+10:49:39 - -----------------------------------------------
+10:49:39 - ============================== Build Step #29 finished ==============================
+10:49:39 - Build Step #30: ValidateIdUsage (ArtefactID: -1)
+10:49:39 - ------------------------------------------------
+10:49:39 - ============================== Build Step #30 finished ==============================
+10:49:39 - Build Step #31: ExportTraceabilityMatrix (ArtefactID: -1)
+10:49:39 - ---------------------------------------------------------
+10:49:39 - ExportTraceabilityMatrix: Skipped because option is deactivated
+10:49:39 - ============================== Build Step #31 finished ==============================
+10:49:39 - Build Step #32: IncludeSources (ArtefactID: -1)
+10:49:39 - -----------------------------------------------
+10:49:39 - IncludeSources: Skipped because option is deactivated
+10:49:39 - ============================== Build Step #32 finished ==============================
+10:49:39 - Build Step #33: WriteSystemEnvironment (ArtefactID: -1)
+10:49:39 - -------------------------------------------------------
+10:49:39 - Copy merged Test System Variable file...
+10:49:39 - Copy <ufj9uirk3n6g-MTSV> to C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\TestSysVars.vsysvar
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\TestSysVars.vsysvar' is outdated
+10:49:39 - Reason: System Environment has changed
+10:49:39 - Add variant property file...
+10:49:39 - 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\CentralLockingSystemTest_ctrlvars1.vvarprop' is outdated
+10:49:39 - Reason: System Environment has changed
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\13nqkdrr6o07=VP.vvarprop' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\CentralLockingSystemTest_ctrlvars1.vvarprop'
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vtraceitem' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\CentralLockingSystem.vtraceitem'
+10:49:39 - Copied file 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\CentralLockingSystem.vattribute' to 'C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\CentralLockingSystem.vattribute'
+10:49:39 - ============================== Build Step #33 finished ==============================
+10:49:39 - Build Step #34: WriteTUProperties (ArtefactID: -1)
+10:49:39 - --------------------------------------------------
+10:49:39 - ============================== Build Step #34 finished ==============================
+10:49:39 - Build Step #35: WriteTetEntries (ArtefactID: -1)
+10:49:39 - ------------------------------------------------
+10:49:39 - ============================== Build Step #35 finished ==============================
+10:49:39 - Build Step #36: FuzzTestNodeLayer (ArtefactID: -1)
+10:49:39 - --------------------------------------------------
+10:49:39 - ============================== Build Step #36 finished ==============================
+10:49:39 - Build Step #37: WriteManifest (ArtefactID: -1)
+10:49:39 - ----------------------------------------------
+10:49:39 - Writing manifest C:\Users\Public\Documents\Vector\vTESTstudio\6.3.75.0\DoorControlUnit\vTESTstudioProject\obj_CentralLockingSystem\bin_13nqkdrr6o07\CentralLockingSystemTest.vtumanifest
+10:49:39 - ============================== Build Step #37 finished ==============================
+10:49:39 - Build Step #42: RemoveOrphanedBuildArtfacts (ArtefactID: -1)
+10:49:39 - ------------------------------------------------------------
+10:49:39 - Removing orphaned build artefacts from the vtuexe's main folder...
+10:49:39 - Nothing to do.
+10:49:39 - ============================== Build Step #42 finished ==============================
+10:49:39 - Build Step #38: WriteMetainfo (ArtefactID: -1)
+10:49:39 - ----------------------------------------------
+10:49:39 - BUILD TIME excluding ZIP/UNZIP (hours:minutes:seconds:milliseconds): 00:00:05:103

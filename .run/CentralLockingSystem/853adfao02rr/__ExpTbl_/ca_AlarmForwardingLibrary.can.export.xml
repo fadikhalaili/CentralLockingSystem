@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <function name="cf_TestForwardingAlarm" id="3123877913" comment="Exercise 9b" signature="void cf_TestForwardingAlarm(long idx, float value)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" SourceFilePersistencyGuid="qv4kfvbq0i72" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="idx" type="long" raw_type="long" />
+    <parameter name="value" type="float" raw_type="float" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>69</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <testcase name="ctc_TestBPCShortcut" id="2378028568" comment="Exercise 9c - Standard" signature="testcase ctc_TestBPCShortcut(long idx)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" SourceFilePersistencyGuid="qv4kfvbq0i72" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="idx" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>592</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </testcase>
+  <testcase name="ctc_TestBPCShortcut_Expert" id="1864953405" comment="Exercise 9d - Expert" signature="testcase ctc_TestBPCShortcut_Expert(long idx)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" SourceFilePersistencyGuid="qv4kfvbq0i72" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="idx" type="long" raw_type="long" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>773</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </testcase>
+  <function name="cf_SetShortcutAlarmValues" id="276173494" comment="Exercise 11c I: Setting Shortcut Alarms" signature="void cf_SetShortcutAlarmValues(int value)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" SourceFilePersistencyGuid="qv4kfvbq0i72" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="value" type="int" raw_type="int" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>1419</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+  <function name="cf_SetBypassedAlarmValues" id="2642641301" comment="Exercise 11c I: Setting Bypassed Alarms" signature="void cf_SetBypassedAlarmValues(int value)" file="C:\Users\fkhalaili\Desktop\Training Material\ECU_Test_with_vTeststudio_and_CANoe\Exercises\Exercises_Testing_TrainingCar\Testing\vTESTstudio_Training_Solution\BMS_Tests\AlarmForwarding\ca_AlarmForwardingLibrary.can" SourceFilePersistencyGuid="qv4kfvbq0i72" IsPrivate="false" IsNetSignatureAndDefinedInExternalDll="true">
+    <parameter name="value" type="int" raw_type="int" />
+    <document_position><![CDATA[<OffsetDocumentPosition xmlns:SerializedType="Vector.ITE.Document.OffsetDocumentPosition"><Offset>2507</Offset></OffsetDocumentPosition>]]></document_position>
+    <implementation_language lang="CAPL" />
+  </function>
+</tclibrary>

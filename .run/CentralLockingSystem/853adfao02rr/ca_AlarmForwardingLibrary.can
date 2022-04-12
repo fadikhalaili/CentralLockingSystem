@@ -1,0 +1,97 @@
+/*@!Encoding:1252*/
+includes
+{
+
+}
+
+variables
+{
+
+}
+
+//Exercise 9b
+export cf_TestForwardingAlarm(long idx, double value)
+{
+  setSignal (syspar::sl_ShortcutAlarms[idx].SigSrc ,value);
+  
+  testWaitForSignalMatch (syspar::sl_ShortcutAlarms[idx].SigSrc, value, 105);
+  testValidateSignalMatch ("check Stim Sig", syspar::sl_ShortcutAlarms[idx].SigSrc, value);
+  
+  testWaitForTimeout (50);
+  
+  testWaitForSignalMatch (syspar::sl_ShortcutAlarms[idx].SigDst, value, 105);
+  testValidateSignalMatch ("check Stim Sig", syspar::sl_ShortcutAlarms[idx].SigDst, value);
+  
+}
+
+//Exercise 9c - Standard
+export testcase ctc_TestBPCShortcut (long idx)
+{
+  cf_TestForwardingAlarm (idx, 0);
+  cf_TestForwardingAlarm (idx, 1);
+  cf_TestForwardingAlarm (idx, 0);
+}
+
+//Exercise 9d - Expert
+export testcase ctc_TestBPCShortcut_Expert(long idx)
+{
+ char TitleName [1000];
+ char Warning [1000];
+  
+ if (idx<0 || idx>=elcount(syspar::sl_ShortcutAlarms))
+  {
+    snprintf(Warning, elcount(Warning), "No parameter available for BPC_%d",idx);
+    Testcasetitle("",Warning);
+    return;
+  }
+  
+ snprintf (TitleName, elCount (TitleName), "Stimulation: %s, Check: %s", syspar::sl_ShortcutAlarms[idx].SigSrc.name, syspar::sl_ShortcutAlarms[idx].SigDst.name);
+ testCaseTitle ("", TitleName);
+  
+  cf_TestForwardingAlarm (idx, 0);
+  cf_TestForwardingAlarm (idx, 1);
+  cf_TestForwardingAlarm (idx, 0);
+
+}
+
+// Exercise 11c I: Setting Shortcut Alarms
+export cf_SetShortcutAlarmValues (int value)
+{
+  $BATTERY::BPC_00::pduStateBPC_00::sigAlertShortcut = value;
+  $BATTERY::BPC_01::pduStateBPC_01::sigAlertShortcut = value;
+  $BATTERY::BPC_02::pduStateBPC_02::sigAlertShortcut = value;
+  $BATTERY::BPC_03::pduStateBPC_03::sigAlertShortcut = value;
+  $BATTERY::BPC_04::pduStateBPC_04::sigAlertShortcut = value;
+  $BATTERY::BPC_05::pduStateBPC_05::sigAlertShortcut = value;
+  $BATTERY::BPC_06::pduStateBPC_06::sigAlertShortcut = value;
+  $BATTERY::BPC_07::pduStateBPC_07::sigAlertShortcut = value;
+  $BATTERY::BPC_08::pduStateBPC_08::sigAlertShortcut = value;
+  $BATTERY::BPC_09::pduStateBPC_09::sigAlertShortcut = value;
+  $BATTERY::BPC_10::pduStateBPC_10::sigAlertShortcut = value;
+  $BATTERY::BPC_11::pduStateBPC_11::sigAlertShortcut = value;
+  $BATTERY::BPC_12::pduStateBPC_12::sigAlertShortcut = value;
+  $BATTERY::BPC_13::pduStateBPC_13::sigAlertShortcut = value;
+  $BATTERY::BPC_14::pduStateBPC_14::sigAlertShortcut = value;
+  $BATTERY::BPC_15::pduStateBPC_15::sigAlertShortcut = value;
+}
+
+// Exercise 11c I: Setting Bypassed Alarms
+export cf_SetBypassedAlarmValues (int value)
+{
+  $BATTERY::BPC_00::pduStateBPC_00::sigAlertBypassed = value;
+  $BATTERY::BPC_01::pduStateBPC_01::sigAlertBypassed = value;
+  $BATTERY::BPC_02::pduStateBPC_02::sigAlertBypassed = value;
+  $BATTERY::BPC_03::pduStateBPC_03::sigAlertBypassed = value;
+  $BATTERY::BPC_04::pduStateBPC_04::sigAlertBypassed = value;
+  $BATTERY::BPC_05::pduStateBPC_05::sigAlertBypassed = value;
+  $BATTERY::BPC_06::pduStateBPC_06::sigAlertBypassed = value;
+  $BATTERY::BPC_07::pduStateBPC_07::sigAlertBypassed = value;
+  $BATTERY::BPC_08::pduStateBPC_08::sigAlertBypassed = value;
+  $BATTERY::BPC_09::pduStateBPC_09::sigAlertBypassed = value;
+  $BATTERY::BPC_10::pduStateBPC_10::sigAlertBypassed = value;
+  $BATTERY::BPC_11::pduStateBPC_11::sigAlertBypassed = value;
+  $BATTERY::BPC_12::pduStateBPC_12::sigAlertBypassed = value;
+  $BATTERY::BPC_13::pduStateBPC_13::sigAlertBypassed = value;
+  $BATTERY::BPC_14::pduStateBPC_14::sigAlertBypassed = value;
+  $BATTERY::BPC_15::pduStateBPC_15::sigAlertBypassed = value;
+}

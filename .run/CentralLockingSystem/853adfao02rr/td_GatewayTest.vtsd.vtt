@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Vector Test Table Editor-->
+<ttroot version="24" minRequiredVersion="19" minRequiredCANoeVersion="CANoe 12.0" xmlns="http://www.vector-informatik.de/ITE/TestTable/1.0">
+  <tt>
+    <tf navid="4bb20003-4236-4f31-9fcb-71318ad56e42">
+      <title>td_GatewayTest</title>
+      <ts navid="8e0d8299-697b-2a6e-5a03-0a25eac8ad87">
+        <title>Test Sequence 1</title>
+        <breakonfail>false</breakonfail>
+        <for>
+          <title />
+          <loopvar>index</loopvar>
+          <loopvartype>int64</loopvartype>
+          <startvalue>
+            <const>0</const>
+          </startvalue>
+          <stopvalue>
+            <const>15</const>
+          </stopvalue>
+          <increment>
+            <const>1</const>
+          </increment>
+          <capltestcase>
+            <title />
+            <name>ctc_TestBPCShortcut</name>
+            <param>
+              <type>long</type>
+              <value>
+                <variable>index</variable>
+              </value>
+            </param>
+            <tcid>76834aa1-c804-e123-9b0b-c0c9045dce19</tcid>
+            <traceitems>
+              <traceitem>TraceItem_BEGIN_OF_OBJECT|1|13dc282b-815d-48a8-a2ae-212b09c41b79|END_OF_OBJECT_TraceItem|</traceitem>
+            </traceitems>
+          </capltestcase>
+        </for>
+      </ts>
+    </tf>
+  </tt>
+  <ttlib>
+    <ts_definitions />
+    <tc_definitions />
+    <function_definitions />
+  </ttlib>
+</ttroot>

@@ -1,0 +1,14 @@
+Vector Parameter	1.0
+
+StructListSingleRecord
+
+StructName	ALIAS::GEN_GATEWAY_TEST::slRoutingData
+ParameterName		srcSignal	Factor	Offset	dstSignal	MaxDelay	DBCMinMax	Min	Max	Steps	Repeat
+Type		Signal	Float	Float	Signal	Integer	String	Float	Float	Float	Auto
+Info											
+Values		BATTERY::BPC_15::pduStateBPC_15::sigAlertBypassed	1	0	POWERTRAIN::BMS::frmAlarmsBPC_15::sigAlertBypassed	250	Y	0	0	1	2
+		BATTERY::BPC_15::pduStateBPC_15::sigAlertShortcut	1	0	POWERTRAIN::BMS::frmAlarmsBPC_15::sigAlertShortcut	250	Y	0	0	1	2
+		BATTERY::BPC_15::pduStateBPC_15::sigCellVoltageMax	1	0	POWERTRAIN::BMS::frmStateBPC_15::sigCellVoltageMax	250	Y	0	0	1	2
+		BATTERY::BPC_15::pduStateBPC_15::sigCellVoltageMin	1	0	POWERTRAIN::BMS::frmStateBPC_15::sigCellVoltageMin	250	N	0	6	0.45	1
+		BATTERY::BPC_15::pduStateBPC_15::sigCapacity	1	0	POWERTRAIN::BMS::frmStateBPC_15::sigPackCapacity	250	N	20	80	13	2
+

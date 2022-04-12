@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileSystemMetainfo>
+  <Files>
+    <File Name="build.log" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="build.log" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.9751607+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.4046150+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystem.vattribute" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystem.vattribute" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystem.vtraceitem" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystem.vtraceitem" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystemTest.vtumanifest" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystemTest.vtumanifest" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.9402547+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.4025999+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystemTest_ctrlvars1.vvarprop" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="CentralLockingSystemTest_ctrlvars1.vvarprop" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="DoorLockData.vct.vparam" Time="12 April 2022 10:49:38">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="DoorLockData.vct.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.7607317+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:38.8339917+02:00</LastWriteTime>
+    </File>
+    <File Name="LockingSystemTester.vtt" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingSystemTester.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="LockingTestLibrary.cs" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="LockingTestLibrary.cs" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="TestParameters.vparam" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestParameters.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="TestSysVars.vsysvar" Time="23 March 2022 14:52:17">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.8853998+02:00</CreationTime>
+      <LastWriteTime>2022-03-23T14:52:17.5739468+01:00</LastWriteTime>
+    </File>
+    <File Name="Utilities.can" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Utilities.can" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.8544496+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.3756407+02:00</LastWriteTime>
+    </File>
+    <File Name="VariantSpecificParameters.vparam" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VariantSpecificParameters.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="VelocityWaveform.sti" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.sti" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.7736958+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.3507099+02:00</LastWriteTime>
+    </File>
+    <File Name="VelocityWaveform.vwf" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:49:34.3001629+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.3001629+02:00</LastWriteTime>
+    </File>
+    <File Name="VelocityWaveform.vwf.vtt" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="VelocityWaveform.vwf.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.7896236+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.3656666+02:00</LastWriteTime>
+    </File>
+    <File Name="[FileSystemMetainfo]" Time="20 October 2021 13:57:16">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="[FileSystemMetainfo]" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:16.7413624+02:00</CreationTime>
+      <LastWriteTime>2021-10-20T13:57:16.7413624+02:00</LastWriteTime>
+    </File>
+    <File Name="[MakeInfo]" Time="12 April 2022 10:49:39">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="[MakeInfo]" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.9751607+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:39.4035975+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystemTest_CS.export.xml" Time="20 October 2021 13:57:16">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\CentralLockingSystemTest_CS.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:16.8211529+02:00</CreationTime>
+      <LastWriteTime>2021-10-20T13:57:16.8211529+02:00</LastWriteTime>
+    </File>
+    <File Name="LockingSystemTester.vtt.export.xml" Time="20 October 2021 13:57:16">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\LockingSystemTester.vtt.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:16.8211529+02:00</CreationTime>
+      <LastWriteTime>2021-10-20T13:57:16.8211529+02:00</LastWriteTime>
+    </File>
+    <File Name="Utilities.can.export.xml" Time="20 October 2021 13:57:16">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\Utilities.can.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:16.8211529+02:00</CreationTime>
+      <LastWriteTime>2021-10-20T13:57:16.8211529+02:00</LastWriteTime>
+    </File>
+    <File Name="VelocityWaveform.vwf.export.xml" Time="20 October 2021 13:57:16">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\VelocityWaveform.vwf.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:16.8211529+02:00</CreationTime>
+      <LastWriteTime>2021-10-20T13:57:16.8211529+02:00</LastWriteTime>
+    </File>
+    <File Name="13nqkdrr6o07_CA.dll" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_CA.dll" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:17.5745017+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.7366564+02:00</LastWriteTime>
+    </File>
+    <File Name="13nqkdrr6o07_PA.dll" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\13nqkdrr6o07_PA.dll" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:17.4608050+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.6197906+02:00</LastWriteTime>
+    </File>
+    <File Name="b6anpsa9odd1_TestSysVars.dll" Time="12 April 2022 10:49:34">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\b6anpsa9odd1_TestSysVars.dll" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-10-20T13:57:17.3966336+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:34.8473511+02:00</LastWriteTime>
+    </File>
+    <File Name="b9npddrvignd_TestSysVars.dll" Time="14 April 2021 17:11:17">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\b9npddrvignd_TestSysVars.dll" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:17.6891968+02:00</CreationTime>
+      <LastWriteTime>2021-04-14T17:11:17.6901947+02:00</LastWriteTime>
+    </File>
+    <File Name="CentralLockingSystemTest.dll" Time="12 April 2022 10:49:38">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__TsoBuildFiles_\CentralLockingSystemTest.dll" /&gt;</SerializedBasedFileName>
+      <CreationTime>2021-04-14T17:11:18.5622298+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:49:38.6474906+02:00</LastWriteTime>
+    </File>
+  </Files>
+</FileSystemMetainfo>

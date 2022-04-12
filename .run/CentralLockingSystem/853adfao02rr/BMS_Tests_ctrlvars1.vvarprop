@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectVariantPropertyModel>
+  <FileFormatVersion>3</FileFormatVersion>
+  <ProjectVariantProperties>
+    <VariantProperties>
+      <VariantProperty>
+        <Name>vTestLevel</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef>b2d8414c-dcd7-4000-baf0-96efdfeb648f</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>b2d8414c-dcd7-4000-baf0-96efdfeb648f</PersistencyGuid>
+            <IntegerValue>0</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>false</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <Min>
+          <IntegerValue>0</IntegerValue>
+          <DoubleValue>NaN</DoubleValue>
+          <StringValue></StringValue>
+          <IsHexValue>false</IsHexValue>
+          <IsRawValue>true</IsRawValue>
+        </Min>
+        <Max>
+          <IntegerValue>1</IntegerValue>
+          <DoubleValue>NaN</DoubleValue>
+          <StringValue></StringValue>
+          <IsHexValue>false</IsHexValue>
+          <IsRawValue>true</IsRawValue>
+        </Max>
+        <PossibleValues />
+        <ValueTable>
+          <RestrictValuesToValueTable>false</RestrictValuesToValueTable>
+          <ValueTableEntries>
+            <ValueTableEntry>
+              <IntValue>0</IntValue>
+              <StrValue>ReducedTest</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>1</IntValue>
+              <StrValue>FullTest</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+          </ValueTableEntries>
+        </ValueTable>
+      </VariantProperty>
+      <VariantProperty>
+        <Name>vIndexMax</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef>dafa480c-8076-4593-adfa-99494922f9dd</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>dafa480c-8076-4593-adfa-99494922f9dd</PersistencyGuid>
+            <IntegerValue>15</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>true</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <PossibleValues />
+      </VariantProperty>
+      <VariantProperty>
+        <Name>vIndexMin</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef>0102c127-f99f-4588-a3c2-8a05a62fd33c</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>0102c127-f99f-4588-a3c2-8a05a62fd33c</PersistencyGuid>
+            <IntegerValue>0</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>true</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <PossibleValues />
+      </VariantProperty>
+      <VariantProperty>
+        <Name>vRacing</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef>1c169062-a430-4a46-98db-216f8f729078</TUStartValueRef>
+        <PreDefinedValues>
+          <PreDefinedValue>
+            <PersistencyGuid>1c169062-a430-4a46-98db-216f8f729078</PersistencyGuid>
+            <IntegerValue>0</IntegerValue>
+            <DoubleValue>NaN</DoubleValue>
+            <StringValue></StringValue>
+            <DependentOnValues />
+            <ImplyingValues />
+            <ParameterFileDependencies />
+            <IsHexValue>false</IsHexValue>
+            <IsRawValue>false</IsRawValue>
+          </PreDefinedValue>
+        </PreDefinedValues>
+        <PossibleValues />
+        <ValueTable>
+          <RestrictValuesToValueTable>false</RestrictValuesToValueTable>
+          <ValueTableEntries>
+            <ValueTableEntry>
+              <IntValue>0</IntValue>
+              <StrValue>Enable</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>1</IntValue>
+              <StrValue>Disable</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+          </ValueTableEntries>
+        </ValueTable>
+      </VariantProperty>
+    </VariantProperties>
+    <ModifiableParameters />
+  </ProjectVariantProperties>
+</ProjectVariantPropertyModel>

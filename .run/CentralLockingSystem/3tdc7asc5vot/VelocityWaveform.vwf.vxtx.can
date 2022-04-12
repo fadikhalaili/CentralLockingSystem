@@ -1,0 +1,185 @@
+﻿/* !Encoding: 65001  */
+includes
+{
+  #include "__VariablesLib.cin"
+  #include "__CaplGeneratorLib.cin"
+  #include "__CANoeReportFuntionsLib.cin"
+}
+
+variables
+{
+  // Global variables defined within this CAPL file
+}
+
+export void Checkpoints_9e15e65899744eae95e1717f3bbcd5ec(int64 __generatorHandle)
+{
+}
+
+export void Checkpoints_cf5cf194a4924537a8813c30b2792b30()
+{
+  {
+    dword __func;
+    CreateCaplIFFunction("__Cp4", __eFct);
+    AddIFParameterDouble(0);
+    __func = CallInterfaceFunctionParallel();
+    testJoinParallelTestThread(__func);
+  }
+
+
+  {
+    dword __func;
+    CreateCaplIFFunction("__Cp5", __eFct);
+    AddIFParameterDouble(0);
+    __func = CallInterfaceFunctionParallel();
+    testJoinParallelTestThread(__func);
+  }
+
+
+  {
+    dword __func;
+    CreateCaplIFFunction("__Cp6", __eFct);
+    AddIFParameterDouble(1);
+    __func = CallInterfaceFunctionParallel();
+    testJoinParallelTestThread(__func);
+  }
+
+
+  {
+    dword __func;
+    CreateCaplIFFunction("__Cp7", __eFct);
+    AddIFParameterDouble(1);
+    __func = CallInterfaceFunctionParallel();
+    testJoinParallelTestThread(__func);
+  }
+  testWaitForAllJoinedEventsSilent(0);
+
+
+}
+
+export void __Cp4(double currentCheckpointValue)
+{
+  TestCommandBegin(__eSet, __cSet, "", __cEmpty);
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 1;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState.phys = currentCheckpointValue;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currentCheckpointValue");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, currentCheckpointValue, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "idle");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+}
+
+export void __Cp5(double currentCheckpointValue)
+{
+  testWaitForTimeoutNSDBSilent(1350 * 1000000);
+
+  TestCommandBegin(__eCheck, __cCheck, "Check doors are \'unlocked\'", __cEmpty);
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, currentCheckpointValue, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currentCheckpointValue");
+      __ReportTableRow(0, __cArray2, "==", currentCheckpointValue, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+}
+
+export void __Cp6(double currentCheckpointValue)
+{
+  testWaitForTimeoutNSDBSilent(1750 * 1000000);
+
+  TestCommandBegin(__eCheck, __cCheck, "Check doors are \'unlocked\'", __cEmpty);
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, currentCheckpointValue, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currentCheckpointValue");
+      __ReportTableRow(0, __cArray2, "==", currentCheckpointValue, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+}
+
+export void __Cp7(double currentCheckpointValue)
+{
+  testWaitForTimeoutNSDBSilent(2150 * 1000000);
+
+  TestCommandBegin(__eCheck, __cCheck, "Check doors are \'unlocked\'", __cEmpty);
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, currentCheckpointValue, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currentCheckpointValue");
+      __ReportTableRow(0, __cArray2, "==", currentCheckpointValue, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+}
+

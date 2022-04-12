@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileSystemMetainfo>
+  <Files>
+    <File Name="BMS_Tests.vtumanifest" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="BMS_Tests.vtumanifest" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.6149616+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.6159583+02:00</LastWriteTime>
+    </File>
+    <File Name="BMS_Tests_ctrlvars1.vvarprop" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="BMS_Tests_ctrlvars1.vvarprop" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="build.log" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="build.log" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.6179531+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.6189511+02:00</LastWriteTime>
+    </File>
+    <File Name="ca_AlarmForwardingLibrary.can" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_AlarmForwardingLibrary.can" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.3406953+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.3406953+02:00</LastWriteTime>
+    </File>
+    <File Name="ca_DriverUtilities.can" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ca_DriverUtilities.can" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.3576497+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.3576497+02:00</LastWriteTime>
+    </File>
+    <File Name="Gen_GatewayTest_Data.vparam" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Data.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="Gen_GatewayTest_Logic.vtt" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="Gen_GatewayTest_Logic.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="pBypassedAlarms.vparam" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pBypassedAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="pShortcutAlarms.vparam" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="pShortcutAlarms.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="td_GatewayTest.vtsd.vtt" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.3493945+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.3493945+02:00</LastWriteTime>
+    </File>
+    <File Name="td_GatewayTest_Advanced.vtsd.vtt" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_GatewayTest_Advanced.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.3513723+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.3523798+02:00</LastWriteTime>
+    </File>
+    <File Name="td_UserScenarios.vtsd.vtt" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="td_UserScenarios.vtsd.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.1432573+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.1652021+02:00</LastWriteTime>
+    </File>
+    <File Name="TestSysVars.vsysvar" Time="30 March 2022 21:24:05">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.6059851+02:00</CreationTime>
+      <LastWriteTime>2022-03-30T21:24:05.4862370+02:00</LastWriteTime>
+    </File>
+    <File Name="TrainingCar_BMS.vtraceitem" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TrainingCar_BMS.vtraceitem" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="tt_BMS_Test.vtt" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_BMS_Test.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="tt_GenericGatewayTest.vtt" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="tt_GenericGatewayTest.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="[MakeInfo]" Time="12 April 2022 10:41:04">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="[MakeInfo]" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:04.6179531+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:04.6179531+02:00</LastWriteTime>
+    </File>
+    <File Name="ca_AlarmForwardingLibrary.can.export.xml" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ca_AlarmForwardingLibrary.can.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="ca_DriverUtilities.can.export.xml" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ca_DriverUtilities.can.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="Gen_GatewayTest_Logic.vtt.export.xml" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\Gen_GatewayTest_Logic.vtt.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="tt_BMS_Test.vtt.export.xml" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\tt_BMS_Test.vtt.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+    <File Name="tt_GenericGatewayTest.vtt.export.xml" Time="12 April 2022 10:41:03">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\tt_GenericGatewayTest.vtt.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2022-04-12T10:41:03.0543159+02:00</CreationTime>
+      <LastWriteTime>2022-04-12T10:41:03.0543159+02:00</LastWriteTime>
+    </File>
+  </Files>
+</FileSystemMetainfo>

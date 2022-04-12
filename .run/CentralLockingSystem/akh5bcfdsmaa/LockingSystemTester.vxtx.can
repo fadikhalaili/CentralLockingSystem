@@ -1,0 +1,2762 @@
+﻿/* !Encoding: 65001  */
+includes
+{
+  #include "__DiagLibrary.cin"
+  #include "__cDiagService.cin"
+  #include "__VariablesLib.cin"
+  #include "__CaplGeneratorLib.cin"
+  #include "__CANoeReportFuntionsLib.cin"
+}
+
+variables
+{
+  // Global variables defined within this CAPL file
+  TestCheck __tc0;
+  int64 __tt0LoopVar1;
+}
+
+void Tttfhhndt_ResetSignals()
+{
+
+
+  TestCommandBegin(__eSet, __cSet, "Reset all signals", "0");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "idle");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "No acceleration/deceleration", "1");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      @sysvarInt::`SystemUnderTest::`Accelerate = 0;
+      snprintf(__cArray, 8192, "%s", "Accelerate");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportTableRow(0, __cArray2, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      @sysvarInt::`SystemUnderTest::`Decelerate = 0;
+      snprintf(__cArray, 8192, "%s", "Decelerate");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportTableRow(0, __cArray2, __cAOp, 0, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCAPLInline, __cCAPLInline, "", "3");
+  {
+    __citfhhndtCaplInline0();
+  }
+  TestCommandEnd();
+
+}
+
+void __citfhhndtCaplInline0 ()
+{
+  {
+testWaitForTimeoutSilent(500);
+  }
+}
+
+testcase Tttfhhndt_AmbiguousKeyRequest(int64 engineRunning)
+{
+  SetBreakOnFail(0);
+
+  CreateTTEIFFunction("Tttfhhndt_TsTc0_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Initialize signals", "0");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown.phys = 0;
+        snprintf(__cArray, 8192, "%s", "KeyDown");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp.phys = 0;
+        snprintf(__cArray, 8192, "%s", "KeyUp");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+  }
+  TestPreparationEnd();
+
+  TestCaseDescription("Checks that a corresponding fault memory entry is created when ambiguous values of KeyUp and KeyDown occur");
+
+  TestCommandBegin(__eSet, __cSet, "", "1");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = engineRunning;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "engineRunning");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, engineRunning, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eFaultMemoryClear, __cFaultMemoryClear, "Clear fault memory of SUT", "2");
+  {
+    long __res;
+    long __dtc;
+    
+    __DiagSetTarget("SUT");
+  
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+    TestStep("Query fault memory", "Clearing fault memory of target Diagnostic ECU 'SUT'");
+  
+    __res = TestWaitForDiagTroubleCodesCleared(-1, cDiagAppTimeoutDefault);
+    if (__EvaluateWaitResWithVerdict(__res, 1, "DTC cleared successfully"))
+      TestReportWriteFaultMemoryDetails(__bVerdict); }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Concurrently set request KeyUp and KeyDown", "3");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp.phys = 1;
+      snprintf(__cArray, 8192, "%s", "KeyUp");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown.phys = 1;
+      snprintf(__cArray, 8192, "%s", "KeyDown");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (100 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "WindowMotion");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "not_moving");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+    
+  TestCommandBegin(__eFaultMemoryStatus, __cFaultMemoryStatus, "Check that a the corresponding DTC has been created", "4");
+  {
+    long  __res;
+    DWORD __statusByte;
+    
+    __bVerdict = __eVerdictPass;
+    __DiagSetTarget("SUT");
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+    TestStep("Query fault memory", "Checking status of fault memory for Diagnostic ECU  'SUT'");
+  
+    __statusByte = 0 | 1 | 32;
+  
+    __res = TestWaitForDiagTroubleCodes(__statusByte, cDiagAppTimeoutDefault);
+    if(__EvaluateWaitResWithVerdict(__res, 1))
+    {
+      long __dtcCount;
+  	  
+      __dtcCount = DiagGetDTCCount();
+      if(__dtcCount >= 0)
+      {
+        __ReportTableHead5Columns("Check received number of relevant DTCs", __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+        __csr = CheckSignalMatch(__dtcCount, 1, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "Expected number of DTCs");
+        snprintf(__cArray2, 8192, "%s", __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+        __ReportCell(__dtcCount);
+        __ReportCellResult(__csr, __ePassFail);
+        __ReportTableEndVerdict(__cEmpty, __csr);
+        __bVerdict = __bVerdict && __csr;
+      }
+  
+      TestReportWriteFaultMemoryDetails(__bVerdict);
+    }
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eFaultMemoryClear, __cFaultMemoryClear, "Reset fault memory", "5");
+  {
+    long __res;
+    long __dtc;
+    
+    __DiagSetTarget("SUT");
+  
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+    TestStep("Query fault memory", "Clearing fault memory of target Diagnostic ECU 'SUT'");
+  
+    __res = TestWaitForDiagTroubleCodesCleared(-1, cDiagAppTimeoutDefault);
+    if (__EvaluateWaitResWithVerdict(__res, 1, "DTC cleared successfully"))
+      TestReportWriteFaultMemoryDetails(__bVerdict); }
+  TestCommandEnd();
+
+
+}
+
+void Tttfhhndt_TsTc0_Completion()
+{  
+  TestCompletionBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Reset signals", "6");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown.phys = 0;
+        snprintf(__cArray, 8192, "%s", "KeyDown");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp.phys = 0;
+        snprintf(__cArray, 8192, "%s", "KeyUp");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyUp, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+  }
+  TestCompletionEnd();
+}
+
+testcase Tttfhhndt_LockingBehavior(int64 engineRunning, int64 isMoving, int64 crash, int64 expectedLockState)
+{
+int64 __ifExec0;
+
+  SetBreakOnFail(1);
+
+  CreateTTEIFFunction("Tttfhhndt_TsTc1_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eSet, __cSet, "", "1");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = engineRunning;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "engineRunning");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, engineRunning, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Set lock state to be locked", "2");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 1;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_lock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  
+  TestControlStructBegin(__cIf, "Set velocity if the car is moving", "3");
+  {
+    int64 __condition;
+    {
+      int64 __expr0;
+      __ifExec0 = 0;
+  
+      {
+        __csr = CheckSignalMatch(isMoving, 1, "==") == 1;
+      }
+      {
+        __expr0 = __csr;
+      }
+      __condition = __expr0;
+  
+        snprintf(__cConditionArray, 8192, "%s", "");
+        snprintf(__cCompareArray, 8192, "%s", "");
+        snprintf(__cCompareArray, 8192, "%s%s%s", "isMoving", "==", "1");
+        snprintf(__cArray, 8192, "%s", __cCompareArray);
+        snprintf(__cCompareArray, 8192, "( %s )", __cArray);
+        snprintf(__cArray, 8192, "%s", __cConditionArray);
+        snprintf(__cConditionArray, 8192, "%s%s", __cArray, __cCompareArray);
+        snprintf(__cArray, 8192, "%s", __cConditionArray);
+        snprintf(__cConditionArray, 8192, "%s %s", "If", __cArray);
+  
+      __ReportConditionTableHead(__cConditionArray, __condition);
+      {
+        __csr = CheckSignalMatch(isMoving, 1, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "isMoving");
+        snprintf(__cArray2, 8192, "%s '%s'", __cVariable, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+        __ReportCell(isMoving);
+        __ReportCellResult(__csr, __eTrueFalse); 
+      }
+      __ReportTableEndCondition(__cIfCondition);
+    }
+  
+    if(__condition)
+    {  
+      __ifExec0 = 1;
+
+      TestCommandBegin(__eSet, __cSet, "", "4");
+      {
+      
+        __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+        {
+          $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 100;
+          snprintf(__cArray, 8192, "%s", "Velocity");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "");
+          
+          __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+          __ReportTableRow(0, __cArray4, __cAOp, 100, __cArray3);
+      
+        }
+        __ReportTableEndTestStep("1");
+      }
+      TestCommandEnd();
+
+    }
+  }
+  TestControlStructEnd(__eUndefined);
+
+  TestCommandBegin(__eWait, __cWait, "", "5");
+  {
+    __Wait("1", (200 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Apply crash state from the parameter. Check the LockState", "6");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = crash;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "crash");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, crash, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (500 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, expectedLockState, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "expectedLockState");
+      __ReportTableRow(0, __cArray2, "==", expectedLockState, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Tttfhhndt_TsTc1_Completion()
+{  
+  TestCompletionBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_TtInit()
+{
+
+
+}
+
+void Tttfhhndt_Tet_Tc0()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc0", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Lock statically", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc0()
+{	
+
+  SetBreakOnFail(1);
+
+  testReportAddTraceItem("a31342c143aea0ddc86623");
+
+
+  CreateTTEIFFunction("Tttfhhndt_Tet_Tc0_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Initialize all signals", "0");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+        snprintf(__cArray, 8192, "%s", "EngineRunning");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+        snprintf(__cArray, 8192, "%s", "Velocity");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+        snprintf(__cArray, 8192, "%s", "CrashDetected");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+        snprintf(__cArray, 8192, "%s", "LockRequest");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "idle");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+    TestCommandBegin(__eWait, __cWait, "", "1");
+    {
+      __Wait("1", (500 * 1000000LL), 1000000, "");
+    }
+    TestCommandEnd();
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Ensure initial state \'Unlocked\'", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_unlock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (200 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Request to lock the car (engine off). Check if the car is locked.", "3");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 1;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_lock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (syspar::`LockingTests::`LockRequestWaitTime * 1000000LL), 1000000, "LockRequestWaitTime");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Request to lock the car (engine running). Check if the car is locked.", "4");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 1;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 1;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_lock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (syspar::`LockingTests::`LockRequestWaitTime * 1000000LL), 1000000, "LockRequestWaitTime");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Tttfhhndt_Tet_Tc0_Completion()
+{  
+  TestCompletionBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Reset all signals", "5");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+        snprintf(__cArray, 8192, "%s", "EngineRunning");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+        snprintf(__cArray, 8192, "%s", "Velocity");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+        snprintf(__cArray, 8192, "%s", "CrashDetected");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+        snprintf(__cArray, 8192, "%s", "LockRequest");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "idle");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+    TestCommandBegin(__eWait, __cWait, "", "6");
+    {
+      __Wait("1", (500 * 1000000LL), 1000000, "");
+    }
+    TestCommandEnd();
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_Tc1()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc1", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Unlock statically", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc1()
+{	
+
+  SetBreakOnFail(1);
+
+  testReportAddTraceItem("a31342c143aea0ddc86629");
+
+
+  CreateTTEIFFunction("Tttfhhndt_Tet_Tc1_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Initialize all signals", "0");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+        snprintf(__cArray, 8192, "%s", "EngineRunning");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+        snprintf(__cArray, 8192, "%s", "Velocity");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+        snprintf(__cArray, 8192, "%s", "CrashDetected");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+        snprintf(__cArray, 8192, "%s", "LockRequest");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "idle");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+    TestCommandBegin(__eWait, __cWait, "", "1");
+    {
+      __Wait("1", (500 * 1000000LL), 1000000, "");
+    }
+    TestCommandEnd();
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Ensure initial state \'Locked\'", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 1;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_lock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (200 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Request to unlock the car (engine off). Check if the car will be unlocked.", "3");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_unlock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (syspar::`LockingTests::`LockRequestWaitTime * 1000000LL), 1000000, "LockRequestWaitTime");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Request to unlock the car (engine running). Check if the car will be unlocked.", "4");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 1;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_unlock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (syspar::`LockingTests::`LockRequestWaitTime * 1000000LL), 1000000, "LockRequestWaitTime");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Tttfhhndt_Tet_Tc1_Completion()
+{  
+  TestCompletionBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Reset all signals", "5");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 0;
+        snprintf(__cArray, 8192, "%s", "EngineRunning");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+        snprintf(__cArray, 8192, "%s", "Velocity");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+        snprintf(__cArray, 8192, "%s", "CrashDetected");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 0;
+        snprintf(__cArray, 8192, "%s", "LockRequest");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "idle");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+    TestCommandBegin(__eWait, __cWait, "", "6");
+    {
+      __Wait("1", (500 * 1000000LL), 1000000, "");
+    }
+    TestCommandEnd();
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_NetTcCall0()
+{
+  AddIFParameterTestCaseAttribute("Lifecycle", "reopened");
+  AddIFParameterTestCaseAttribute("Note", "Use parameters from parameter file instead of single values");
+  TestGetTestClientNameCIdentifier(__cArray, 8192);
+  CallNetTCList(__cArray, "LockingTestLibrary", "CrashDetection", "Int32,Double", "4b9a90599a8f19a992540fa590887c40");
+}
+
+void Tttfhhndt_Tet_Tf_Preparation0()
+{
+  TestPreparationBegin();
+  {
+    __SetBusContext("CAN", __eSaveCurrent);
+    if(__BusContextOk())
+    {
+      ChkConfig_SetPrecision(3);
+      __tc0 = TestCheck::CreateMsgAbsCycleTimeViolationNS(`CAN::`CentralLockingSystemState, 0, 110 * 1000000LL);
+      ChkConfig_SetPrecision(3);
+    }
+    if (__tc0.QueryValid() > 0)
+    {
+      __tc0.SetTitle("Check max. cycle time of message \'CentralLockingSystemState\' 110 ms");
+      TestAddCondition(__tc0);
+      __tc0.Start("0");
+    }
+    __ResetBusContext();
+
+
+  }
+  TestPreparationEnd();
+}
+
+
+void Tttfhhndt_Tet_Tc2()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc2", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Lock by increasing velocity", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc2()
+{	
+
+  SetBreakOnFail(1);
+
+  testReportAddTraceItem("a31342c143aea0ddc86635");
+
+
+  CreateTTEIFFunction("Tttfhhndt_Tet_Tc2_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+    TestCommandBegin(__eStateChange, __cStateChange, "Ensure initial state \'Unlocked\'", "1");
+    {
+      __bVerdict = __eVerdictPass;
+      __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+      {
+        $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+        snprintf(__cArray, 8192, "%s", "LockRequest");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "Request_unlock");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    
+      __Wait("2", (200 * 1000000LL), 1000000, "");
+    
+      __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+      {
+        __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "LockState");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "Unlocked");
+        __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+        __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+        __ReportCell(__cArray5);
+        __ReportCellResult(__csr, __ePassFail);
+        __bVerdict = __bVerdict && __csr;
+      }
+      __ReportTableEndVerdict("3", __bVerdict);
+    }
+    TestCommandEnd();
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Start engine", "2");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 1;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  {
+    CreateCaplIFFunction("AccelerateDecelerateToTargetSpeed", __eTestFct);
+    AddIFParameterDouble(20);
+    CallInterfaceFunction("Accelerate to velocity lower than the lock-velocity", __cEmpty, "3");
+  }
+
+
+  TestCommandBegin(__eWait, __cWait, "", "4");
+  {
+    __Wait("1", (500 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "Check no automatic lock with velocity lower than the lock-velocity", "5");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+  {
+    CreateCaplIFFunction("AccelerateDecelerateToTargetSpeed", __eTestFct);
+    AddIFParameterDouble(60);
+    CallInterfaceFunction("Accelerate to velocity higher than lock-velocity", __cEmpty, "6");
+  }
+
+
+  TestCommandBegin(__eWait, __cWait, "", "7");
+  {
+    __Wait("1", (500 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "Check automatic lock with velocity higher than lock-velocity", "8");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+  {
+    CreateCaplIFFunction("AccelerateDecelerateToTargetSpeed", __eTestFct);
+    AddIFParameterDouble(0);
+    CallInterfaceFunction("Decelerate until stopped", __cEmpty, "9");
+  }
+
+
+
+}
+
+void Tttfhhndt_Tet_Tc2_Completion()
+{  
+  TestCompletionBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_Tc3()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc3", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("No unlock when slowing down", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc3()
+{	
+int64 __tt0LoopVar0;
+int64 __ifExec1;
+
+
+  SetBreakOnFail(0);
+
+  testReportAddTraceItem("a31342c143aea0ddc8663b");
+
+
+  CreateTTEIFFunction("Tttfhhndt_Tet_Tc3_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Ensure initial state \'Unlocked\'", "1");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_unlock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (200 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Start engine", "2");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = 1;
+      snprintf(__cArray, 8192, "%s", "EngineRunning");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eWait, __cWait, "", "3");
+  {
+    __Wait("1", (500 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  {
+    
+    __type_of(0) __tcLocVar0;
+    __type_of(5) __tcLocVar1;
+    __type_of(1) __tcLocVar2;
+   
+    __tcLocVar0 = 0;
+    __tcLocVar1 = 5;
+    __tcLocVar2 = 1;
+  
+    snprintf(__cArray, 8192, "%s", "0");
+    snprintf(__cArray2, 8192, "%s", "5");
+    snprintf(__cArray3, 8192, "%s", "1");
+  
+    snprintf(__cArray4, 8192, "For (For loopIterator=%s..%s, increment=%s)", __cArray, __cArray2, __cArray3);
+    TestControlStructBegin(__cFor, __cArray4, "0");  
+    for(__tt0LoopVar0 = __tcLocVar0; (__tcLocVar2 < 0) ? (CheckSignalMatch(__tt0LoopVar0, __tcLocVar1, ">=" ) == 1) : (CheckSignalMatch(__tt0LoopVar0, __tcLocVar1, "<=") == 1); __tt0LoopVar0 += __tcLocVar2)
+    {
+      if(__LoopIsBlocking())  
+        break;
+  
+      snprintf(__cArray, 8192, "%s", "0");
+      snprintf(__cArray2, 8192, "%s", "5");
+      snprintf(__cArray3, 8192, "%s", "1");
+      snprintf(__cArray4, 8192, "For (For loopIterator=%s..%s, increment=%s; current loopIterator = %I64d)", __cArray, __cArray2, __cArray3, __tt0LoopVar0);
+      TestControlStructBegin(__cForIteration, __cArray4, "4");
+      TestCommandBegin(__eCAPLInline, __cCAPLInline, "Speed up", "5");
+      {
+        __citfhhndtCaplInline1(__tt0LoopVar0);
+      }
+      TestCommandEnd();
+
+      TestCommandBegin(__eWait, __cWait, "", "6");
+      {
+        __Wait("1", (500 * 1000000LL), 1000000, "");
+      }
+      TestCommandEnd();
+
+      TestControlStructEnd(__eUndefined);
+    }
+    TestControlStructEnd(__eUndefined);
+  }
+  TestCommandBegin(__eCheck, __cCheck, "Check lock state at a speed of 150 km/h", "7");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+  {
+      snprintf(__cConditionArray, 8192, "%s", "");
+    snprintf(__cCompareArray, 8192, "%s", "");
+    snprintf(__cCompareArray, 8192, "%s%s%s", "Velocity", ">", "0");
+    snprintf(__cArray, 8192, "%s", __cCompareArray);
+    snprintf(__cCompareArray, 8192, "( %s )", __cArray);
+    snprintf(__cArray, 8192, "%s", __cConditionArray);
+    snprintf(__cConditionArray, 8192, "%s%s", __cArray, __cCompareArray);
+    snprintf(__cArray, 8192, "%s", __cConditionArray);
+    snprintf(__cConditionArray, 8192, "%s %s", "While", __cArray);
+
+    snprintf(__cConditionArray, 8192, "%s%s", "Decelerate (", __cConditionArray);
+    snprintf(__cConditionArray, 8192, "%s%s", __cConditionArray, ")");
+    TestControlStructBegin(__cWhile, __cConditionArray, "0");
+    while(1)
+    {
+      int64 __expr0;
+      int64 __condition;
+  
+      {
+        __csr = CheckSignalMatch(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, 0, ">") == 1;
+      }
+      {
+        __expr0 = __csr;
+      }
+      __condition = __expr0;
+  
+          snprintf(__cConditionArray, 8192, "%s", "");
+      snprintf(__cCompareArray, 8192, "%s", "");
+      snprintf(__cCompareArray, 8192, "%s%s%s", "Velocity", ">", "0");
+      snprintf(__cArray, 8192, "%s", __cCompareArray);
+      snprintf(__cCompareArray, 8192, "( %s )", __cArray);
+      snprintf(__cArray, 8192, "%s", __cConditionArray);
+      snprintf(__cConditionArray, 8192, "%s%s", __cArray, __cCompareArray);
+      snprintf(__cArray, 8192, "%s", __cConditionArray);
+      snprintf(__cConditionArray, 8192, "%s %s", "While", __cArray);
+  
+      snprintf(__cConditionArray, 8192, "%s%s", "Decelerate (", __cConditionArray);
+      snprintf(__cConditionArray, 8192, "%s%s", __cConditionArray, ")");
+      if(__condition == 1)
+      {
+        snprintf(__cArray2, 8192, "%s%s", __cConditionArray, " : true");
+      }
+      else
+      {
+        snprintf(__cArray2, 8192, "%s%s", __cConditionArray, " : false");
+      }
+      TestControlStructBegin(__cWhileIteration, __cArray2, "8");
+      {
+      __ReportTableHead5Columns("Condition", __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+      {
+            __csr = CheckSignalMatch(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, 0, ">") == 1;
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      __ReportTableRow(0, __cArray2, ">", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __eTrueFalse); 
+      }
+      __ReportTableEndCondition(__cWhileCondition, 1);
+  
+      if(__LoopIsBlocking())
+      {
+        TestControlStructEnd(__eErrorInTestSystem);
+        break;
+      }
+  
+      if (0 == __condition)
+      {
+        TestControlStructEnd(__eUndefined);
+        break;
+      }
+    }
+
+      TestCommandBegin(__eCAPLInline, __cCAPLInline, "Slow down", "9");
+      {
+        __citfhhndtCaplInline2();
+      }
+      TestCommandEnd();
+
+      TestCommandBegin(__eWait, __cWait, "", "10");
+      {
+        __Wait("1", (500 * 1000000LL), 1000000, "");
+      }
+      TestCommandEnd();
+
+      TestControlStructEnd(__eUndefined);
+    }
+    TestControlStructEnd(__eUndefined);
+  }
+  
+
+  TestCommandBegin(__eCheck, __cCheck, "Check lock state is still \'Locked\' after halt", "11");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Locked");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("1", __bVerdict);
+  }
+  TestCommandEnd();
+
+  
+  TestControlStructBegin(__cIf, "", "13");
+  {
+    int64 __condition;
+    {
+      int64 __expr0;
+      __ifExec1 = 0;
+  
+      {
+        __csr = CheckSignalMatch(syspar::`UnlockDoorOnEngineStop, 1, "==") == 1;
+      }
+      {
+        __expr0 = __csr;
+      }
+      __condition = __expr0;
+  
+        snprintf(__cConditionArray, 8192, "%s", "");
+        snprintf(__cCompareArray, 8192, "%s", "");
+        snprintf(__cCompareArray, 8192, "%s%s%s", "UnlockDoorOnEngineStop", "==", "1");
+        snprintf(__cArray, 8192, "%s", __cCompareArray);
+        snprintf(__cCompareArray, 8192, "( %s )", __cArray);
+        snprintf(__cArray, 8192, "%s", __cConditionArray);
+        snprintf(__cConditionArray, 8192, "%s%s", __cArray, __cCompareArray);
+        snprintf(__cArray, 8192, "%s", __cConditionArray);
+        snprintf(__cConditionArray, 8192, "%s %s", "If", __cArray);
+  
+      __ReportConditionTableHead(__cConditionArray, __condition);
+      {
+        __csr = CheckSignalMatch(syspar::`UnlockDoorOnEngineStop, 1, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "UnlockDoorOnEngineStop");
+        snprintf(__cArray2, 8192, "%s '%s'", __cParameter, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+        __ReportCell(syspar::`UnlockDoorOnEngineStop);
+        __ReportCellResult(__csr, __eTrueFalse); 
+      }
+      __ReportTableEndCondition(__cIfCondition);
+    }
+  
+    if(__condition)
+    {  
+      __ifExec1 = 1;
+
+      TestCommandBegin(__eCheck, __cCheck, "Check automatic unlock", "14");
+      {
+        __bVerdict = __eVerdictPass;
+        __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+        {
+          __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+          snprintf(__cArray, 8192, "%s", "LockState");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "Unlocked");
+          __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+          __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+          __ReportCell(__cArray5);
+          __ReportCellResult(__csr, __ePassFail);
+          __bVerdict = __bVerdict && __csr;
+        }
+        __ReportTableEndVerdict("1", __bVerdict);
+      }
+      TestCommandEnd();
+
+    }
+  }
+  TestControlStructEnd(__eUndefined);
+
+  TestControlStructBegin(__cElse, "", "15");
+  {
+    if (__DoElse(__ifExec1))
+    {
+      TestCommandBegin(__eCheck, __cCheck, "Check no automatic unlock", "16");
+      {
+        __bVerdict = __eVerdictPass;
+        __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+        {
+          __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 1, "==") == 1;
+          snprintf(__cArray, 8192, "%s", "LockState");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "Locked");
+          __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+          __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+          __ReportCell(__cArray5);
+          __ReportCellResult(__csr, __ePassFail);
+          __bVerdict = __bVerdict && __csr;
+        }
+        __ReportTableEndVerdict("1", __bVerdict);
+      }
+      TestCommandEnd();
+
+    }
+  }
+  TestControlStructEnd(__eUndefined);
+
+  TestCommandBegin(__eCANoeStandardService, __cCANoeStandardService, "Add capture of graphic window to the report", "17");
+  {
+  
+    testStep(2, __cEmpty, "Execute testReportAddWindowCapture(%s, %s, %s)", "\"Graphic\"", "\"\"", "\"Velocity dependent lock state:\"");
+    testReportAddWindowCapture("Graphic", "", "Velocity dependent lock state:");
+  }
+  TestCommandEnd();
+
+
+}
+
+void __citfhhndtCaplInline1 (int64& loopIterator)
+{
+  {
+float currentVelocity;
+currentVelocity = 6 * sqrt(20 * loopIterator);
+TestStep("", "Speed up to %f ...", currentVelocity);
+$Velocity = currentVelocity;
+  }
+}
+void __citfhhndtCaplInline2 ()
+{
+  {
+float currentVelocity;
+currentVelocity = $Velocity - 10;
+TestStep("", "Slow down to %f ...", currentVelocity);
+$Velocity = currentVelocity;
+  }
+}
+void Tttfhhndt_Tet_Tc3_Completion()
+{  
+  TestCompletionBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_Tc4()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc4", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Check locking behavior with velocity waveform", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc4()
+{	
+dword __h0;
+
+  __h0 = HILAPICreateSignalGenerator("VelocityWaveform.sti");
+  if(__h0 == 0)
+    testStepErrorInTestSystem("Generation of signal generator for waveform curve 'LockAutomaticallyTester::StimulateVelocity' failed"); 
+  
+  if ((__h0 != 0) && (testWaitForHILAPISignalGeneratorLoaded(__h0) < 0))
+  {
+    testStepErrorInTestSystem("Load of signal generator for waveform curve 'LockAutomaticallyTester::StimulateVelocity' failed"); 
+    __h0 = 0; 
+  }
+  SetBreakOnFail(0);
+
+  testReportAddTraceItem("a31342c143aea0ddc86635");
+  testReportAddTraceItem("a31342c143aea0ddc8663b");
+
+
+  {
+    CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+  }
+
+
+  TestCommandBegin(__eStimulateWaveform, __cStimulateWaveform, "Stimulate velocity via \'StimulateVelocity\' and execute checkpoints from \'ExpectedLockState\'", "1");
+  {
+    __ReportTableHead2Columns(__cExecuteWaveformCurves, __cWaveformCurve, __cTSym);
+    testInfoRow(__tableHandle, 0, "LockAutomaticallyTester::StimulateVelocity");
+    snprintf(__cArray, elCount(__cArray), "CAN signal '%s'", "Velocity");
+    testInfoCell(__tableHandle, __cArray);
+    
+    if ((__h0 != 0) && (0 == HILAPISetSignalGeneratorAssignment(__h0, "LockAutomaticallyTester::StimulateVelocity", `CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity)))
+    { 
+      snprintf(__cArray2, 8192, "Assignment of signal generator for waveform curve 'LockAutomaticallyTester::StimulateVelocity' failed");
+      testStepErrorInTestSystem(__cArray2); 
+      __h0 = 0;
+    }
+    HILAPIStartSignalGenerator(__h0);
+    testInfoRow(__tableHandle, 0, "LockAutomaticallyTester::ExpectedLockState");
+    testInfoCell(__tableHandle, "-");
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+  
+  CreateCaplIFFunction("__wftfhhndtSetValues0", __eFct);
+  AddIFParameterInt64(__h0);
+  CallInterfaceFunctionParallelUnsafe();
+  
+    {
+      dword __func;
+      CreateCaplIFFunction("Checkpoints_cf5cf194a4924537a8813c30b2792b30", __eFct);
+      __func = CallInterfaceFunctionParallel();
+      testJoinParallelTestThread(__func);
+    }
+  
+  testWaitForAllJoinedEventsSilent(0);
+  if(__h0 != 0 && HILAPIGetSignalGeneratorState(__h0) == 4)
+    testWaitForHILAPISignalGeneratorFinished(__h0);
+
+}
+
+export void __wftfhhndtSetValues0(int64 __h0)
+{
+  if (__h0 != 0 && HILAPIGetSignalGeneratorState(__h0) == 4)
+  {
+    testWaitForHILAPISignalGeneratorFinished(__h0);
+  }
+  $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = 0;
+
+}
+
+void Tttfhhndt_Tet_Ts0()
+{
+  CreateTTEIFFunction("Tttfhhndt_Ts0", __eTsDef, __eLocal);
+  CallInterfaceFunction("Apply crash with different velocities", "", __cEmpty );
+}
+testsequence Tttfhhndt_Ts0()
+{
+
+  SetBreakOnFail(0);
+
+  {
+    TestControlStructBegin(__cForEach, "For Each (For Each currVelocity in VelocityList)", "0");
+    for(__tt0LoopVar1 = 0; __tt0LoopVar1 < elCount(syspar::`LockingTests::`VelocityList); __tt0LoopVar1++)
+    {
+      snprintf(__cArray, 8192, "For Each (For Each currVelocity in VelocityList; current currVelocity = %I64d (%s[%I64d]))", (int64)syspar::`LockingTests::`VelocityList[__tt0LoopVar1], "VelocityList", __tt0LoopVar1);
+      TestControlStructBegin(__cForEachIteration, __cArray, "1");
+
+      CreateTTEIFFunction("Tttfhhndt_TsTc2", __eTcDef, __eLocal);
+      AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+      AddIFParameterTestCaseAttribute("Note", "");
+      CallInterfaceFunction("Crash detection when car is moving", __cEmpty , "91360866-9ce0-4e7e-a612-f74be4cbef39");
+
+      TestControlStructEnd(__eUndefined);
+    }
+    TestControlStructEnd(__eUndefined);
+  }
+}
+
+testcase Tttfhhndt_TsTc2()
+{
+
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eCAPLInline, __cCAPLInline, "Set test case name", "1");
+  {
+    __citfhhndtCaplInline3(syspar::`LockingTests::`VelocityList[__tt0LoopVar1]);
+  }
+  TestCommandEnd();
+
+  {
+    CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+  }
+
+
+  TestCommandBegin(__eSet, __cSet, "Set velocity to execute test with", "3");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = syspar::`LockingTests::`VelocityList[__tt0LoopVar1];
+      snprintf(__cArray, 8192, "%s", "Velocity");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currVelocity");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, syspar::`LockingTests::`VelocityList[__tt0LoopVar1], __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Apply a crash. Check if the car has been opened", "4");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 1;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (500 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "LockState");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Unlocked");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Reset the crash signal", "5");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = 0;
+      snprintf(__cArray, 8192, "%s", "CrashDetected");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eWait, __cWait, "", "6");
+  {
+    __Wait("1", (500 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  {
+    CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+  }
+
+
+}
+
+void __citfhhndtCaplInline3 (int64 currVelocity)
+{
+  {
+char buffer[64];
+snprintf(buffer,elcount(buffer),"Crash detection when car is moving with velocity %d", currVelocity);
+TestCaseTitle("", buffer);
+  }
+}
+
+void Tttfhhndt_Tet_Tc5()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc5", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "in implementation");
+  AddIFParameterTestCaseAttribute("Note", "Use test sequence with loop around test cases instead?");
+  CallInterfaceFunction("Lock dependent on velocity and crash detection", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc5()
+{	
+int64 __tt0LoopVar2;
+
+  SetBreakOnFail(1);
+
+  testReportAddTraceItem("a31342c143aea0ddc86635");
+  testReportAddTraceItem("a31342c143aea0ddc8663b");
+
+
+  {
+    TestControlStructBegin(__cForEach, "Iterate through all relevant locking test vectors (For Each testVector in DoorLockData)", "0");
+    for(__tt0LoopVar2 = 0; __tt0LoopVar2 < elCount(syspar::`LockingTests::`DoorLockData); __tt0LoopVar2++)
+    {
+      snprintf(__cArray, elCount(__cArray), "Iterate through all relevant locking test vectors (For Each testVector in DoorLockData; current testVector = DoorLockData[%I64d])", __tt0LoopVar2);
+      TestControlStructBegin(__cForEachIteration, __cArray, "0");
+
+      {
+        CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+        CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+      }
+
+
+      TestCommandBegin(__eSet, __cSet, "", "2");
+      {
+      
+        __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+        {
+          $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning.phys = syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`Engine;
+          snprintf(__cArray, 8192, "%s", "EngineRunning");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "testVector.Engine");
+          
+          __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`EngineRunning, __cArray2, __cArray4);
+          __ReportTableRow(0, __cArray4, __cAOp, syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`Engine, __cArray3);
+      
+        }
+        __ReportTableEndTestStep("1");
+      }
+      TestCommandEnd();
+
+      TestCommandBegin(__eWait, __cWait, "", "3");
+      {
+        __Wait("1", (500 * 1000000LL), 1000000, "");
+      }
+      TestCommandEnd();
+
+      TestCommandBegin(__eStateChange, __cStateChange, "Ensure initial state \'Unlocked\'", "4");
+      {
+        __bVerdict = __eVerdictPass;
+        __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+        {
+          $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+          snprintf(__cArray, 8192, "%s", "LockRequest");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "Request_unlock");
+          
+          __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+          __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+      
+        }
+        __ReportTableEndTestStep("1");
+      
+        __Wait("2", (500 * 1000000LL), 1000000, "");
+      
+        __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+        {
+          __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, 0, "==") == 1;
+          snprintf(__cArray, 8192, "%s", "LockState");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "Unlocked");
+          __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+          __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+          __ReportCell(__cArray5);
+          __ReportCellResult(__csr, __ePassFail);
+          __bVerdict = __bVerdict && __csr;
+        }
+        __ReportTableEndVerdict("3", __bVerdict);
+      }
+      TestCommandEnd();
+
+      TestCommandBegin(__eStateChange, __cStateChange, "Apply test vector of stimulation and expected values", "5");
+      {
+        __bVerdict = __eVerdictPass;
+        __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+        {
+          $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity.phys = syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`Velocity;
+          snprintf(__cArray, 8192, "%s", "Velocity");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "testVector.Velocity");
+          
+          __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`Velocity, __cArray2, __cArray4);
+          __ReportTableRow(0, __cArray4, __cAOp, syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`Velocity, __cArray3);
+      
+        }
+        {
+          $`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected.phys = syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`CrashDetected;
+          snprintf(__cArray, 8192, "%s", "CrashDetected");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "testVector.CrashDetected");
+          
+          __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`VehicleMotion::`CrashDetected, __cArray2, __cArray4);
+          __ReportTableRow(0, __cArray4, __cAOp, syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`CrashDetected, __cArray3);
+      
+        }
+        __ReportTableEndTestStep("1");
+      
+        __Wait("2", (250 * 1000000LL), 1000000, "");
+      
+        __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+        {
+          __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`LockState, "==") == 1;
+          snprintf(__cArray, 8192, "%s", "LockState");
+          snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+          snprintf(__cArray3, 8192, "%s", "testVector.LockState");
+          __ReportTableRow(0, __cArray2, "==", syspar::`LockingTests::`DoorLockData[__tt0LoopVar2].`LockState, __cArray3);
+          __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`CentralLockingSystemState::`LockState, __cArray5);
+          __ReportCell(__cArray5);
+          __ReportCellResult(__csr, __ePassFail);
+          __bVerdict = __bVerdict && __csr;
+        }
+        __ReportTableEndVerdict("3", __bVerdict);
+      }
+      TestCommandEnd();
+
+      TestControlStructEnd(__eUndefined);
+    }
+    TestControlStructEnd(__eUndefined);
+  }
+  {
+    CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+    CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+  }
+
+
+}
+
+void Tttfhhndt_Tet_TcListCall0()
+{
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "Candidate for classification tree.");
+  CallTTETCList("Tttfhhndt_LockingBehavior", "6,6,6,6", "32ddb90f4c2108f3bf7f1ca394d110c2", __eLocal);
+}
+
+void Tttfhhndt_Tet_Tc6()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc6", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Open and comfort close", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc6()
+{	
+TestCheck __tc1;
+TestCheck __tc2;
+
+  SetBreakOnFail(1);
+
+  CreateTTEIFFunction("Tttfhhndt_Tet_Tc6_Completion", __eFct, __eLocal);
+  
+  AddIFAsCleanUpFunction();
+
+  TestPreparationBegin();
+  {
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+    __SetBusContext("CAN", __eSaveCurrent);
+    if(__BusContextOk())
+    {
+      ChkConfig_SetPrecision(3);
+      __tc1 = TestCheck::CreateMsgAbsCycleTimeViolationNS(`CAN::`CentralLockingSystemState, 0, 110 * 1000000LL);
+      ChkConfig_SetPrecision(3);
+    }
+    if (__tc1.QueryValid() > 0)
+    {
+      __tc1.SetTitle("Check max. cycle time of message \'CentralLockingSystemState\' 110 ms");
+      TestAddCondition(__tc1);
+      __tc1.Start("1");
+    }
+    __ResetBusContext();
+
+
+    __SetBusContext("CAN", __eSaveCurrent);
+    if(__BusContextOk())
+    {
+      ChkConfig_SetPrecision(3);
+      __tc2 = TestCheck::CreateMsgAbsCycleTimeViolationNS(`CAN::`WindowState, 0, 110 * 1000000LL);
+      ChkConfig_SetPrecision(3);
+    }
+    if (__tc2.QueryValid() > 0)
+    {
+      __tc2.SetTitle("Check max. cycle time of message \'WindowState\' 110 ms");
+      TestAddCondition(__tc2);
+      __tc2.Start("2");
+    }
+    __ResetBusContext();
+
+
+  }
+  TestPreparationEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Open the window", "3");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown.phys = 1;
+      snprintf(__cArray, 8192, "%s", "KeyDown");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 1, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eWait, __cWait, "", "4");
+  {
+    __Wait("1", (5000 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "Release key", "5");
+  {
+  
+    __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown.phys = 0;
+      snprintf(__cArray, 8192, "%s", "KeyDown");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`WindowControl::`KeyDown, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eWait, __cWait, "", "6");
+  {
+    __Wait("1", (100 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Try the comfort close and check if the window is really closing", "7");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 3;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Comfort_lock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 3, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (4000 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "WindowMotion");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "currently_closing");
+      __ReportTableRow(0, __cArray2, "==", 1, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eStateChange, __cStateChange, "Check if the window stops moving when the car is opened again", "8");
+  {
+    __bVerdict = __eVerdictPass;
+    __ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      $`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest.phys = 2;
+      snprintf(__cArray, 8192, "%s", "LockRequest");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Request_unlock");
+      
+      __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT_Driver::`LockingRemoteControlRequest::`LockRequest, __cArray2, __cArray4);
+      __ReportTableRow(0, __cArray4, __cAOp, 2, __cArray3);
+  
+    }
+    __ReportTableEndTestStep("1");
+  
+    __Wait("2", (100 * 1000000LL), 1000000, "");
+  
+    __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "WindowMotion");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "not_moving");
+      __ReportTableRow(0, __cArray2, "==", 0, __cArray3);
+      __ReportLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, __cArray5);
+      __ReportCell(__cArray5);
+      __ReportCellResult(__csr, __ePassFail);
+      __bVerdict = __bVerdict && __csr;
+    }
+    __ReportTableEndVerdict("3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Tttfhhndt_Tet_Tc6_Completion()
+{  
+  TestCompletionBegin();
+  {
+    TestCommandBegin(__eSet, __cSet, "Reset window state", "9");
+    {
+    
+      __ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+      {
+        $`CAN::dbNode::`SUT::`WindowState::`WindowMotion.phys = 0;
+        snprintf(__cArray, 8192, "%s", "WindowMotion");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "not_moving");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`WindowState::`WindowMotion, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      {
+        $`CAN::dbNode::`SUT::`WindowState::`WindowPosition.phys = 0;
+        snprintf(__cArray, 8192, "%s", "WindowPosition");
+        snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        
+        __ReportSetLValueOrSignalNotOnline(`CAN::dbNode::`SUT::`WindowState::`WindowPosition, __cArray2, __cArray4);
+        __ReportTableRow(0, __cArray4, __cAOp, 0, __cArray3);
+    
+      }
+      __ReportTableEndTestStep("1");
+    }
+    TestCommandEnd();
+
+    {
+      CreateTTEIFFunction("Tttfhhndt_ResetSignals", __eFct, __eLocal);
+      CallInterfaceFunction(__cEmpty, __cEmpty, "47337ac5-56d6-4b6d-865c-2286877a2d2b");
+    }
+
+
+  }
+  TestCompletionEnd();
+}
+
+void Tttfhhndt_Tet_TcCall0()
+{
+  CreateTTEIFFunction("Tttfhhndt_AmbiguousKeyRequest", __eTcDef, __eLocal);
+  AddIFParameterTestCaseAttribute("Lifecycle", "ready for review");
+  AddIFParameterTestCaseAttribute("Note", "Use test case list instead?");
+  AddIFParameterInt64(0);
+  CallInterfaceFunction(__cEmpty , "", __cEmpty );
+}
+
+void Tttfhhndt_Tet_TcCall1()
+{
+  CreateTTEIFFunction("Tttfhhndt_AmbiguousKeyRequest", __eTcDef, __eLocal);
+  AddIFParameterTestCaseAttribute("Lifecycle", "ready for review");
+  AddIFParameterTestCaseAttribute("Note", "Use test case list instead?");
+  AddIFParameterInt64(1);
+  CallInterfaceFunction(__cEmpty , "", __cEmpty );
+}
+
+void Tttfhhndt_Tet_Tc7()
+{
+  CreateTTEIFFunction("Tttfhhndt_Tc7", __eTcDef, __eLocal);  
+  AddIFParameterTestCaseAttribute("Lifecycle", "finished");
+  AddIFParameterTestCaseAttribute("Note", "");
+  CallInterfaceFunction("Variant coding", __cEmpty , __cEmpty );
+}
+testcase Tttfhhndt_Tc7()
+{	
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eFaultMemoryClear, __cFaultMemoryClear, "Clear fault memory of SUT in order to get a defined precondition", "0");
+  {
+    long __res;
+    long __dtc;
+    
+    __DiagSetTarget("SUT");
+  
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+    TestStep("Query fault memory", "Clearing fault memory of target Diagnostic ECU 'SUT'");
+  
+    __res = TestWaitForDiagTroubleCodesCleared(-1, cDiagAppTimeoutDefault);
+    if (__EvaluateWaitResWithVerdict(__res, 1, "DTC cleared successfully"))
+      TestReportWriteFaultMemoryDetails(__bVerdict); }
+  TestCommandEnd();
+
+    
+  TestCommandBegin(__eDiagService, __cDiagService, "Activate Extended Session", "1");
+  {
+    long __res, __paramLen, __bytePos;
+    DiagResponse * __resp;
+    DiagRequest "ExtendedDiagnosticSession_Start" __req;
+  
+    __bVerdict = __eVerdictPass;
+  
+    do {
+      if(!__DiagSetTarget("SUT"))
+        break;
+  
+      TestReportResetDiagObjectList();
+      DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+      // Request aspect
+      {
+  
+        if (0 >= __DiagSendReqAndWaitForResp(__req, -1, -1, -1, -1, -1, EnumResult_pos, EnumServiceDetails_onfail, EnumSendingMode_physical, EnumSuppressPosResBit_asconfigured, EnumVerdictOnInvalidValues_fail))
+          break;
+      }
+  
+    }
+    while(0);
+  
+  
+    if (__bVerdict == __eVerdictFail)
+      TestReportWriteDiagObjectList();
+  }
+  TestCommandEnd();
+
+    
+  TestCommandBegin(__eDiagService, __cDiagService, "Write Variant Coding while ECU is locked --> Expected result: Security access denied", "2");
+  {
+    long __res, __paramLen, __bytePos;
+    DiagResponse * __resp;
+    DiagRequest "Coding_Write" __req;
+  
+    __bVerdict = __eVerdictPass;
+  
+    do {
+      if(!__DiagSetTarget("SUT"))
+        break;
+  
+      TestReportResetDiagObjectList();
+      DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+      __DiagReadBeforeWrite(__req, EnumServiceDetails_onfail);
+      // Request aspect
+      {
+        {
+          snprintf(__cDiagValueArray, 8192, "%s", "USA");
+          __res = __DiagSetParameter(__req, "Codingstring.CountryType", __cDiagValueArray);
+          if(__res < 0)
+          {
+            __bVerdict = __eVerdictFail;
+            __DiagErrCodeTestStep(__res, "Cannot set diagnostic parameter 'Codingstring.CountryType'");
+            break;
+          }
+        }
+        {
+          __res = __DiagSetParameter(__req, "Codingstring.SpecialAdjustment", 0x42);
+          if(__res < 0)
+          {
+            __bVerdict = __eVerdictFail;
+            __DiagErrCodeTestStep(__res, "Cannot set diagnostic parameter 'Codingstring.SpecialAdjustment'");
+            break;
+          }
+        }
+  
+        if (0 >= __DiagSendReqAndWaitForResp(__req, -1, -1, -1, -1, -1, EnumResult_neg, EnumServiceDetails_onfail, EnumSendingMode_physical, EnumSuppressPosResBit_asconfigured, EnumVerdictOnInvalidValues_fail))
+          break;
+      }
+  
+      __res = __req.GetLastResponse(__resp);
+      __res = __DiagErrCodeTestStep(__res, "Can't retrieve last response for request! No check possible.") < 0;
+      if(__res)
+      {
+  	  __bVerdict = __eVerdictFail;
+        break;
+      }
+      {
+        __res = DiagInterpretAs(__resp, "WDBI_NR");
+        if(__res != 0)
+        {
+          __bVerdict = __eVerdictFail;
+          __DiagErrCodeTestStep(__res, "Can't interpret response as diagnostic primitive 'WDBI_NR'.");
+          break;
+        }
+        else
+        {
+          TestStepPass( "Received primitive can be interpreted as diagnostic primitive 'WDBI_NR'.");
+        }
+      }
+    }
+    while(0);
+  
+  
+    // Response, check & read aspect
+    {
+      __res = 1;
+      __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+      {
+        double __nDiagValue;
+        __DiagGetParameter(__resp, "RC", __nDiagValue);
+        __csr = CheckSignalMatch(__nDiagValue, 51, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "Diagnostic parameter \'RC\'");
+        snprintf(__cArray2, 8192, "%s", __cArray);
+        snprintf(__cArray3, 8192, "%s", "Security access denied");
+        __ReportTableRow(0, __cArray2, "==", 51, __cArray3);
+        __ReportCell(__nDiagValue);
+        __ReportCellResult(__csr, __ePassFail);
+        __res = __res && __csr;
+      
+      }
+      __ReportTableEndVerdict(__cEvaluateResponse, __res);
+  	__bVerdict = __bVerdict && __res;
+    }
+    if (__bVerdict == __eVerdictFail)
+      TestReportWriteDiagObjectList();
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eFaultMemoryDtc, __cFaultMemoryDtc, "Check whether the corresponding DTC was stored (Variant Coding Illegal Access)", "3");
+  {
+    long  __res;
+    dword __statusByte;
+   
+    __DiagSetTarget("SUT");
+    DiagSetReportDetailLevel(EnumServiceDetails_always);
+    TestStep("Query fault memory", "Reading DTCs from diagnostic ECU 'SUT'");
+  
+    __statusByte = -1;
+  
+    __res = TestWaitForDiagTroubleCodes(__statusByte, cDiagAppTimeoutDefault);
+    if(__EvaluateWaitResWithVerdict(__res, 1))
+    {
+      __bVerdict = __eVerdictPass;
+      // DTC Content
+      {
+        long  __expectedDtc;
+        long  __statusReceived;
+      
+        __expectedDtc = 0x2;
+        __statusReceived = DiagGetDtcStatus(__expectedDtc);
+        if (__statusReceived < 0)
+        {
+          __bVerdict = __eVerdictFail;
+          snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+          TestStepFail(__cEmpty, "Mandatory DTC 0x%lX%s and status not found.", __expectedDtc, __cArray);
+        }
+        else
+        {
+          long __match;
+          __match = 1;
+      
+          if (__match)
+          {
+            snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+            TestStepPass(__cEmpty, "Mandatory DTC 0x%lX%s found with matching status.", __expectedDtc, __cArray);
+          }
+          else
+          {
+            __bVerdict = __eVerdictFail;
+            snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+            TestStepFail(__cEmpty, "Mandatory DTC 0x%lX%s and status not found.", __expectedDtc, __cArray);
+          }
+        }
+      }
+    
+      TestReportWriteFaultMemoryDetails(__bVerdict);  
+    }
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eDiagUnlockEcu, __cDiagUnlockEcu, "Unlock ECU using configured Seed & Key DLL", "4");
+  {
+    long result;
+  
+    __DiagSetTarget("SUT");
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+  
+    TestStep("", "Unlocking Diagnostic ECU 'SUT'");
+    result = TestWaitForUnlockEcu(1);
+    if(result == 0)
+      TestStepPass("Unlocking succeeded.");
+    else
+      __DiagErrCodeTestStep(result, "Unlocking Diagnostic ECU 'SUT'");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eFaultMemoryClear, __cFaultMemoryClear, "Clear fault memory again", "5");
+  {
+    long __res;
+    long __dtc;
+    
+    __DiagSetTarget("SUT");
+  
+    DiagSetReportDetailLevel(EnumServiceDetails_onfail);
+    TestStep("Query fault memory", "Clearing fault memory of target Diagnostic ECU 'SUT'");
+  
+    __res = TestWaitForDiagTroubleCodesCleared(-1, cDiagAppTimeoutDefault);
+    if (__EvaluateWaitResWithVerdict(__res, 1, "DTC cleared successfully"))
+      TestReportWriteFaultMemoryDetails(__bVerdict); }
+  TestCommandEnd();
+
+    
+  TestCommandBegin(__eDiagService, __cDiagService, "Write Variant Coding while ECU is unlocked (CountryType=USA, SpecialAdjustment=0x77) --> should work this time", "6");
+  {
+    long __res, __paramLen, __bytePos;
+    DiagResponse * __resp;
+    DiagRequest "Coding_Write" __req;
+  
+    __bVerdict = __eVerdictPass;
+  
+    do {
+      if(!__DiagSetTarget("SUT"))
+        break;
+  
+      TestReportResetDiagObjectList();
+      DiagSetReportDetailLevel(EnumServiceDetails_always);
+      __DiagReadBeforeWrite(__req, EnumServiceDetails_always);
+      // Request aspect
+      {
+        {
+          snprintf(__cDiagValueArray, 8192, "%s", "USA");
+          __res = __DiagSetParameter(__req, "Codingstring.CountryType", __cDiagValueArray);
+          if(__res < 0)
+          {
+            __bVerdict = __eVerdictFail;
+            __DiagErrCodeTestStep(__res, "Cannot set diagnostic parameter 'Codingstring.CountryType'");
+            break;
+          }
+        }
+        {
+          __res = __DiagSetParameter(__req, "Codingstring.SpecialAdjustment", 0x77);
+          if(__res < 0)
+          {
+            __bVerdict = __eVerdictFail;
+            __DiagErrCodeTestStep(__res, "Cannot set diagnostic parameter 'Codingstring.SpecialAdjustment'");
+            break;
+          }
+        }
+  
+        if (0 >= __DiagSendReqAndWaitForResp(__req, -1, -1, -1, -1, -1, EnumResult_pos, EnumServiceDetails_always, EnumSendingMode_physical, EnumSuppressPosResBit_asconfigured, EnumVerdictOnInvalidValues_fail))
+          break;
+      }
+  
+    }
+    while(0);
+  
+  
+    if (__bVerdict == __eVerdictFail)
+      TestReportWriteDiagObjectList();
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eFaultMemoryDtc, __cFaultMemoryDtc, "Check that the corresponding DTC was not set (Variant Coding Illegal Access)", "7");
+  {
+    long  __res;
+    dword __statusByte;
+   
+    __DiagSetTarget("SUT");
+    DiagSetReportDetailLevel(EnumServiceDetails_always);
+    TestStep("Query fault memory", "Reading DTCs from diagnostic ECU 'SUT'");
+  
+    __statusByte = -1;
+  
+    __res = TestWaitForDiagTroubleCodes(__statusByte, cDiagAppTimeoutDefault);
+    if(__EvaluateWaitResWithVerdict(__res, 1))
+    {
+      __bVerdict = __eVerdictPass;
+      // DTC Content
+      {
+        long  __expectedDtc;
+        long  __statusReceived;
+      
+        __expectedDtc = 0x2;
+        __statusReceived = DiagGetDtcStatus(__expectedDtc);
+        if (__statusReceived < 0)
+        {
+          snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+          TestStepPass(__cEmpty, "Not allowed DTC 0x%lX%s not found.", __expectedDtc, __cArray);
+        }
+        else
+        {
+          long __match;
+          __match = 1;
+      
+          if (__match)
+          {
+            __bVerdict = __eVerdictFail;
+            snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+            TestStepFail(__cEmpty, "Not allowed DTC 0x%lX%s found.", __expectedDtc, __cArray);
+          }
+          else
+          {
+            snprintf(__cArray, 8192, "(%s)", "Diagnostic trouble code \'P000002\'");
+            TestStepPass(__cEmpty, "Not allowed DTC 0x%lX%s not found. Status not found.", __expectedDtc, __cArray);
+          }
+        }
+      }
+    
+      TestReportWriteFaultMemoryDetails(__bVerdict);  
+    }
+  }
+  TestCommandEnd();
+
+    
+  TestCommandBegin(__eDiagService, __cDiagService, "Check if Variant Coding was correctly written (CountryType==USA, SpecialAdjustment==0x77, VehicleType==Coupe)", "8");
+  {
+    long __res, __paramLen, __bytePos;
+    DiagResponse * __resp;
+    DiagRequest "Coding_Read" __req;
+  
+    __bVerdict = __eVerdictPass;
+  
+    do {
+      if(!__DiagSetTarget("SUT"))
+        break;
+  
+      TestReportResetDiagObjectList();
+      DiagSetReportDetailLevel(EnumServiceDetails_always);
+      // Request aspect
+      {
+  
+        if (0 >= __DiagSendReqAndWaitForResp(__req, -1, -1, -1, -1, -1, EnumResult_pos, EnumServiceDetails_always, EnumSendingMode_physical, EnumSuppressPosResBit_asconfigured, EnumVerdictOnInvalidValues_fail))
+          break;
+      }
+  
+      __res = __req.GetLastResponse(__resp);
+      __res = __DiagErrCodeTestStep(__res, "Can't retrieve last response for request! No check possible.") < 0;
+      if(__res)
+      {
+  	  __bVerdict = __eVerdictFail;
+        break;
+      }
+      {
+        __res = DiagInterpretAs(__resp, "RDBI_PR");
+        if(__res != 0)
+        {
+          __bVerdict = __eVerdictFail;
+          __DiagErrCodeTestStep(__res, "Can't interpret response as diagnostic primitive 'RDBI_PR'.");
+          break;
+        }
+        else
+        {
+          TestStepPass( "Received primitive can be interpreted as diagnostic primitive 'RDBI_PR'.");
+        }
+      }
+    }
+    while(0);
+  
+  
+    // Response, check & read aspect
+    {
+      __res = 1;
+      __ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+      {
+        __DiagGetParameter(__resp, "Codingstring.CountryType", __bDiagValueArray, __cDiagValueArray);
+      snprintf(__cArray, 8192, "%s", __cDiagValueArray);
+      snprintf(__cArray2, 8192, "%s", "USA");
+      __csr = strncmp(__cArray, __cArray2, 8192) == 0;
+      snprintf(__cArray3, 8192, "%s", "Diagnostic parameter \'Codingstring.CountryType\'");
+      snprintf(__cArray4, 8192, "%s", __cArray3);
+      snprintf(__cArray5, 8192, "%s", "");
+      __ReportTableRow(0, __cArray4, "==", __cArray2, __cArray5);
+      __ReportCell(__cArray);
+      __ReportCellResult(__csr, __ePassFail);
+        __res = __res && __csr;
+      
+      }
+      {
+        double __nDiagValue;
+        __DiagGetParameter(__resp, "Codingstring.SpecialAdjustment", __nDiagValue);
+        __csr = CheckSignalMatch(__nDiagValue, 0x77, "==") == 1;
+        snprintf(__cArray, 8192, "%s", "Diagnostic parameter \'Codingstring.SpecialAdjustment\'");
+        snprintf(__cArray2, 8192, "%s", __cArray);
+        snprintf(__cArray3, 8192, "%s", "");
+        __ReportTableRow(0, __cArray2, "==", 0x77, __cArray3);
+        __ReportCell(__nDiagValue);
+        __ReportCellResult(__csr, __ePassFail);
+        __res = __res && __csr;
+      
+      }
+      {
+        __DiagGetParameter(__resp, "Codingstring.VehicleType", __bDiagValueArray, __cDiagValueArray);
+      snprintf(__cArray, 8192, "%s", __cDiagValueArray);
+      snprintf(__cArray2, 8192, "%s", "Coupe");
+      __csr = strncmp(__cArray, __cArray2, 8192) == 0;
+      snprintf(__cArray3, 8192, "%s", "Diagnostic parameter \'Codingstring.VehicleType\'");
+      snprintf(__cArray4, 8192, "%s", __cArray3);
+      snprintf(__cArray5, 8192, "%s", "");
+      __ReportTableRow(0, __cArray4, "==", __cArray2, __cArray5);
+      __ReportCell(__cArray);
+      __ReportCellResult(__csr, __ePassFail);
+        __res = __res && __csr;
+      
+      }
+      __ReportTableEndVerdict(__cEvaluateResponse, __res);
+  	__bVerdict = __bVerdict && __res;
+    }
+    if (__bVerdict == __eVerdictFail)
+      TestReportWriteDiagObjectList();
+  }
+  TestCommandEnd();
+
+}
+
