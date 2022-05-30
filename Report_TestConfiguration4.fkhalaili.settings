@@ -9,12 +9,16 @@
         <value type="Vector.ReportViewer.ViewModel.ContentModels.ContentModelPersistList">
           <ArrayOfContentModelPersist>
             <ContentModelPersist d7p1:type="VisualizableNodeModelPersist" xmlns:d7p1="http://www.w3.org/2001/XMLSchema-instance">
-              <ReportUniqueId>2b9c868e-f41a-4adb-a055-d623c87c8e1f</ReportUniqueId>
-              <NodeName>TestConfiguration4</NodeName>
-              <NodeType>TestReport</NodeType>
-              <DbId>1</DbId>
+              <ReportUniqueId>90d17ae0-9bf8-42fd-9d06-160ae019e357</ReportUniqueId>
+              <NodeName>Lock statically</NodeName>
+              <NodeType>TestCase</NodeType>
+              <DbId>2</DbId>
               <IsTreeNode>true</IsTreeNode>
-              <PathToNode />
+              <PathToNode>
+                <string>Central locking system test</string>
+                <string>Test static requirements of the door control unit</string>
+                <string>Lock statically</string>
+              </PathToNode>
             </ContentModelPersist>
           </ArrayOfContentModelPersist>
         </value>
@@ -132,8 +136,8 @@
 			&lt;/UIElement&gt;
 			&lt;UIElement xsi:type="Workspace"&gt;
 				&lt;Content xsi:type="TabbedMdiHost"&gt;
-					&lt;Content xsi:type="TabbedMdiContainer" SelectedWindowUniqueId="3b53c885-813c-46e0-8c86-fd9609cfa17a"&gt;
-						&lt;UIElement xsi:type="DocumentWindowRef" UniqueId="3b53c885-813c-46e0-8c86-fd9609cfa17a" /&gt;
+					&lt;Content xsi:type="TabbedMdiContainer" SelectedWindowUniqueId="5627c04f-60bf-4f95-a872-fd0d1b5db5ba"&gt;
+						&lt;UIElement xsi:type="DocumentWindowRef" UniqueId="5627c04f-60bf-4f95-a872-fd0d1b5db5ba" /&gt;
 					&lt;/Content&gt;
 				&lt;/Content&gt;
 			&lt;/UIElement&gt;
@@ -144,10 +148,10 @@
 		&lt;/UIElement&gt;
 	&lt;/Content&gt;
 	&lt;DocumentWindows&gt;
-		&lt;DocumentWindow UniqueId="3b53c885-813c-46e0-8c86-fd9609cfa17a" SerializationId="TestReport&amp;lt;1&amp;gt;" IsOpen="true" LastActiveDateTime="2022-04-12T11:46:19.7440997+02:00" State="Document" Type="Vector.ReportViewer.UI.ContentViews.Controls.ContentViewDocumentWnd, Vector.ReportViewer.UI" /&gt;
+		&lt;DocumentWindow UniqueId="5627c04f-60bf-4f95-a872-fd0d1b5db5ba" SerializationId="TestCase&amp;lt;2&amp;gt;" IsOpen="true" LastActiveDateTime="2022-04-12T19:16:31.9731117+02:00" State="Document" Type="Vector.ReportViewer.UI.ContentViews.Controls.ContentViewDocumentWnd, Vector.ReportViewer.UI" /&gt;
 	&lt;/DocumentWindows&gt;
 	&lt;ToolWindows&gt;
-		&lt;ToolWindow UniqueId="93e5db3f-45d8-4704-b846-c69482c4ad09" Name="mWndExplorer" ContainerDockedSize="350,150" IsOpen="true" LastActiveDateTime="2022-04-12T11:46:20.0459261+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="93e5db3f-45d8-4704-b846-c69482c4ad09" Name="mWndExplorer" ContainerDockedSize="350,150" IsOpen="true" LastActiveDateTime="2022-04-12T19:16:31.8422868+02:00" State="Docked" /&gt;
 		&lt;ToolWindow UniqueId="823e7b1c-7950-45f0-8b97-b3f950c5777b" Name="mWndCommentsOverview" ContainerDockedSize="350,150" IsOpen="false" State="Docked" /&gt;
 		&lt;ToolWindow UniqueId="ec22791a-e270-4d73-beef-c6b312c0d43a" Name="mWndReassessmentsOverview" ContainerDockedSize="350,150" IsOpen="false" State="Docked" /&gt;
 	&lt;/ToolWindows&gt;
