@@ -1,0 +1,17 @@
+
+IDE (Integrated Development Environment, e.g. Pycharm, Visual Studio, Eclipse, etc)
+
+Git 
+branch 
+Check out
+merge
+commit
+
+push
+pull
+
+Github
+
+Jenkins
+
+Vector (e.g. TSO, CANoe, vFlash?, Diva ?)
